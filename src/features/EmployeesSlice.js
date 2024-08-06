@@ -10,12 +10,12 @@ export const employeesSlice = createSlice({
   },
   reducers: {
     createEmployee: (state, employee) => {
-      state.employees.push(employee);
+      state.employees.push(employee.payload);
       sessionStorage.setItem('employees', JSON.stringify(state.employees));
     },
   },
   selectors: {
-    selectEmployees: (state) => state.profiles,
+    selectEmployees: (state) => state.employees,
     selectEmployeesStatus: (state) => state.status,
     selectEmployeesError: (state) => state.error,
   },
