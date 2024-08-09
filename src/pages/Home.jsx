@@ -5,7 +5,7 @@ const Home = () => {
   return (
     <PageLayout pageTitle={'HRnet'} mainClassName={'home'}>
       <>
-        <Link to={'/current-employees'}>View Current Employees</Link>
+        <Link to={'/employee-list'}>Current Employees</Link>
         <Link to={'/create-employee'}>Create employee</Link>
       </>
     </PageLayout>

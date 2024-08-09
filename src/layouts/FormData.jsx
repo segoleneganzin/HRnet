@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 
 /**
- * FormDataLayout component handles the layout of form data.
+ * FormData component handles the layout of form data.
  *
  * @param {Object} props - The properties object.
  * @param {Object} props.field - The field configuration object.
@@ -9,34 +9,35 @@ import PropTypes from 'prop-types';
  * @param {ReactNode} props.children - The child elements of the layout.
  * @returns {JSX.Element} The JSX element for the form data layout.
  */
-const FormDataLayout = ({ field, errors, children }) => {
+const FormData = ({ field, errors, children }) => {
+  const { name, label } = field;
   // Determine if there's an error for this field
-  const hasError = Boolean(errors[field.name]);
+  const hasError = Boolean(errors[name]);
   return (
     <div className={hasError ? 'form-data-layout--error' : 'form-data-layout'}>
       {/* label */}
-      <label htmlFor={field.name} className={'label'}>
-        {field.label}
+      <label htmlFor={name} className={'label'}>
+        {label}
       </label>
       {/* content */}
       {children}
       {/* error message */}
       {hasError && (
         <p className={'error-message'}>
-          {errors[field.name]?.type === 'required' && field.fieldErrorMessage}
-          {errors[field.name]?.type === 'pattern' && 'Invalid field'}
+          {errors[name]?.type === 'required' &&
+            `Please enter a ${label.toLowerCase()}`}
+          {errors[name]?.type === 'pattern' && 'Invalid field'}
         </p>
       )}
     </div>
   );
 };
-FormDataLayout.propTypes = {
+FormData.propTypes = {
   field: PropTypes.shape({
     name: PropTypes.string.isRequired,
     label: PropTypes.string,
-    fieldErrorMessage: PropTypes.string,
   }).isRequired,
   errors: PropTypes.object.isRequired,
   children: PropTypes.element.isRequired,
 };
-export default FormDataLayout;
+export default FormData;

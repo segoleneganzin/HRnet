@@ -1,11 +1,15 @@
 import PropTypes from 'prop-types';
 import { useForm } from 'react-hook-form';
+import { useEffect } from 'react';
+import { v4 as uuidv4 } from 'uuid';
 import Input from '../components/Input';
 import Select from '../components/Select';
-import FormDataLayout from './FormDataLayout';
-import { createEmployeeFormField } from '../utils/createEmployeeFormFields'; // form data
+import FormData from './FormData';
 import { useDispatch } from 'react-redux';
-import { createEmployee } from '../features/EmployeesSlice';
+import { addEmployee } from '../features/employeesSlice';
+import { usStates } from '../utils/usStates';
+import { getDepartments } from '../services/departmentAPI';
+import { useState } from 'react';
 
 const CreateEmployeeForm = ({ toggleModal }) => {
   const dispatch = useDispatch();
@@ -15,12 +19,26 @@ const CreateEmployeeForm = ({ toggleModal }) => {
     formState: { errors },
   } = useForm();
 
+  const [departments, setDepartments] = useState([]);
+  const fetchDepartments = async () => {
+    try {
+      const data = await getDepartments();
+      setDepartments(data);
+    } catch (error) {
+      console.log(error.message);
+    }
+  };
+  // Effect to fetch mocked departments data
+  useEffect(() => {
+    fetchDepartments();
+  }, []);
+
   /**
    * Function to obtain the error class for a given field.
    * @param {string} field
    * @returns {string} - Field error class.
    */
-  const inputErrorClass = (fieldName) => {
+  const fieldClass = (fieldName) => {
     return errors[fieldName] ? 'field--error' : 'field';
   };
 
@@ -28,9 +46,10 @@ const CreateEmployeeForm = ({ toggleModal }) => {
    * Function to handle form submission
    * @param {object} data - Form data
    */
-  const formSubmit = (employee) => {
-    console.log('Form Data:', employee);
-    dispatch(createEmployee(employee));
+  const formSubmit = (formData) => {
+    // Generate a unique ID for the new employee
+    const newEmployee = { id: uuidv4(), ...formData };
+    dispatch(addEmployee(newEmployee));
     toggleModal();
   };
 
@@ -42,106 +61,111 @@ const CreateEmployeeForm = ({ toggleModal }) => {
       noValidate
     >
       {/* First Name Field */}
-      <FormDataLayout
-        field={createEmployeeFormField['firstName']}
+      <FormData
+        field={{ name: 'firstName', label: 'First Name' }}
         errors={errors}
       >
         <Input
-          field={createEmployeeFormField['firstName']}
+          field={{ name: 'firstName' }}
           register={register}
-          inputErrorClass={inputErrorClass}
+          fieldClass={fieldClass}
         />
-      </FormDataLayout>
+      </FormData>
 
       {/* Last Name Field */}
-      <FormDataLayout
-        field={createEmployeeFormField['lastName']}
+      <FormData
+        field={{ name: 'lastName', label: 'Last Name' }}
         errors={errors}
       >
         <Input
-          field={createEmployeeFormField['lastName']}
+          field={{ name: 'lastName' }}
           register={register}
-          inputErrorClass={inputErrorClass}
+          fieldClass={fieldClass}
         />
-      </FormDataLayout>
+      </FormData>
 
       {/* Birth Date Field */}
-      <FormDataLayout field={createEmployeeFormField['birth']} errors={errors}>
-        <Input
-          field={createEmployeeFormField['birth']}
-          register={register}
-          inputErrorClass={inputErrorClass}
-        />
-      </FormDataLayout>
-
-      {/* Start Date Field */}
-      <FormDataLayout
-        field={createEmployeeFormField['startDate']}
+      <FormData
+        field={{ name: 'birth', label: 'Date of Birth' }}
         errors={errors}
       >
         <Input
-          field={createEmployeeFormField['startDate']}
+          field={{ name: 'birth', type: 'date' }}
           register={register}
-          inputErrorClass={inputErrorClass}
+          fieldClass={fieldClass}
         />
-      </FormDataLayout>
+      </FormData>
+
+      {/* Start Date Field */}
+      <FormData
+        field={{ name: 'startDate', label: 'Start Date' }}
+        errors={errors}
+      >
+        <Input
+          field={{ name: 'startDate', type: 'date' }}
+          register={register}
+          fieldClass={fieldClass}
+        />
+      </FormData>
 
       {/* Address Fieldset */}
-      <fieldset className={inputErrorClass('address')}>
+      <fieldset className={fieldClass('address')}>
         <legend>Address</legend>
-        <FormDataLayout
-          field={createEmployeeFormField['street']}
-          errors={errors}
-        >
+        <FormData field={{ name: 'street', label: 'Street' }} errors={errors}>
           <Input
-            field={createEmployeeFormField['street']}
+            field={{ name: 'street' }}
             register={register}
-            inputErrorClass={inputErrorClass}
+            fieldClass={fieldClass}
           />
-        </FormDataLayout>
+        </FormData>
 
-        <FormDataLayout field={createEmployeeFormField['city']} errors={errors}>
+        <FormData field={{ name: 'city', label: 'City' }} errors={errors}>
           <Input
-            field={createEmployeeFormField['city']}
+            field={{ name: 'city' }}
             register={register}
-            inputErrorClass={inputErrorClass}
+            fieldClass={fieldClass}
           />
-        </FormDataLayout>
+        </FormData>
 
-        <FormDataLayout
-          field={createEmployeeFormField['state']}
-          errors={errors}
-        >
+        <FormData field={{ name: 'state', label: 'State' }} errors={errors}>
           <Select
-            field={createEmployeeFormField['state']}
+            field={{
+              name: 'state',
+              defaultValue: 'Choose a state',
+              options: usStates,
+            }}
             register={register}
-            inputErrorClass={inputErrorClass}
+            fieldClass={fieldClass}
           />
-        </FormDataLayout>
+        </FormData>
 
-        <FormDataLayout
-          field={createEmployeeFormField['zipCode']}
+        <FormData
+          field={{ name: 'zipCode', label: 'Zip Code' }}
           errors={errors}
         >
           <Input
-            field={createEmployeeFormField['zipCode']}
+            field={{ name: 'zipCode', type: 'number' }}
             register={register}
-            inputErrorClass={inputErrorClass}
+            fieldClass={fieldClass}
           />
-        </FormDataLayout>
+        </FormData>
       </fieldset>
 
       {/* Department Field */}
-      <FormDataLayout
-        field={createEmployeeFormField['department']}
+      <FormData
+        field={{ name: 'department', label: 'Department' }}
         errors={errors}
       >
         <Select
-          field={createEmployeeFormField['department']}
+          field={{
+            name: 'department',
+            defaultValue: 'Choose a department',
+            options: departments,
+          }}
           register={register}
-          inputErrorClass={inputErrorClass}
+          fieldClass={fieldClass}
         />
-      </FormDataLayout>
+      </FormData>
       <button>Create</button>
     </form>
   );

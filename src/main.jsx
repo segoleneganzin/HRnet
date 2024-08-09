@@ -8,7 +8,7 @@ import './stylesheet/style.scss';
 const root = createRoot(document.getElementById('root'));
 root.render(
   <BrowserRouter>
-    <Provider store={store}>
+    <Provider store={store} stabilityCheck='always'>
       <Router />
     </Provider>
   </BrowserRouter>

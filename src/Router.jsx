@@ -1,6 +1,6 @@
 import { Routes, Route } from 'react-router-dom';
 import CreateEmployee from './pages/CreateEmployee';
-import CurrentEmployees from './pages/CurrentEmployees';
+import EmployeeList from './pages/EmployeeList';
 import Home from './pages/Home';
 
 const Router = () => {
@@ -8,7 +8,7 @@ const Router = () => {
     <Routes>
       <Route index element={<Home />} />
       <Route path='/create-employee' element={<CreateEmployee />} />
-      <Route path='/current-employees' element={<CurrentEmployees />} />
+      <Route path='/employee-list' element={<EmployeeList />} />
     </Routes>
   );
 };

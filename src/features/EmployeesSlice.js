@@ -1,4 +1,13 @@
 import { createSlice } from '@reduxjs/toolkit';
+import { getEmployees } from '../services/employeeAPI';
+import {
+  createThunkAction,
+  handleAsyncActions,
+} from '../utils/slicerFunctions';
+
+const GET_EMPLOYEES = 'employees/getEmployees';
+
+export const getEmployeesAsync = createThunkAction(GET_EMPLOYEES, getEmployees);
 
 // Redux slice for profile state management
 export const employeesSlice = createSlice({
@@ -9,10 +18,15 @@ export const employeesSlice = createSlice({
     error: null,
   },
   reducers: {
-    createEmployee: (state, employee) => {
-      state.employees.push(employee.payload);
-      sessionStorage.setItem('employees', JSON.stringify(state.employees));
+    addEmployee: (state, action) => {
+      const employees = [...state.employees, action.payload];
+      sessionStorage.setItem('employees', JSON.stringify(employees));
+      state.employees = employees;
     },
+  },
+  extraReducers: (builder) => {
+    // Extra reducers to handle async actions (getUserAccounts)
+    handleAsyncActions(builder, getEmployeesAsync, 'employees', 'status');
   },
   selectors: {
     selectEmployees: (state) => state.employees,
@@ -21,7 +35,7 @@ export const employeesSlice = createSlice({
   },
 });
 
-export const { createEmployee } = employeesSlice.actions;
+export const { addEmployee } = employeesSlice.actions;
 export const { selectEmployees, selectEmployeesStatus, selectEmployeesError } =
   employeesSlice.selectors;
 
