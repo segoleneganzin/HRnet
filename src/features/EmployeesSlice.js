@@ -13,20 +13,20 @@ export const getEmployeesAsync = createThunkAction(GET_EMPLOYEES, getEmployees);
 export const employeesSlice = createSlice({
   name: 'employees',
   initialState: {
-    employees: JSON.parse(localStorage.getItem('employees')) || [],
+    employees: JSON.parse(sessionStorage.getItem('employees')) || [],
     previousEmployees:
-      JSON.parse(localStorage.getItem('previousEmployees')) || [],
+      JSON.parse(sessionStorage.getItem('previousEmployees')) || [],
     status: 'idle',
     error: null,
   },
   reducers: {
     addEmployee: (state, action) => {
       const employees = [...state.employees, action.payload];
-      localStorage.setItem('employees', JSON.stringify(employees));
+      sessionStorage.setItem('employees', JSON.stringify(employees));
       state.employees = employees;
     },
-    setPreviousEmployees: (state) => {
-      localStorage.setItem(
+    updatePreviousEmployees: (state) => {
+      sessionStorage.setItem(
         'previousEmployees',
         JSON.stringify(state.employees)
       );
@@ -39,13 +39,13 @@ export const employeesSlice = createSlice({
   },
   selectors: {
     selectEmployees: (state) => state.employees,
-    selectPreviousEmployees: (state) => state.employees,
+    selectPreviousEmployees: (state) => state.previousEmployees,
     selectEmployeesStatus: (state) => state.status,
     selectEmployeesError: (state) => state.error,
   },
 });
 
-export const { addEmployee, setPreviousEmployees } = employeesSlice.actions;
+export const { addEmployee, updatePreviousEmployees } = employeesSlice.actions;
 export const {
   selectEmployees,
   selectPreviousEmployees,

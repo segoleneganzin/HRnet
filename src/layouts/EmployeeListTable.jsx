@@ -4,12 +4,11 @@ import { AgGridReact } from 'ag-grid-react'; // React Data Grid Component
 import 'ag-grid-community/styles/ag-grid.css'; // Mandatory CSS required by the Data Grid
 import 'ag-grid-community/styles/ag-theme-quartz.css'; // Optional Theme applied to the Data Grid
 import {
-  // getEmployeesAsync,
   selectEmployees,
   selectEmployeesError,
   selectEmployeesStatus,
   selectPreviousEmployees,
-  setPreviousEmployees,
+  updatePreviousEmployees,
 } from '../features/employeesSlice';
 import Loader from '../components/Loader';
 import Error from '../components/Error';
@@ -79,19 +78,18 @@ const EmployeeListTable = () => {
       const existingEmployeeId = new Set(
         existingRowNodes.map((row) => row.data.id)
       );
-      // Determine which rows to add
+      // Determine which rows to add (employees not in table)
       const updatedRows = employees.filter(
         (employee) => !existingEmployeeId.has(employee.id)
       );
-      console.log('Rows to be Added:', updatedRows);
 
       if (updatedRows.length > 0) {
         console.log(
           'Updated Row IDs:',
           updatedRows.map((row) => row.id)
         );
-        gridApiRef.current.applyTransaction({ add: updatedRows });
-        dispatch(setPreviousEmployees());
+        gridApiRef.current.applyTransaction({ add: updatedRows }); // add rows
+        dispatch(updatePreviousEmployees());
       }
     }
   }, [employees, apiReady, dispatch]);
