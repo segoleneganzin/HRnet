@@ -10,10 +10,12 @@ import { addEmployee } from '../features/employeesSlice';
 import { usStates } from '../utils/usStates';
 import { getDepartments } from '../services/departmentAPI';
 import { useState } from 'react';
-import DatePicker from 'react-date-picker';
+// import DatePicker from 'react-date-picker';
 // import 'react-datepicker/dist/react-datepicker.css';
-import 'react-date-picker/dist/DatePicker.css';
+// import 'react-date-picker/dist/DatePicker.css';
 // import 'react-calendar/dist/Calendar.css';
+import { DatePicker } from '@mui/x-date-pickers';
+import dayjs from 'dayjs';
 
 const CreateEmployeeForm = ({ toggleModal }) => {
   const dispatch = useDispatch();
@@ -22,17 +24,27 @@ const CreateEmployeeForm = ({ toggleModal }) => {
     handleSubmit,
     control,
     formState: { errors },
-  } = useForm();
+    setValue,
+    reset,
+  } = useForm({
+    defaultValues: {
+      startDate: dayjs().toISOString(), // Valeur par défaut pour le startDate
+    },
+  });
 
   const [birthDate, setBirthDate] = useState('');
-  const [minStartDate, setMinStartDate] = useState(null);
+  const [minStartDate, setMinStartDate] = useState(dayjs());
+
+  useEffect(() => {
+    setValue('startDate', dayjs().toISOString()); // Définir la date par défaut si aucune date n'a été sélectionnée
+  }, [setValue]);
+
   useEffect(() => {
     if (birthDate) {
-      const minDate = new Date(birthDate);
-      minDate.setFullYear(minDate.getFullYear() + 16);
+      const minDate = dayjs(birthDate).add(16, 'year');
       setMinStartDate(minDate);
     } else {
-      setMinStartDate(null);
+      setMinStartDate(dayjs());
     }
   }, [birthDate]);
 
@@ -65,9 +77,18 @@ const CreateEmployeeForm = ({ toggleModal }) => {
    */
   const formSubmit = (formData) => {
     // Generate a unique ID for the new employee
-    const newEmployee = { id: uuidv4(), ...formData };
+    const newEmployee = {
+      id: uuidv4(),
+      ...formData,
+      birth: formData.birth ? dayjs(formData.birth).toISOString() : '',
+      startDate: formData.startDate
+        ? dayjs(formData.startDate).toISOString()
+        : '',
+    };
     dispatch(addEmployee(newEmployee));
     toggleModal();
+    reset(); // reinitialize form when addEmployee succeeded
+    setMinStartDate(dayjs());
   };
 
   return (
@@ -112,15 +133,19 @@ const CreateEmployeeForm = ({ toggleModal }) => {
           rules={{ required: 'Please enter a date of Birth' }}
           render={({ field }) => (
             <DatePicker
+              name='birth'
               className='input'
-              // placeholderText='Select date'
+              format='MM/DD/YYYY'
               onChange={(date) => {
-                field.onChange(date ? date.toISOString() : '');
-                setBirthDate(date);
+                field.onChange(date ? dayjs(date) : '');
+                setBirthDate(date ? date.toDate() : null);
               }}
-              // selected={field.value}
-              value={field.value}
-              format='MM/dd/y'
+              value={dayjs(field.value)}
+              slotProps={{
+                textField: {
+                  id: 'birth',
+                },
+              }}
             />
           )}
         />
@@ -137,13 +162,17 @@ const CreateEmployeeForm = ({ toggleModal }) => {
           rules={{ required: 'Please enter a start Date' }}
           render={({ field }) => (
             <DatePicker
+              name='startDate'
               className='input'
-              // minDate={minStartDate}
-              onChange={(date) =>
-                field.onChange(date ? date.toISOString() : '')
-              }
-              value={field.value}
-              format='MM/dd/yyyy'
+              format='MM/DD/YYYY'
+              minDate={minStartDate}
+              onChange={(date) => field.onChange(date ? dayjs(date) : '')}
+              value={dayjs(field.value)}
+              slotProps={{
+                textField: {
+                  id: 'startDate',
+                },
+              }}
             />
           )}
         />
@@ -188,6 +217,7 @@ const CreateEmployeeForm = ({ toggleModal }) => {
             field={{ name: 'zipCode', type: 'number' }}
             register={register}
             fieldClass={fieldClass}
+            pattern='\d{5}'
           />
         </FormData>
       </fieldset>
@@ -212,7 +242,6 @@ const CreateEmployeeForm = ({ toggleModal }) => {
   );
 };
 CreateEmployeeForm.propTypes = {
-  isModalOpen: PropTypes.bool,
   toggleModal: PropTypes.func,
 };
 export default CreateEmployeeForm;

@@ -16,9 +16,11 @@ const FormData = ({ field, errors, children }) => {
   return (
     <div className={hasError ? 'form-data-layout--error' : 'form-data-layout'}>
       {/* label */}
-      <label htmlFor={name} className={'label'}>
-        {label}
-      </label>
+      {label && (
+        <label htmlFor={name} className={'label'}>
+          {label}
+        </label>
+      )}
       {/* content */}
       {children}
       {/* error message */}
