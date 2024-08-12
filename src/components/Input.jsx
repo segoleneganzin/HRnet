@@ -30,6 +30,7 @@ Input.propTypes = {
     pattern: PropTypes.string,
   }).isRequired,
   fieldClass: PropTypes.func,
+  handleChange: PropTypes.func,
   register: PropTypes.func.isRequired,
 };
 

@@ -29,9 +29,8 @@ export const handleAsyncActions = (builder, thunk, slicer, statusKey) => {
     .addCase(thunk.fulfilled, (state, action) => {
       state[statusKey] = 'succeeded';
       state[slicer] = action.payload.body;
-      console.log(action.payload.body);
       state.error = null;
-      sessionStorage.setItem(slicer, JSON.stringify(state[slicer]));
+      localStorage.setItem(slicer, JSON.stringify(state[slicer]));
     })
     .addCase(thunk.rejected, (state, action) => {
       state[statusKey] = 'failed';

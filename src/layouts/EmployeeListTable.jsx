@@ -1,14 +1,15 @@
 import { useState, useRef, useEffect, useCallback } from 'react';
-import { useDispatch } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { AgGridReact } from 'ag-grid-react'; // React Data Grid Component
 import 'ag-grid-community/styles/ag-grid.css'; // Mandatory CSS required by the Data Grid
 import 'ag-grid-community/styles/ag-theme-quartz.css'; // Optional Theme applied to the Data Grid
-import { useSelector } from 'react-redux';
 import {
-  getEmployeesAsync,
+  // getEmployeesAsync,
   selectEmployees,
   selectEmployeesError,
   selectEmployeesStatus,
+  selectPreviousEmployees,
+  setPreviousEmployees,
 } from '../features/employeesSlice';
 import Loader from '../components/Loader';
 import Error from '../components/Error';
@@ -18,9 +19,8 @@ const EmployeeListTable = () => {
   const employees = useSelector((state) => selectEmployees(state));
   const employeesStatus = useSelector((state) => selectEmployeesStatus(state));
   const employeesError = useSelector((state) => selectEmployeesError(state));
-
-  const previousEmployees = JSON.parse(
-    sessionStorage.getItem('previousEmployees')
+  const previousEmployees = useSelector((state) =>
+    selectPreviousEmployees(state)
   );
 
   const gridApiRef = useRef(null);
@@ -30,21 +30,6 @@ const EmployeeListTable = () => {
   const pagination = true;
   const paginationPageSize = 10;
   const paginationPageSizeSelector = [5, 10, 25, 50, 100];
-
-  // Effect to fetch mocked employees and stock them in state manager
-  useEffect(() => {
-    const fetchEmployees = async () => {
-      if (employees.length === 0) {
-        const result = await dispatch(getEmployeesAsync()).unwrap();
-        sessionStorage.setItem(
-          'previousEmployees',
-          JSON.stringify(result.body)
-        );
-      }
-    };
-
-    fetchEmployees();
-  }, [employees, dispatch]);
 
   const colDefs = [
     { headerName: 'First Name', field: 'firstName' },
@@ -105,16 +90,11 @@ const EmployeeListTable = () => {
           'Updated Row IDs:',
           updatedRows.map((row) => row.id)
         );
-        if (JSON.stringify(employees) !== JSON.stringify(previousEmployees)) {
-          gridApiRef.current.applyTransaction({ add: updatedRows });
-          sessionStorage.setItem(
-            'previousEmployees',
-            JSON.stringify(employees)
-          );
-        }
+        gridApiRef.current.applyTransaction({ add: updatedRows });
+        dispatch(setPreviousEmployees());
       }
     }
-  }, [employees, previousEmployees, apiReady]);
+  }, [employees, apiReady, dispatch]);
 
   if (employeesStatus === 'loading') {
     return <Loader />;

@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import { useForm } from 'react-hook-form';
+import { useForm, Controller } from 'react-hook-form';
 import { useEffect } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import Input from '../components/Input';
@@ -10,14 +10,31 @@ import { addEmployee } from '../features/employeesSlice';
 import { usStates } from '../utils/usStates';
 import { getDepartments } from '../services/departmentAPI';
 import { useState } from 'react';
+import DatePicker from 'react-date-picker';
+// import 'react-datepicker/dist/react-datepicker.css';
+import 'react-date-picker/dist/DatePicker.css';
+// import 'react-calendar/dist/Calendar.css';
 
 const CreateEmployeeForm = ({ toggleModal }) => {
   const dispatch = useDispatch();
   const {
     register,
     handleSubmit,
+    control,
     formState: { errors },
   } = useForm();
+
+  const [birthDate, setBirthDate] = useState('');
+  const [minStartDate, setMinStartDate] = useState(null);
+  useEffect(() => {
+    if (birthDate) {
+      const minDate = new Date(birthDate);
+      minDate.setFullYear(minDate.getFullYear() + 16);
+      setMinStartDate(minDate);
+    } else {
+      setMinStartDate(null);
+    }
+  }, [birthDate]);
 
   const [departments, setDepartments] = useState([]);
   const fetchDepartments = async () => {
@@ -89,10 +106,23 @@ const CreateEmployeeForm = ({ toggleModal }) => {
         field={{ name: 'birth', label: 'Date of Birth' }}
         errors={errors}
       >
-        <Input
-          field={{ name: 'birth', type: 'date' }}
-          register={register}
-          fieldClass={fieldClass}
+        <Controller
+          control={control}
+          name='birth'
+          rules={{ required: 'Please enter a date of Birth' }}
+          render={({ field }) => (
+            <DatePicker
+              className='input'
+              // placeholderText='Select date'
+              onChange={(date) => {
+                field.onChange(date ? date.toISOString() : '');
+                setBirthDate(date);
+              }}
+              // selected={field.value}
+              value={field.value}
+              format='MM/dd/y'
+            />
+          )}
         />
       </FormData>
 
@@ -101,10 +131,21 @@ const CreateEmployeeForm = ({ toggleModal }) => {
         field={{ name: 'startDate', label: 'Start Date' }}
         errors={errors}
       >
-        <Input
-          field={{ name: 'startDate', type: 'date' }}
-          register={register}
-          fieldClass={fieldClass}
+        <Controller
+          control={control}
+          name='startDate'
+          rules={{ required: 'Please enter a start Date' }}
+          render={({ field }) => (
+            <DatePicker
+              className='input'
+              // minDate={minStartDate}
+              onChange={(date) =>
+                field.onChange(date ? date.toISOString() : '')
+              }
+              value={field.value}
+              format='MM/dd/yyyy'
+            />
+          )}
         />
       </FormData>
 
