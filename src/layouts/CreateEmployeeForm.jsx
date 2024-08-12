@@ -10,10 +10,6 @@ import { addEmployee } from '../features/employeesSlice';
 import { usStates } from '../utils/usStates';
 import { getDepartments } from '../services/departmentAPI';
 import { useState } from 'react';
-// import DatePicker from 'react-date-picker';
-// import 'react-datepicker/dist/react-datepicker.css';
-// import 'react-date-picker/dist/DatePicker.css';
-// import 'react-calendar/dist/Calendar.css';
 import { DatePicker } from '@mui/x-date-pickers';
 import dayjs from 'dayjs';
 
