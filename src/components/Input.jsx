@@ -5,7 +5,8 @@ const Input = ({ field, register, fieldClass }) => {
     name,
     type = 'text', // Default value for type
     isRequired = true, // Default value for isRequired
-    pattern,
+    pattern = null, // Default value for pattern
+    placeholder = '', // Default value for placeholder
   } = field;
   return (
     <input
@@ -13,9 +14,10 @@ const Input = ({ field, register, fieldClass }) => {
       id={name}
       name={name}
       className={fieldClass(name)}
+      placeholder={placeholder}
       {...register(name, {
         required: isRequired,
-        pattern: pattern || null, // null by default, if the information isn't set into fieldConfig
+        pattern: pattern, // null by default, if the information isn't set into fieldConfig
       })}
       aria-required={isRequired}
       aria-invalid={fieldClass(name) === 'field--error'}
@@ -27,7 +29,8 @@ Input.propTypes = {
     name: PropTypes.string.isRequired,
     type: PropTypes.string,
     isRequired: PropTypes.bool,
-    pattern: PropTypes.string,
+    pattern: PropTypes.instanceOf(RegExp),
+    placeholder: PropTypes.string,
   }).isRequired,
   fieldClass: PropTypes.func,
   handleChange: PropTypes.func,

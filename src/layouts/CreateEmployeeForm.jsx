@@ -31,10 +31,12 @@ const CreateEmployeeForm = ({ toggleModal }) => {
   const [birthDate, setBirthDate] = useState('');
   const [minStartDate, setMinStartDate] = useState(dayjs());
 
+  // Set default date if no date has been selected
   useEffect(() => {
-    setValue('startDate', dayjs().toISOString()); // Définir la date par défaut si aucune date n'a été sélectionnée
+    setValue('startDate', dayjs().toISOString());
   }, [setValue]);
 
+  // manage start date depends of birth date
   useEffect(() => {
     if (birthDate) {
       const minDate = dayjs(birthDate).add(16, 'year');
@@ -210,10 +212,9 @@ const CreateEmployeeForm = ({ toggleModal }) => {
           errors={errors}
         >
           <Input
-            field={{ name: 'zipCode', type: 'number' }}
+            field={{ name: 'zipCode', type: 'number', pattern: /^\d{5}$/ }} // 5 numbers only
             register={register}
             fieldClass={fieldClass}
-            pattern='\d{5}'
           />
         </FormData>
       </fieldset>
