@@ -1,9 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { getEmployees } from '../services/employeeAPI';
-import {
-  createThunkAction,
-  handleAsyncActions,
-} from '../utils/slicerFunctions';
+import { createThunkAction, handleAsyncActions } from './slicerFunctions';
 
 const GET_EMPLOYEES = 'employees/getEmployees';
 

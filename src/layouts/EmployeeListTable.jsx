@@ -12,6 +12,7 @@ import {
 } from '../features/employeesSlice';
 import Loader from '../components/Loader';
 import Error from '../components/Error';
+import { colDefs } from '../utils/tables/employeesColDefs';
 
 const EmployeeListTable = () => {
   const dispatch = useDispatch();
@@ -29,36 +30,6 @@ const EmployeeListTable = () => {
   const pagination = true;
   const paginationPageSize = 10;
   const paginationPageSizeSelector = [5, 10, 25, 50, 100];
-
-  const colDefs = [
-    { headerName: 'First Name', field: 'firstName' },
-    { headerName: 'Last Name', field: 'lastName' },
-    {
-      headerName: 'Start Date',
-      field: 'startDate',
-      valueFormatter: (p) =>
-        new Date(p.value).toLocaleDateString('en-US', {
-          year: 'numeric',
-          month: '2-digit',
-          day: '2-digit',
-        }),
-    },
-    { headerName: 'Department', field: 'department' },
-    {
-      headerName: 'Date of Birth',
-      field: 'birth',
-      valueFormatter: (p) =>
-        new Date(p.value).toLocaleDateString('en-US', {
-          year: 'numeric',
-          month: '2-digit',
-          day: '2-digit',
-        }),
-    },
-    { headerName: 'Street', field: 'street' },
-    { headerName: 'City', field: 'city' },
-    { headerName: 'State', field: 'state' },
-    { headerName: 'Zip Code', field: 'zipCode' },
-  ];
 
   const onFilterTextChange = (e) => {
     setFilterText(e.target.value);
@@ -111,10 +82,14 @@ const EmployeeListTable = () => {
         onChange={onFilterTextChange}
         className='current-employee__table-filter'
       />
-      <div className='ag-theme-quartz current-employee__table'>
+      <div
+        className='ag-theme-quartz current-employee__table'
+        style={{ width: '100%' }}
+      >
         <AgGridReact
           rowData={previousEmployees}
           columnDefs={colDefs}
+          domLayout='autoHeight'
           pagination={pagination}
           paginationPageSize={paginationPageSize}
           paginationPageSizeSelector={paginationPageSizeSelector}

@@ -9,10 +9,9 @@ const CreateEmployee = () => {
     setIsModalOpen(!isModalOpen);
   };
   return (
-    <PageLayout pageTitle={'Create employee'}>
+    <PageLayout pageTitle={'Create employee'} mainClassName={'create-employee'}>
       <>
-        <h2>Create employee</h2>
-        <a onClick={toggleModal}>toggleModal</a>
+        <h2 className='create-employee__title'>Create employee</h2>
         <CreateEmployeeForm toggleModal={toggleModal} />
         {isModalOpen && (
           <Modal

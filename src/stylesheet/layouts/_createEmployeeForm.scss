@@ -1,0 +1,17 @@
+.create-employee__form {
+  @include flexCol;
+  gap: 1rem;
+  .address {
+    @include flexCol;
+    border-color: lightgrey;
+    border-radius: 0.5rem;
+    gap: 1rem;
+  }
+  .btn {
+    margin-top: 20px;
+  }
+  @include min-media-breakpoint($breakpoint-mobileXl) {
+    margin: auto;
+    width: 500px;
+  }
+}

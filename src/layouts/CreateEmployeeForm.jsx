@@ -12,7 +12,8 @@ import Select from '../components/Select';
 import FormData from './FormData';
 import { LocalizationProvider } from '@mui/x-date-pickers';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
-import CustomDatePicker from '../components/CustomDatePicker ';
+import DatePicker from '../components/DatePicker ';
+import Button from '../components/Button';
 
 const CreateEmployeeForm = ({ toggleModal }) => {
   const dispatch = useDispatch();
@@ -21,7 +22,6 @@ const CreateEmployeeForm = ({ toggleModal }) => {
     handleSubmit,
     control,
     formState: { errors },
-    setValue,
     reset,
   } = useForm({
     defaultValues: {
@@ -32,12 +32,6 @@ const CreateEmployeeForm = ({ toggleModal }) => {
   const [birthDate, setBirthDate] = useState('');
   const [minStartDate, setMinStartDate] = useState(dayjs());
   const maxBirthDate = dayjs().subtract(16, 'year');
-
-  // Set default date if no date has been selected
-  useEffect(() => {
-    setValue('birth', maxBirthDate.toISOString());
-    setValue('startDate', dayjs().toISOString());
-  }, [setValue, maxBirthDate]);
 
   // manage start date depends of birth date
   useEffect(() => {
@@ -95,7 +89,7 @@ const CreateEmployeeForm = ({ toggleModal }) => {
     <LocalizationProvider dateAdapter={AdapterDayjs}>
       <form
         onSubmit={handleSubmit(formSubmit)}
-        className={'form'}
+        className={'form create-employee__form'}
         id={'createEmployeeForm'}
         noValidate
       >
@@ -128,7 +122,7 @@ const CreateEmployeeForm = ({ toggleModal }) => {
           field={{ name: 'birth', label: 'Date of Birth' }}
           errors={errors}
         >
-          <CustomDatePicker
+          <DatePicker
             control={control}
             field={{
               name: 'birth',
@@ -144,7 +138,7 @@ const CreateEmployeeForm = ({ toggleModal }) => {
           field={{ name: 'startDate', label: 'Start Date' }}
           errors={errors}
         >
-          <CustomDatePicker
+          <DatePicker
             control={control}
             field={{
               name: 'startDate',
@@ -155,7 +149,7 @@ const CreateEmployeeForm = ({ toggleModal }) => {
         </FormData>
 
         {/* Address Fieldset */}
-        <fieldset className={fieldClass('address')}>
+        <fieldset className={'address'}>
           <legend>Address</legend>
           <FormData field={{ name: 'street', label: 'Street' }} errors={errors}>
             <Input
@@ -212,7 +206,7 @@ const CreateEmployeeForm = ({ toggleModal }) => {
             fieldClass={fieldClass}
           />
         </FormData>
-        <button>Create</button>
+        <Button text='Create' className='btn--validation' />
       </form>
     </LocalizationProvider>
   );

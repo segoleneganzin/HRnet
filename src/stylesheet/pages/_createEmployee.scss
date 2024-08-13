@@ -1,0 +1,10 @@
+.create-employee {
+  &__title {
+    border-bottom: 2px solid black;
+    padding-bottom: 10px;
+    width: fit-content;
+    @include min-media-breakpoint($breakpoint-mobileXl) {
+      margin: auto;
+    }
+  }
+}

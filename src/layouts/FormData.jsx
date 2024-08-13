@@ -13,7 +13,13 @@ const FormData = ({ field, errors, children }) => {
   // Determine if there's an error for this field
   const hasError = Boolean(errors[name]);
   return (
-    <div className={hasError ? 'form-data-layout--error' : 'form-data-layout'}>
+    <div
+      className={
+        hasError
+          ? 'form-data-layout form-data-layout--error'
+          : 'form-data-layout'
+      }
+    >
       {/* label */}
       {label && (
         <label htmlFor={name} className={'label'}>
@@ -24,7 +30,7 @@ const FormData = ({ field, errors, children }) => {
       {children}
       {/* error message */}
       {hasError && (
-        <p className={'error-message'}>
+        <p className={'form-data-layout__error-message'}>
           {errors[name]?.type === 'required' &&
             `Please enter a ${label.toLowerCase()}`}
           {errors[name]?.type === 'pattern' && 'Invalid field'}

@@ -1,0 +1,33 @@
+.btn {
+  align-items: center;
+  align-self: center;
+  background-image: linear-gradient(to top, #d8d9db 0%, #fff 80%, #fdfdfd 100%);
+  border: 1px solid #8f9092;
+  border-radius: 30px;
+  color: #606060;
+  cursor: pointer;
+  display: flex;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  height: 50px;
+  justify-content: center;
+  outline: none;
+  text-shadow: 0 1px #fff;
+  transition: all 0.2s ease;
+  width: 150px;
+  &:hover {
+    box-shadow: 0 4px 3px 1px #fcfcfc, 0 6px 8px #d6d7d9, 0 -4px 4px #cecfd1,
+      0 -6px 4px #fefefe, inset 0 0 3px 3px #cecfd1;
+  }
+
+  &:active {
+    box-shadow: 0 4px 3px 1px #fcfcfc, 0 6px 8px #d6d7d9, 0 -4px 4px #cecfd1,
+      0 -6px 4px #fefefe, inset 0 0 5px 3px #999, inset 0 0 30px #aaa;
+  }
+
+  &:focus {
+    box-shadow: 0 4px 3px 1px #fcfcfc, 0 6px 8px #d6d7d9, 0 -4px 4px #cecfd1,
+      0 -6px 4px #fefefe, inset 0 0 5px 3px #999, inset 0 0 30px #aaa;
+  }
+}

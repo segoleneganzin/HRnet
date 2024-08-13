@@ -1,4 +1,4 @@
-@mixin flex-col {
+@mixin flexCol {
   display: flex;
   flex-direction: column;
 }
@@ -8,7 +8,7 @@
   width: 100%;
 }
 
-@mixin pseudo-elem {
+@mixin pseudoElem {
   @include fullHeightWidth;
   bottom: 0;
   content: '';

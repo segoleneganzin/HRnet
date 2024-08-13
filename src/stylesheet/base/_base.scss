@@ -19,7 +19,7 @@ html {
  * Basic styles for main
  */
 main {
-  @include flex-col;
+  @include flexCol;
   gap: 43px;
   margin: 50px 100px;
   @include media-breakpoint($breakpoint-laptop) {

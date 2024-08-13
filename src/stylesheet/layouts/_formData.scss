@@ -1,0 +1,12 @@
+.form-data-layout {
+  @include flexCol;
+  gap: 0.4rem;
+  .label {
+    color: #4a5568;
+    font-size: 0.875rem;
+    font-weight: bold;
+  }
+  &__error-message {
+    color: red;
+  }
+}

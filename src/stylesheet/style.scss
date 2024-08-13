@@ -10,10 +10,13 @@
 @import 'base/base', 'base/typography', 'base/helpers';
 
 // 4. Layout-related sections
-@import 'layouts/header', 'layouts/footer', 'layouts/employeeListTable';
+@import 'layouts/header', 'layouts/footer', 'layouts/employeeListTable',
+  'layouts/createEmployeeForm', 'layouts/formData';
 
 // 5. Components
-@import 'components/button', 'components/custom-modal';
+@import 'components/button', 'components/customModal', 'components/customAgGrid',
+  'components/loader', 'components/input', 'components/select',
+  'components/datePicker';
 
 // 6. Page-specific styles
-@import 'pages/home';
+@import 'pages/home', 'pages/createEmployee', 'pages/employeeList';
