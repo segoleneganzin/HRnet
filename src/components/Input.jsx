@@ -3,21 +3,21 @@ import PropTypes from 'prop-types';
 const Input = ({ field, register, fieldClass }) => {
   const {
     name,
-    type = 'text', // Default value for type
-    isRequired = true, // Default value for isRequired
-    pattern = null, // Default value for pattern
-    placeholder = '', // Default value for placeholder
+    type = 'text', // Default value
+    isRequired = true, // Default value
+    pattern = null, // Default value
+    placeholder = '', // Default value
   } = field;
   return (
     <input
       type={type}
       id={name}
       name={name}
-      className={fieldClass(name)}
+      className={'input ' + fieldClass(name)}
       placeholder={placeholder}
       {...register(name, {
         required: isRequired,
-        pattern: pattern, // null by default, if the information isn't set into fieldConfig
+        pattern: pattern,
       })}
       aria-required={isRequired}
       aria-invalid={fieldClass(name) === 'field--error'}
@@ -32,9 +32,8 @@ Input.propTypes = {
     pattern: PropTypes.instanceOf(RegExp),
     placeholder: PropTypes.string,
   }).isRequired,
-  fieldClass: PropTypes.func,
-  handleChange: PropTypes.func,
   register: PropTypes.func.isRequired,
+  fieldClass: PropTypes.func,
 };
 
 export default Input;

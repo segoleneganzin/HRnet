@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+
 /**
  * A React functional component that displays error.
  * @param {Object} props

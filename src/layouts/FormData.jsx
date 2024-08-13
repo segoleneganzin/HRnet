@@ -2,7 +2,6 @@ import PropTypes from 'prop-types';
 
 /**
  * FormData component handles the layout of form data.
- *
  * @param {Object} props - The properties object.
  * @param {Object} props.field - The field configuration object.
  * @param {Object} props.errors - The errors object.

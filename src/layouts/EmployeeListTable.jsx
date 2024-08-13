@@ -104,6 +104,7 @@ const EmployeeListTable = () => {
   return (
     <div>
       <input
+        id='filter'
         type='text'
         placeholder='Filter...'
         value={filterText}

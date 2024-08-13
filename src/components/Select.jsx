@@ -4,27 +4,23 @@ import PropTypes from 'prop-types';
  * SelectField component renders a select dropdown based on the provided configuration.
  *
  * @param {Object} props - The properties object.
- * @param {string} props.fieldName - The name of the field.
  * @param {Object} props.field - The configuration object for the field.
  * @param {function} props.register - The register function from useForm hook.
- * @param {function} props.inputErrorClass - The function to determine the error class for the input.
- * @param {function} props.onChange
+ * @param {function} props.fieldClass - The function to determine the error class for the input.
  * @returns {JSX.Element} - The JSX element for the select dropdown.
  */
 const Select = ({ field, register, fieldClass }) => {
   const {
     name,
-    isRequired = true, // Default value for isRequired
-    defaultValue = 'Choose an option',
+    isRequired = true, // Default value
+    defaultValue = 'Choose an option', // Default value
     options,
   } = field;
   return (
     <select
       id={name}
       name={name}
-      className={
-        `sg-form-lib__select` + fieldClass(name) // into css : sg-form-lib__input / sg-form-lib__textarea, ...
-      }
+      className={`select ` + fieldClass(name)}
       {...register(name, {
         required: isRequired,
       })}
@@ -48,7 +44,7 @@ Select.propTypes = {
     defaultValue: PropTypes.string,
     options: PropTypes.array,
   }).isRequired,
-  fieldClass: PropTypes.func,
   register: PropTypes.func.isRequired,
+  fieldClass: PropTypes.func,
 };
 export default Select;

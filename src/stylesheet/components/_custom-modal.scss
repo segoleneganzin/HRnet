@@ -1,0 +1,12 @@
+.sg-modal {
+  &__body {
+    margin-top: 20%;
+  }
+  &--light {
+    .sg-modal {
+      &__body {
+        border: none;
+      }
+    }
+  }
+}

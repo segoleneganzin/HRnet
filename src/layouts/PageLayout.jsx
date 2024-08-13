@@ -8,12 +8,12 @@ import Footer from './Footer';
  * @param {ReactNode} props.children
  * @returns {JSX.Element}
  */
-const PageLayout = ({ children, pageTitle, mainClassName }) => {
+const PageLayout = ({ children, pageTitle, mainClassName = '' }) => {
   document.title = pageTitle;
   return (
     <div>
       <Header />
-      <main className={mainClassName}>{children}</main>
+      <main className={'main ' + mainClassName}>{children}</main>
       <Footer />
     </div>
   );
