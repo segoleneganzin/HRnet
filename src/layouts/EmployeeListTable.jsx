@@ -73,19 +73,16 @@ const EmployeeListTable = () => {
   }
 
   return (
-    <div>
+    <div className='current-employee__table-container'>
       <input
         id='filter'
         type='text'
         placeholder='Filter...'
         value={filterText}
         onChange={onFilterTextChange}
-        className='current-employee__table-filter'
+        className='current-employee__table-filter input'
       />
-      <div
-        className='ag-theme-quartz current-employee__table'
-        style={{ width: '100%' }}
-      >
+      <div className='ag-theme-quartz current-employee__table'>
         <AgGridReact
           rowData={previousEmployees}
           columnDefs={colDefs}

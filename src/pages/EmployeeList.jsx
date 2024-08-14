@@ -3,9 +3,9 @@ import PageLayout from '../layouts/PageLayout';
 
 const EmployeeList = () => {
   return (
-    <PageLayout pageTitle={'Current Employees'}>
+    <PageLayout pageTitle={'Current Employees'} mainClassName={'employee-list'}>
       <>
-        <h2>Current Employees</h2>
+        <h3 className='employee-list__title title'>Current Employees</h3>
 
         <EmployeeListTable />
       </>

@@ -1,18 +1,88 @@
 /***************************** IMPORTS *****************************/
-/* google font Anton + Manrope*/
-@import url('https://fonts.googleapis.com/css2?family=Anton&family=Manrope:wght@400;500;700&display=swap');
+/* google font Roboto*/
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
 
 /***************************** TYPOGRAPHY *****************************/
+
 /****************************************************** COLORS */
-
-/****************************************************** FONTS */
-
-body {
+body,
+a,
+.btn,
+.form-data-layout .label,
+.ag-header-cell-text,
+.ag-paging-panel,
+.ag-icon {
   color: $text-color;
 }
 
-/***************************************** font weight */
+a {
+  @include on-event {
+    color: $principal-color;
+  }
+}
+
+.header__titles,
+.menu__item a {
+  color: $principal-brand-color;
+}
+
+.form-data-layout {
+  &__error-message {
+    color: $error-color;
+  }
+}
+
+.ag-picker-field-display {
+  color: $third-brand-color;
+}
+
+/****************************************************** FONTS */
+body,
+.btn,
+.ag-cell {
+  font-family: $base-font-family;
+  letter-spacing: $letter-spacing;
+}
+
+.title {
+  font-family: 'Comfortaa', sans-serif;
+}
+
 /***************************************** font size */
-/***************************************** line height */
-/***************************************** text transform */
-/***************************************** text shadow */
+body {
+  font-size: $base-font-size;
+}
+
+h1 {
+  font-size: 1.1rem;
+}
+h2,
+h3 {
+  font-size: 1rem;
+}
+
+.input,
+.select {
+  font-size: 0.875rem;
+}
+
+.ag-paging-page-size,
+.ag-paging-row-summary-panel,
+.ag-paging-page-summary-panel {
+  font-size: 0.8rem;
+}
+
+@include min-media-breakpoint($breakpoint-tablet) {
+  h1 {
+    font-size: 1.4rem;
+  }
+  h2,
+  h3 {
+    font-size: 1.2rem;
+  }
+}
+
+/***************************************** font weight */
+.bold {
+  font-weight: 700;
+}

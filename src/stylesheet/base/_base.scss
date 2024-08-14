@@ -15,18 +15,19 @@ html {
   box-sizing: inherit;
 }
 
+body {
+  background-color: $principal-brand-color;
+}
+
 /**
  * Basic styles for main
  */
 main {
   @include flexCol;
-  gap: 43px;
-  margin: 50px 100px;
-  @include media-breakpoint($breakpoint-laptop) {
-    margin: 27px 20px;
-  }
-  @include media-breakpoint($breakpoint-mobile) {
-    gap: 22px;
+  gap: 30px;
+  margin: 27px 0px;
+  @include min-media-breakpoint($breakpoint-mobileXl) {
+    margin: 50px auto;
   }
 }
 
@@ -34,13 +35,15 @@ main {
  * Basic styles for links
  */
 a {
-  color: $brand-color;
   text-decoration: none;
   cursor: pointer;
   width: fit-content;
+}
 
-  @include on-event {
-    color: $text-color;
-    text-decoration: underline;
-  }
+h3 {
+  border: 2px solid $text-color;
+  border-radius: $smallRadius;
+  margin: auto;
+  padding: 10px;
+  width: fit-content;
 }

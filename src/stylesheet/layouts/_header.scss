@@ -1,2 +1,18 @@
 .header {
+  align-items: center;
+  background-color: $second-brand-color;
+  display: flex;
+  gap: 10px;
+  padding: 20px;
+  &__img {
+    height: 50px;
+  }
+  @include min-media-breakpoint($breakpoint-mobileXS) {
+    gap: 30px;
+  }
+  @include min-media-breakpoint($breakpoint-mobileXl) {
+    border-radius: $fullRadius;
+    margin: 10px;
+    padding: 5px 10px;
+  }
 }

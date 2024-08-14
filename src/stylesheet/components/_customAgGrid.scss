@@ -1,20 +1,32 @@
 .ag-root-wrapper {
-  border: 1px solid #d1d5db;
+  border-radius: 0;
+  border: none;
+  @include min-media-breakpoint($breakpoint-mobileXl) {
+    border-radius: $smallRadius;
+  }
 }
 
+.ag-row {
+  background-color: $second-brand-color;
+  border-color: $third-brand-color;
+}
+
+.ag-header {
+  border: none;
+}
 .ag-header-container,
 .ag-paging-panel {
-  background-color: #d1d5db; /* Changer la couleur de fond */
+  background-color: $third-brand-color;
+}
+.ag-icon-small-down {
+  color: $third-brand-color;
+}
+.ag-picker-field-wrapper {
+  background-color: $secondary-color;
 }
 .ag-paging-panel {
   height: fit-content;
   padding: 10px 0;
-  .ag-paging-page-size,
-  .ag-paging-row-summary-panel,
-  .ag-paging-page-summary-panel {
-    font-size: 0.8rem;
-  }
-
   @include media-breakpoint($breakpoint-mobileXl) {
     display: grid;
     grid-template-columns: repeat(2, 1fr);

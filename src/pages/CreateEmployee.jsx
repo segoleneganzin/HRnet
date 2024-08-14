@@ -11,7 +11,7 @@ const CreateEmployee = () => {
   return (
     <PageLayout pageTitle={'Create employee'} mainClassName={'create-employee'}>
       <>
-        <h2 className='create-employee__title'>Create employee</h2>
+        <h3 className='create-employee__title title'>Create employee</h3>
         <CreateEmployeeForm toggleModal={toggleModal} />
         {isModalOpen && (
           <Modal

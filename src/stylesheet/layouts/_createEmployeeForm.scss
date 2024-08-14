@@ -1,9 +1,11 @@
 .create-employee__form {
   @include flexCol;
+  background-color: rgba(184, 181, 181, 0.5); // Fond noir à 50% d'opacité
   gap: 1rem;
+  padding: 20px;
   .address {
     @include flexCol;
-    border-color: lightgrey;
+    border-color: $secondary-color;
     border-radius: 0.5rem;
     gap: 1rem;
   }
@@ -11,7 +13,9 @@
     margin-top: 20px;
   }
   @include min-media-breakpoint($breakpoint-mobileXl) {
+    border-radius: $smallRadius;
     margin: auto;
+    padding: 30px;
     width: 500px;
   }
 }

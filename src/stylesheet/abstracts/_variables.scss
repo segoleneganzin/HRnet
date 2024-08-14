@@ -1,20 +1,29 @@
 // -----------------------------------------------------------------------------
 // This file contains all application-wide Sass variables.
 // -----------------------------------------------------------------------------
-$text-color: #000000;
+$principal-color: #6b7280;
 
-$link-color: #000000;
+$secondary-color: #e8e8e8;
 
-$brand-color: #ff6060;
+$principal-brand-color: #5a6e0c;
+$second-brand-color: #babe98;
+$third-brand-color: rgb(17, 73, 17);
 
-$grey: #f6f6f6;
+$grey: #f1eeee;
 
-$light-grey: #fbfbfb;
+$error-color: rgb(131, 3, 3);
+
+/// *********************** TYPOGRAPHY
+$base-font-family: 'Nunito', sans-serif;
+$base-font-size: 1rem;
+$line-height: 1.5;
+$letter-spacing: 0.05rem;
+$text-color: $secondary-color;
 
 /// *********************** BREAKPOINTS
 $breakpoint-mobileXS: 360px;
 $breakpoint-mobile: 425px;
-$breakpoint-mobileXl: 560px;
+$breakpoint-mobileXl: 580px;
 $breakpoint-tablet: 768px;
 $breakpoint-laptop: 1024px;
 $breakpoint-laptopXL: 1400px;
@@ -24,3 +33,4 @@ $breakpoint-desktopXL: 1850px;
 $smallRadius: 5px;
 $mediumRadius: 10px;
 $largeRadius: 25px;
+$fullRadius: 100px;
