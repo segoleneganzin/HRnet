@@ -19,16 +19,23 @@ body {
   background-color: $principal-brand-color;
 }
 
+#root > div {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
 /**
  * Basic styles for main
  */
 main {
   @include flexCol;
+  flex: 1;
   gap: 30px;
   margin: 27px 0px;
-  @include min-media-breakpoint($breakpoint-mobileXl) {
-    margin: 50px auto;
-  }
+  // @include min-media-breakpoint($breakpoint-mobileXl) {
+  //   margin: 50px auto;
+  // }
 }
 
 /**
@@ -42,8 +49,8 @@ a {
 
 h3 {
   border: 2px solid $text-color;
-  border-radius: $smallRadius;
-  margin: auto;
+  border-radius: $small-radius;
+  margin: 0 auto;
   padding: 10px;
   width: fit-content;
 }

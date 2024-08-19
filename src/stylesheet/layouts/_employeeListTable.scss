@@ -1,6 +1,5 @@
 .current-employee__table {
   width: 100%;
-
   &-filter {
     margin: 0 0 10px 10px;
     height: 20px;
@@ -8,7 +7,7 @@
   }
   @include min-media-breakpoint($breakpoint-mobileXl) {
     &-container {
-      margin: auto;
+      margin: 0 auto;
       width: 95%;
     }
     &-filter {

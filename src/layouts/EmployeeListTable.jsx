@@ -19,9 +19,7 @@ const EmployeeListTable = () => {
   const employees = useSelector((state) => selectEmployees(state));
   const employeesStatus = useSelector((state) => selectEmployeesStatus(state));
   const employeesError = useSelector((state) => selectEmployeesError(state));
-  const previousEmployees = useSelector((state) =>
-    selectPreviousEmployees(state)
-  );
+  const employeesTable = useSelector((state) => selectPreviousEmployees(state));
 
   const gridApiRef = useRef(null);
   const [apiReady, setApiReady] = useState(false);
@@ -44,6 +42,7 @@ const EmployeeListTable = () => {
   useEffect(() => {
     if (apiReady && gridApiRef.current) {
       // Get all existing row nodes
+      // Table contains previous employees (employees already in table) and then we compare with employees to view if there are new entries to load
       const existingRowNodes = [];
       gridApiRef.current.forEachNode((node) => existingRowNodes.push(node));
       const existingEmployeeId = new Set(
@@ -65,13 +64,16 @@ const EmployeeListTable = () => {
     }
   }, [employees, apiReady, dispatch]);
 
+  const noRows = `<p>
+      No data available in table
+    </p>`;
+
   if (employeesStatus === 'loading') {
     return <Loader />;
   }
   if (employeesStatus === 'failed') {
     return <Error errorMessage={employeesError} />;
   }
-
   return (
     <div className='current-employee__table-container'>
       <input
@@ -84,7 +86,7 @@ const EmployeeListTable = () => {
       />
       <div className='ag-theme-quartz current-employee__table'>
         <AgGridReact
-          rowData={previousEmployees}
+          rowData={employeesTable}
           columnDefs={colDefs}
           domLayout='autoHeight'
           pagination={pagination}
@@ -94,6 +96,7 @@ const EmployeeListTable = () => {
           deltaRowDataMode={true} // Only update changed rows
           getRowNodeId={(data) => data.id}
           onGridReady={onGridReady}
+          overlayNoRowsTemplate={noRows}
         />
       </div>
     </div>

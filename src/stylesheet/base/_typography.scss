@@ -9,6 +9,7 @@ body,
 a,
 .btn,
 .form-data-layout .label,
+.sg-modal__btn,
 .ag-header-cell-text,
 .ag-paging-panel,
 .ag-icon {
@@ -22,7 +23,8 @@ a {
 }
 
 .header__titles,
-.menu__item a {
+.menu__item a,
+.footer {
   color: $principal-brand-color;
 }
 
@@ -39,7 +41,9 @@ a {
 /****************************************************** FONTS */
 body,
 .btn,
-.ag-cell {
+.sg-modal__btn,
+.ag-cell,
+.select {
   font-family: $base-font-family;
   letter-spacing: $letter-spacing;
 }
@@ -51,6 +55,10 @@ body,
 /***************************************** font size */
 body {
   font-size: $base-font-size;
+}
+
+.home__content a {
+  font-size: 1.5rem;
 }
 
 h1 {

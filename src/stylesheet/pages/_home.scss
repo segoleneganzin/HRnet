@@ -1,0 +1,19 @@
+.home {
+  position: relative;
+  overflow: hidden;
+}
+
+.home__content {
+  @include flexColCenter;
+  gap: 80px;
+  margin: auto;
+}
+
+.home__content a {
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 5px;
+  display: block;
+  margin: 10px 0;
+  padding: 10px 20px;
+  width: 100%;
+}

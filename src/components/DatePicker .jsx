@@ -2,6 +2,8 @@ import PropTypes from 'prop-types';
 import { Controller } from 'react-hook-form';
 import dayjs from 'dayjs';
 import { DatePicker as MUIDatePicker } from '@mui/x-date-pickers';
+import { LocalizationProvider } from '@mui/x-date-pickers';
+import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 
 const CustomDatePicker = ({ control, field, setDate }) => {
   const {
@@ -12,30 +14,32 @@ const CustomDatePicker = ({ control, field, setDate }) => {
     isRequired = true, // Default value
   } = field;
   return (
-    <Controller
-      control={control}
-      name={name}
-      rules={isRequired && { required: textError }}
-      render={({ field: { onChange, value } }) => (
-        <MUIDatePicker
-          name={name}
-          className='input'
-          format='MM/DD/YYYY'
-          minDate={minDate}
-          maxDate={maxDate}
-          onChange={(date) => {
-            onChange(date ? dayjs(date) : '');
-            setDate && setDate(date ? date.toDate() : null);
-          }}
-          value={dayjs(value)}
-          slotProps={{
-            textField: {
-              id: name,
-            },
-          }}
-        />
-      )}
-    />
+    <LocalizationProvider dateAdapter={AdapterDayjs}>
+      <Controller
+        control={control}
+        name={name}
+        rules={isRequired && { required: textError }}
+        render={({ field: { onChange, value } }) => (
+          <MUIDatePicker
+            name={name}
+            className='input'
+            format='MM/DD/YYYY'
+            minDate={minDate}
+            maxDate={maxDate}
+            onChange={(date) => {
+              onChange(date ? dayjs(date) : '');
+              setDate && setDate(date ? date.toDate() : null);
+            }}
+            value={dayjs(value)}
+            slotProps={{
+              textField: {
+                id: name,
+              },
+            }}
+          />
+        )}
+      />
+    </LocalizationProvider>
   );
 };
 CustomDatePicker.propTypes = {

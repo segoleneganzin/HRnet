@@ -10,8 +10,6 @@ import dayjs from 'dayjs';
 import Input from '../components/Input';
 import Select from '../components/Select';
 import FormData from './FormData';
-import { LocalizationProvider } from '@mui/x-date-pickers';
-import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import DatePicker from '../components/DatePicker ';
 import Button from '../components/Button';
 
@@ -85,130 +83,127 @@ const CreateEmployeeForm = ({ toggleModal }) => {
   };
 
   return (
-    // for datePicker
-    <LocalizationProvider dateAdapter={AdapterDayjs}>
-      <form
-        onSubmit={handleSubmit(formSubmit)}
-        className={'form create-employee__form'}
-        id={'createEmployeeForm'}
-        noValidate
+    <form
+      onSubmit={handleSubmit(formSubmit)}
+      className={'form create-employee__form'}
+      id={'createEmployeeForm'}
+      noValidate
+    >
+      {/* First Name Field */}
+      <FormData
+        field={{ name: 'firstName', label: 'First Name' }}
+        errors={errors}
       >
-        {/* First Name Field */}
-        <FormData
-          field={{ name: 'firstName', label: 'First Name' }}
-          errors={errors}
-        >
+        <Input
+          field={{ name: 'firstName' }}
+          register={register}
+          fieldClass={fieldClass}
+        />
+      </FormData>
+
+      {/* Last Name Field */}
+      <FormData
+        field={{ name: 'lastName', label: 'Last Name' }}
+        errors={errors}
+      >
+        <Input
+          field={{ name: 'lastName' }}
+          register={register}
+          fieldClass={fieldClass}
+        />
+      </FormData>
+
+      {/* Birth Date Field */}
+      <FormData
+        field={{ name: 'birth', label: 'Date of Birth' }}
+        errors={errors}
+      >
+        <DatePicker
+          control={control}
+          field={{
+            name: 'birth',
+            textError: 'Please enter a date of Birth',
+            maxDate: maxBirthDate,
+          }}
+          setDate={setBirthDate}
+        />
+      </FormData>
+
+      {/* Start Date Field */}
+      <FormData
+        field={{ name: 'startDate', label: 'Start Date' }}
+        errors={errors}
+      >
+        <DatePicker
+          control={control}
+          field={{
+            name: 'startDate',
+            minDate: minStartDate,
+            textError: 'Please enter a start Date',
+          }}
+        />
+      </FormData>
+
+      {/* Address Fieldset */}
+      <fieldset className={'address'}>
+        <legend>Address</legend>
+        <FormData field={{ name: 'street', label: 'Street' }} errors={errors}>
           <Input
-            field={{ name: 'firstName' }}
+            field={{ name: 'street' }}
             register={register}
             fieldClass={fieldClass}
           />
         </FormData>
 
-        {/* Last Name Field */}
-        <FormData
-          field={{ name: 'lastName', label: 'Last Name' }}
-          errors={errors}
-        >
+        <FormData field={{ name: 'city', label: 'City' }} errors={errors}>
           <Input
-            field={{ name: 'lastName' }}
+            field={{ name: 'city' }}
             register={register}
             fieldClass={fieldClass}
           />
         </FormData>
 
-        {/* Birth Date Field */}
-        <FormData
-          field={{ name: 'birth', label: 'Date of Birth' }}
-          errors={errors}
-        >
-          <DatePicker
-            control={control}
-            field={{
-              name: 'birth',
-              textError: 'Please enter a date of Birth',
-              maxDate: maxBirthDate,
-            }}
-            setDate={setBirthDate}
-          />
-        </FormData>
-
-        {/* Start Date Field */}
-        <FormData
-          field={{ name: 'startDate', label: 'Start Date' }}
-          errors={errors}
-        >
-          <DatePicker
-            control={control}
-            field={{
-              name: 'startDate',
-              minDate: minStartDate,
-              textError: 'Please enter a start Date',
-            }}
-          />
-        </FormData>
-
-        {/* Address Fieldset */}
-        <fieldset className={'address'}>
-          <legend>Address</legend>
-          <FormData field={{ name: 'street', label: 'Street' }} errors={errors}>
-            <Input
-              field={{ name: 'street' }}
-              register={register}
-              fieldClass={fieldClass}
-            />
-          </FormData>
-
-          <FormData field={{ name: 'city', label: 'City' }} errors={errors}>
-            <Input
-              field={{ name: 'city' }}
-              register={register}
-              fieldClass={fieldClass}
-            />
-          </FormData>
-
-          <FormData field={{ name: 'state', label: 'State' }} errors={errors}>
-            <Select
-              field={{
-                name: 'state',
-                defaultValue: 'Choose a state',
-                options: usStates,
-              }}
-              register={register}
-              fieldClass={fieldClass}
-            />
-          </FormData>
-
-          <FormData
-            field={{ name: 'zipCode', label: 'Zip Code' }}
-            errors={errors}
-          >
-            <Input
-              field={{ name: 'zipCode', type: 'number', pattern: /^\d{5}$/ }} // 5 numbers only
-              register={register}
-              fieldClass={fieldClass}
-            />
-          </FormData>
-        </fieldset>
-
-        {/* Department Field */}
-        <FormData
-          field={{ name: 'department', label: 'Department' }}
-          errors={errors}
-        >
+        <FormData field={{ name: 'state', label: 'State' }} errors={errors}>
           <Select
             field={{
-              name: 'department',
-              defaultValue: 'Choose a department',
-              options: departments,
+              name: 'state',
+              defaultValue: 'Choose a state',
+              options: usStates,
             }}
             register={register}
             fieldClass={fieldClass}
           />
         </FormData>
-        <Button text='Create' className='btn--validation' />
-      </form>
-    </LocalizationProvider>
+
+        <FormData
+          field={{ name: 'zipCode', label: 'Zip Code' }}
+          errors={errors}
+        >
+          <Input
+            field={{ name: 'zipCode', type: 'number', pattern: /^\d{5}$/ }} // 5 numbers only
+            register={register}
+            fieldClass={fieldClass}
+          />
+        </FormData>
+      </fieldset>
+
+      {/* Department Field */}
+      <FormData
+        field={{ name: 'department', label: 'Department' }}
+        errors={errors}
+      >
+        <Select
+          field={{
+            name: 'department',
+            defaultValue: 'Choose a department',
+            options: departments,
+          }}
+          register={register}
+          fieldClass={fieldClass}
+        />
+      </FormData>
+      <Button text='Create' className='btn--validation bold' />
+    </form>
   );
 };
 CreateEmployeeForm.propTypes = {

@@ -1,12 +1,7 @@
 .sg-modal {
   &__body {
+    background-color: $second-brand-color;
+    border: none;
     margin-top: 20%;
-  }
-  &--light {
-    .sg-modal {
-      &__body {
-        border: none;
-      }
-    }
   }
 }

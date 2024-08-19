@@ -51,21 +51,6 @@ const Menu = () => {
           <span></span>
           <span></span>
         </label>
-        {/* <a
-          href='#'
-          className='menu__burger '
-          onClick={openResponsiveMenu}
-          aria-haspopup='true'
-          aria-controls='toggleNavbar'
-          aria-expanded={hamburgerOpen}
-          aria-label='Open menu'
-        >
-          <span className='menu__burger-icon'>
-            <span></span>
-            <span></span>
-            <span></span>
-          </span>
-        </a> */}
       </>
     )
   );

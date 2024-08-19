@@ -1,11 +1,14 @@
-.btn {
-  padding: 12.5px 30px;
+.btn,
+.sg-modal__btn {
+  background-color: $third-brand-color;
   border: 0;
   border-radius: 100px;
-  background-color: $third-brand-color;
   cursor: pointer;
+  margin: 0 auto;
+  padding: 12.5px 30px;
   transition: all 0.5s;
   -webkit-transition: all 0.5s;
+  width: fit-content;
   &:hover,
   &:focus {
     background-color: $principal-brand-color;

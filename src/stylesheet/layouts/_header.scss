@@ -11,7 +11,7 @@
     gap: 30px;
   }
   @include min-media-breakpoint($breakpoint-mobileXl) {
-    border-radius: $fullRadius;
+    border-radius: $full-radius;
     margin: 10px;
     padding: 5px 10px;
   }
