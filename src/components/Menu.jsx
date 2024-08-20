@@ -47,6 +47,9 @@ const Menu = () => {
             aria-expanded={hamburgerOpen}
             aria-label='Open menu'
           />
+          <span className='visually-hidden'>
+            {hamburgerOpen ? 'Close menu' : 'Open menu'}
+          </span>
           <span></span>
           <span></span>
           <span></span>

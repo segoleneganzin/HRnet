@@ -1,19 +1,9 @@
-// -----------------------------------------------------------------------------
-// This file contains all application-wide Sass variables.
-// -----------------------------------------------------------------------------
 $light-color: #e8e8e8;
 $principal-brand-color: #5a6e0c;
 $second-brand-color: #babe98;
 $third-brand-color: rgb(17, 73, 17);
 $text-color: #e8e8e8;
 $error-color: rgb(233, 113, 113);
-
-/// *********************** TYPOGRAPHY
-$base-font-family: 'Nunito', sans-serif;
-$title-font-family: 'Comfortaa', sans-serif;
-$base-font-size: 1rem;
-$line-height: 1.5;
-$letter-spacing: 0.05rem;
 
 /// *********************** BREAKPOINTS
 $breakpoint-mobileXS: 360px;

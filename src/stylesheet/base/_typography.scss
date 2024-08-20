@@ -15,12 +15,12 @@ a,
 }
 
 .header__titles,
-.menu__item a,
+.menu__item-link,
 .footer {
-  color: $principal-brand-color;
+  color: $third-brand-color;
 }
 
-a {
+.home__link {
   @include on-event {
     color: $second-brand-color;
   }
@@ -41,18 +41,20 @@ body,
 .ag-cell,
 .select,
 .input {
-  font-family: $base-font-family;
-  letter-spacing: $letter-spacing;
+  font-family: 'Nunito', sans-serif;
+  letter-spacing: 0.05rem;
 }
 
 .title,
 .page__title {
-  font-family: $title-font-family;
+  font-family: 'Comfortaa', sans-serif;
 }
 
 /***************************************** font size */
-body {
-  font-size: $base-font-size;
+body,
+h2,
+h3 {
+  font-size: 1rem;
 }
 
 .home__link {
@@ -61,10 +63,6 @@ body {
 
 h1 {
   font-size: 1.1rem;
-}
-h2,
-h3 {
-  font-size: 1rem;
 }
 
 .input,
