@@ -6,8 +6,12 @@ const Home = () => {
     <PageLayout pageTitle={'HRnet'} mainClassName={'home'}>
       <>
         <div className='home__content'>
-          <Link to={'/employee-list'}>Current Employees</Link>
-          <Link to={'/create-employee'}>Create employee</Link>
+          <Link to={'/employee-list'} className='home__link'>
+            Current Employees
+          </Link>
+          <Link to={'/create-employee'} className='home__link'>
+            Create employee
+          </Link>
         </div>
       </>
     </PageLayout>

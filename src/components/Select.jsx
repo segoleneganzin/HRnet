@@ -9,7 +9,7 @@ import PropTypes from 'prop-types';
  * @param {function} props.fieldClass - The function to determine the error class for the input.
  * @returns {JSX.Element} - The JSX element for the select dropdown.
  */
-const Select = ({ field, register, fieldClass }) => {
+const Select = ({ field, register, fieldErrorClass }) => {
   const {
     name,
     isRequired = true, // Default value
@@ -20,7 +20,7 @@ const Select = ({ field, register, fieldClass }) => {
     <select
       id={name}
       name={name}
-      className={`select ` + fieldClass(name)}
+      className={`select ` + fieldErrorClass(name)}
       {...register(name, {
         required: isRequired,
       })}
@@ -45,6 +45,6 @@ Select.propTypes = {
     options: PropTypes.array,
   }).isRequired,
   register: PropTypes.func.isRequired,
-  fieldClass: PropTypes.func,
+  fieldErrorClass: PropTypes.func,
 };
 export default Select;

@@ -1,4 +1,4 @@
-.form-data-layout {
-  @include flexCol;
+.form-data {
+  @include flex-col;
   gap: 0.4rem;
 }

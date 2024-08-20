@@ -8,18 +8,10 @@
 body,
 a,
 .btn,
-.form-data-layout .label,
-.sg-modal__btn,
 .ag-header-cell-text,
 .ag-paging-panel,
 .ag-icon {
   color: $text-color;
-}
-
-a {
-  @include on-event {
-    color: $principal-color;
-  }
 }
 
 .header__titles,
@@ -28,9 +20,9 @@ a {
   color: $principal-brand-color;
 }
 
-.form-data-layout {
-  &__error-message {
-    color: $error-color;
+a {
+  @include on-event {
+    color: $second-brand-color;
   }
 }
 
@@ -38,18 +30,24 @@ a {
   color: $third-brand-color;
 }
 
+.error-message {
+  color: $error-color;
+}
+
 /****************************************************** FONTS */
 body,
 .btn,
 .sg-modal__btn,
 .ag-cell,
-.select {
+.select,
+.input {
   font-family: $base-font-family;
   letter-spacing: $letter-spacing;
 }
 
-.title {
-  font-family: 'Comfortaa', sans-serif;
+.title,
+.page__title {
+  font-family: $title-font-family;
 }
 
 /***************************************** font size */
@@ -57,7 +55,7 @@ body {
   font-size: $base-font-size;
 }
 
-.home__content a {
+.home__link {
   font-size: 1.5rem;
 }
 
@@ -71,7 +69,7 @@ h3 {
 
 .input,
 .select {
-  font-size: 0.875rem;
+  font-size: 0.9rem;
 }
 
 .ag-paging-page-size,

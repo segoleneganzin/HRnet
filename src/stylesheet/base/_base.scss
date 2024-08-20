@@ -19,35 +19,27 @@ body {
   background-color: $principal-brand-color;
 }
 
+// set footer at bottom
 #root > div {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
 }
 
-/**
- * Basic styles for main
- */
 main {
-  @include flexCol;
+  @include flex-col;
   flex: 1;
   gap: 30px;
   margin: 27px 0px;
-  // @include min-media-breakpoint($breakpoint-mobileXl) {
-  //   margin: 50px auto;
-  // }
 }
 
-/**
- * Basic styles for links
- */
 a {
   text-decoration: none;
   cursor: pointer;
   width: fit-content;
 }
 
-h3 {
+.page__title {
   border: 2px solid $text-color;
   border-radius: $small-radius;
   margin: 0 auto;

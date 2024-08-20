@@ -1,16 +1,16 @@
 .create-employee__form {
-  @include flexCol;
+  @include flex-col;
   background-color: $third-brand-color;
   gap: 1rem;
   padding: 20px;
   .address {
-    @include flexCol;
+    @include flex-col;
     border-color: $second-brand-color;
-    border-radius: 0.5rem;
+    border-radius: $small-radius;
     gap: 1rem;
   }
   .btn {
-    background-color: $principal-color;
+    background-color: $principal-brand-color;
     margin-top: 20px;
   }
   @include min-media-breakpoint($breakpoint-mobileXl) {

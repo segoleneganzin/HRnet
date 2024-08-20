@@ -11,7 +11,7 @@
     animation: loader 2s infinite ease-in-out;
     animation-fill-mode: both;
     background-color: $second-brand-color;
-    border-radius: 100%;
+    border-radius: $full-radius;
     opacity: 1;
     z-index: 99;
     height: 20px;

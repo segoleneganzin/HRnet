@@ -5,7 +5,7 @@ const EmployeeList = () => {
   return (
     <PageLayout pageTitle={'Current Employees'} mainClassName={'employee-list'}>
       <>
-        <h3 className='employee-list__title title'>Current Employees</h3>
+        <h3 className='employee-list__title page__title'>Current Employees</h3>
 
         <EmployeeListTable />
       </>

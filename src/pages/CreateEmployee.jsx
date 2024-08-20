@@ -11,7 +11,7 @@ const CreateEmployee = () => {
   return (
     <PageLayout pageTitle={'Create employee'} mainClassName={'create-employee'}>
       <>
-        <h3 className='create-employee__title title'>Create employee</h3>
+        <h3 className='create-employee__title page__title'>Create employee</h3>
         <button onClick={toggleModal} className='btn'>
           Test modal
         </button>

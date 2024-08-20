@@ -21,25 +21,7 @@ const CreateEmployeeForm = ({ toggleModal }) => {
     control,
     formState: { errors },
     reset,
-  } = useForm({
-    defaultValues: {
-      startDate: dayjs().toISOString(), // Valeur par défaut pour le startDate
-    },
-  });
-
-  const [birthDate, setBirthDate] = useState('');
-  const [minStartDate, setMinStartDate] = useState(dayjs());
-  const maxBirthDate = dayjs().subtract(16, 'year');
-
-  // manage start date depends of birth date
-  useEffect(() => {
-    if (birthDate) {
-      const minDate = dayjs(birthDate).add(16, 'year');
-      setMinStartDate(minDate);
-    } else {
-      setMinStartDate(dayjs());
-    }
-  }, [birthDate]);
+  } = useForm();
 
   const [departments, setDepartments] = useState([]);
   const fetchDepartments = async () => {
@@ -60,8 +42,8 @@ const CreateEmployeeForm = ({ toggleModal }) => {
    * @param {string} field
    * @returns {string} - Field error class.
    */
-  const fieldClass = (fieldName) => {
-    return errors[fieldName] ? 'field--error' : 'field';
+  const fieldErrorClass = (fieldName) => {
+    return errors[fieldName] && 'field--error';
   };
 
   /**
@@ -79,7 +61,6 @@ const CreateEmployeeForm = ({ toggleModal }) => {
     dispatch(addEmployee(newEmployee));
     toggleModal();
     reset(); // reinitialize form when addEmployee succeeded
-    setMinStartDate(dayjs());
   };
 
   return (
@@ -97,7 +78,7 @@ const CreateEmployeeForm = ({ toggleModal }) => {
         <Input
           field={{ name: 'firstName' }}
           register={register}
-          fieldClass={fieldClass}
+          fieldErrorClass={fieldErrorClass}
         />
       </FormData>
 
@@ -109,7 +90,7 @@ const CreateEmployeeForm = ({ toggleModal }) => {
         <Input
           field={{ name: 'lastName' }}
           register={register}
-          fieldClass={fieldClass}
+          fieldErrorClass={fieldErrorClass}
         />
       </FormData>
 
@@ -122,10 +103,9 @@ const CreateEmployeeForm = ({ toggleModal }) => {
           control={control}
           field={{
             name: 'birth',
-            textError: 'Please enter a date of Birth',
-            maxDate: maxBirthDate,
+            maxDate: dayjs().subtract(16, 'year'),
           }}
-          setDate={setBirthDate}
+          fieldErrorClass={fieldErrorClass}
         />
       </FormData>
 
@@ -138,9 +118,8 @@ const CreateEmployeeForm = ({ toggleModal }) => {
           control={control}
           field={{
             name: 'startDate',
-            minDate: minStartDate,
-            textError: 'Please enter a start Date',
           }}
+          fieldErrorClass={fieldErrorClass}
         />
       </FormData>
 
@@ -151,7 +130,7 @@ const CreateEmployeeForm = ({ toggleModal }) => {
           <Input
             field={{ name: 'street' }}
             register={register}
-            fieldClass={fieldClass}
+            fieldErrorClass={fieldErrorClass}
           />
         </FormData>
 
@@ -159,7 +138,7 @@ const CreateEmployeeForm = ({ toggleModal }) => {
           <Input
             field={{ name: 'city' }}
             register={register}
-            fieldClass={fieldClass}
+            fieldErrorClass={fieldErrorClass}
           />
         </FormData>
 
@@ -171,7 +150,7 @@ const CreateEmployeeForm = ({ toggleModal }) => {
               options: usStates,
             }}
             register={register}
-            fieldClass={fieldClass}
+            fieldErrorClass={fieldErrorClass}
           />
         </FormData>
 
@@ -182,7 +161,7 @@ const CreateEmployeeForm = ({ toggleModal }) => {
           <Input
             field={{ name: 'zipCode', type: 'number', pattern: /^\d{5}$/ }} // 5 numbers only
             register={register}
-            fieldClass={fieldClass}
+            fieldErrorClass={fieldErrorClass}
           />
         </FormData>
       </fieldset>
@@ -199,7 +178,7 @@ const CreateEmployeeForm = ({ toggleModal }) => {
             options: departments,
           }}
           register={register}
-          fieldClass={fieldClass}
+          fieldErrorClass={fieldErrorClass}
         />
       </FormData>
       <Button text='Create' className='btn--validation bold' />

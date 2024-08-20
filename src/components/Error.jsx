@@ -7,7 +7,7 @@ import PropTypes from 'prop-types';
  * @returns {JSX.Element}
  */
 const Error = ({ errorMessage }) => {
-  return <p className='error error-message'>{errorMessage}</p>;
+  return <p className='error-message'>{errorMessage}</p>;
 };
 Error.propTypes = {
   errorMessage: PropTypes.string.isRequired,
