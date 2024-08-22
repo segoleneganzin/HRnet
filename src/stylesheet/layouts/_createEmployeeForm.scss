@@ -10,8 +10,8 @@
     gap: 16px;
   }
   .btn {
-    background-color: $principal-brand-color;
     margin-top: 20px;
+    text-transform: uppercase;
   }
   @include min-media-breakpoint($breakpoint-mobileXl) {
     border-radius: $small-radius;

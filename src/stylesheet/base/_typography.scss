@@ -7,7 +7,6 @@
 /****************************************************** COLORS */
 body,
 a,
-.btn,
 .ag-header-cell-text,
 .ag-paging-panel,
 .ag-icon {
@@ -16,11 +15,12 @@ a,
 
 .header__titles,
 .menu__item-link,
-.footer {
+.footer,
+.btn {
   color: $third-brand-color;
 }
 
-.home-card__link {
+.btn {
   @include on-event {
     color: $second-brand-color;
   }
@@ -53,18 +53,14 @@ body,
 
 /***************************************** font size */
 body,
-h2,
-h3 {
-  font-size: 1rem;
-}
-
-.choice__btn {
-  font-size: 1rem;
+h2 {
+  font-size: 0.9rem;
 }
 
 h1,
-.section__title {
-  font-size: 1.1rem;
+.section__title,
+.home-card__title {
+  font-size: 1.3rem;
 }
 
 .input,
@@ -91,5 +87,9 @@ h1,
 
 /***************************************** font weight */
 .bold {
-  font-weight: 700;
+  font-weight: 600;
+}
+
+p {
+  font-weight: 300;
 }

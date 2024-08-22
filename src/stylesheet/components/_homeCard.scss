@@ -1,10 +1,58 @@
 .home-card {
+  background-color: $third-brand-color;
+  border-radius: $medium-radius;
+  max-width: 600px;
+  padding: 60px 30px 50px;
+  position: relative;
+  &__icon {
+    left: 50%;
+    position: absolute;
+    top: -50px;
+    transform: translateX(-50%);
+  }
+  &__title {
+    padding-bottom: 20px;
+  }
+  &__title,
+  &__description {
+    text-align: center;
+  }
   &__link {
-    background-color: rgba(0, 0, 0, 0.6);
-    border-radius: $small-radius;
-    display: block;
-    margin: 10px 0;
-    padding: 10px 20px;
-    width: 100%;
+    bottom: -25px;
+    left: 50%;
+    min-width: 180px;
+    padding: 12.5px 15px;
+    position: absolute;
+    text-align: center;
+    transform: translateX(-50%);
+  }
+  @include min-media-breakpoint($breakpoint-tablet) {
+    &__icon {
+      left: 15px;
+      position: absolute;
+      top: -50px;
+      transform: translateX(-50%);
+    }
+    &__title {
+      align-self: flex-end;
+      position: absolute;
+      right: 20px;
+      top: 30px;
+    }
+    &__description {
+      padding-top: 20px;
+    }
+    &__title,
+    &__description {
+      text-align: left;
+    }
+    &__link {
+      bottom: -35px;
+      left: auto;
+      margin: 10px 0;
+      position: absolute;
+      right: 0;
+      transform: translateX(0%);
+    }
   }
 }

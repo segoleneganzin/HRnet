@@ -59,7 +59,7 @@
     display: block;
     height: 30px;
     margin-left: auto;
-    width: 40px;
+    width: fit-content;
     input {
       display: none;
       &:checked ~ span:nth-of-type(1) {

@@ -1,8 +1,9 @@
-$light-color: #e8e8e8;
 $principal-brand-color: #5a6e0c;
 $second-brand-color: #babe98;
 $third-brand-color: rgb(17, 73, 17);
-$text-color: #e8e8e8;
+$light-color: #e8e8e8;
+
+$text-color: $light-color;
 $error-color: rgb(233, 113, 113);
 
 /// *********************** BREAKPOINTS

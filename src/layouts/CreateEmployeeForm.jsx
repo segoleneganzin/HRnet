@@ -169,7 +169,7 @@ const CreateEmployeeForm = ({ toggleModal }) => {
           fieldErrorClass={fieldErrorClass}
         />
       </FormData>
-      <Button text='Create' className='btn--validation bold' />
+      <Button text='Create' className='bold' />
     </form>
   );
 };
