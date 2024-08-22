@@ -7,7 +7,9 @@ import axios from 'axios';
  */
 export const getDepartments = async () => {
   try {
-    const res = await axios.get(window.location.origin + '/departments.json');
+    const res = await axios.get(
+      window.location.origin + '/mockDepartments.json'
+    );
     const datas = res.data;
 
     if (!datas) {

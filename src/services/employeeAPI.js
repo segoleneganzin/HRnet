@@ -7,7 +7,7 @@ import axios from 'axios';
  */
 export const getEmployees = async () => {
   try {
-    const res = await axios.get(window.location.origin + '/employees.json');
+    const res = await axios.get(window.location.origin + '/mockEmployees.json');
     const datas = res.data;
     if (!datas) {
       throw new Error('No employee found');

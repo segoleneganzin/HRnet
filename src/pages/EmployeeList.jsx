@@ -1,14 +1,13 @@
 import EmployeeListTable from '../layouts/EmployeeListTable';
 import PageLayout from '../layouts/PageLayout';
+import SectionLayout from '../layouts/SectionLayout';
 
 const EmployeeList = () => {
   return (
     <PageLayout pageTitle={'Current Employees'} mainClassName={'employee-list'}>
-      <>
-        <h3 className='employee-list__title page__title'>Current Employees</h3>
-
+      <SectionLayout title={'Current employees'}>
         <EmployeeListTable />
-      </>
+      </SectionLayout>
     </PageLayout>
   );
 };

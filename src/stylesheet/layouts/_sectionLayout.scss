@@ -1,0 +1,10 @@
+.section {
+  @include flex-col;
+  gap: $base-gap;
+  &__title {
+    border-bottom: 2px solid $text-color;
+    margin: 0 auto;
+    padding: 20px 0;
+    width: fit-content;
+  }
+}

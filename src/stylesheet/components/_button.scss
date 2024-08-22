@@ -1,11 +1,11 @@
 .btn {
   background-color: $third-brand-color;
-  border: 0;
+  border: 1px solid $third-brand-color;
   border-radius: $small-radius;
   cursor: pointer;
+  display: block;
   margin: 0 auto;
   padding: 12.5px 30px;
-  transition: all 0.5s;
   width: fit-content;
   @include on-event {
     background-color: $principal-brand-color;

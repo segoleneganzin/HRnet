@@ -1,0 +1,9 @@
+.choice {
+  .btn {
+    @include on-event {
+      background-color: none;
+      border-color: $text-color;
+      box-shadow: none;
+    }
+  }
+}

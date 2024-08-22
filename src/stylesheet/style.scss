@@ -11,12 +11,13 @@
 
 // 4. Layout-related sections
 @import 'layouts/header', 'layouts/footer', 'layouts/employeeListTable',
-  'layouts/createEmployeeForm', 'layouts/formData';
+  'layouts/createEmployeeForm', 'layouts/formData', 'layouts/choice',
+  'layouts/sectionLayout', 'layouts/menu';
 
 // 5. Components
 @import 'components/button', 'components/customModal', 'components/customAgGrid',
   'components/loader', 'components/input', 'components/select',
-  'components/menu';
+  'components/homeCard';
 
 // 6. Page-specific styles
-@import 'pages/home', 'pages/createEmployee', 'pages/employeeList';
+@import 'pages/home';

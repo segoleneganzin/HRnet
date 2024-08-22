@@ -20,12 +20,14 @@ a,
   color: $third-brand-color;
 }
 
-.home__link {
+.home-card__link {
   @include on-event {
     color: $second-brand-color;
   }
 }
 
+.header__titles,
+.footer,
 .ag-picker-field-display {
   color: $third-brand-color;
 }
@@ -45,8 +47,7 @@ body,
   letter-spacing: 0.05rem;
 }
 
-.title,
-.page__title {
+.title {
   font-family: 'Comfortaa', sans-serif;
 }
 
@@ -57,11 +58,12 @@ h3 {
   font-size: 1rem;
 }
 
-.home__link {
-  font-size: 1.5rem;
+.choice__btn {
+  font-size: 1rem;
 }
 
-h1 {
+h1,
+.section__title {
   font-size: 1.1rem;
 }
 
@@ -77,7 +79,8 @@ h1 {
 }
 
 @include min-media-breakpoint($breakpoint-tablet) {
-  h1 {
+  h1,
+  .section__title {
     font-size: 1.4rem;
   }
   h2,

@@ -27,20 +27,12 @@ body {
 main {
   @include flex-col;
   flex: 1;
-  gap: 30px;
+  gap: $base-gap;
   margin: 27px 0px;
 }
 
 a {
   text-decoration: none;
   cursor: pointer;
-  width: fit-content;
-}
-
-.page__title {
-  border: 2px solid $text-color;
-  border-radius: $small-radius;
-  margin: 0 auto;
-  padding: 10px;
   width: fit-content;
 }

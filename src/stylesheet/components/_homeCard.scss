@@ -1,0 +1,10 @@
+.home-card {
+  &__link {
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: $small-radius;
+    display: block;
+    margin: 10px 0;
+    padding: 10px 20px;
+    width: 100%;
+  }
+}

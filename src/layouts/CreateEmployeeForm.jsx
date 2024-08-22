@@ -1,11 +1,10 @@
-import { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { useForm } from 'react-hook-form';
 import { v4 as uuidv4 } from 'uuid';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { addEmployee } from '../features/employeesSlice';
+import { selectDepartments } from '../features/departmentsSlice';
 import { usStates } from '../utils/usStates';
-import { getDepartments } from '../services/departmentAPI';
 import dayjs from 'dayjs';
 import Input from '../components/Input';
 import Select from '../components/Select';
@@ -15,6 +14,9 @@ import Button from '../components/Button';
 
 const CreateEmployeeForm = ({ toggleModal }) => {
   const dispatch = useDispatch();
+
+  const departments = useSelector((state) => selectDepartments(state));
+
   const {
     register,
     handleSubmit,
@@ -23,27 +25,13 @@ const CreateEmployeeForm = ({ toggleModal }) => {
     reset,
   } = useForm();
 
-  const [departments, setDepartments] = useState([]);
-  const fetchDepartments = async () => {
-    try {
-      const data = await getDepartments();
-      setDepartments(data);
-    } catch (error) {
-      console.log(error.message);
-    }
-  };
-  // Effect to fetch mocked departments data
-  useEffect(() => {
-    fetchDepartments();
-  }, []);
-
   /**
    * Function to obtain the error class for a given field.
    * @param {string} field
    * @returns {string} - Field error class.
    */
   const fieldErrorClass = (fieldName) => {
-    return errors[fieldName] && 'field--error';
+    return errors[fieldName] ? 'field--error' : '';
   };
 
   /**

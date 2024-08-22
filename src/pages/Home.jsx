@@ -1,17 +1,12 @@
-import { Link } from 'react-router-dom';
 import PageLayout from '../layouts/PageLayout';
-
+import HomeCard from '../components/HomeCard';
 const Home = () => {
   return (
     <PageLayout pageTitle={'HRnet'} mainClassName={'home'}>
       <>
         <div className='home__content'>
-          <Link to={'/employee-list'} className='home__link'>
-            Current Employees
-          </Link>
-          <Link to={'/create-employee'} className='home__link'>
-            Create employee
-          </Link>
+          <HomeCard link={'/employee-list'} linkText={'Current employees'} />
+          <HomeCard link={'/create-employee'} linkText={'Create employee'} />
         </div>
       </>
     </PageLayout>

@@ -1,13 +1,13 @@
 .create-employee__form {
   @include flex-col;
   background-color: $third-brand-color;
-  gap: 1rem;
+  gap: 16px;
   padding: 20px;
   .address {
     @include flex-col;
     border-color: $second-brand-color;
     border-radius: $small-radius;
-    gap: 1rem;
+    gap: 16px;
   }
   .btn {
     background-color: $principal-brand-color;

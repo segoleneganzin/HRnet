@@ -45,11 +45,8 @@ const Menu = () => {
             aria-haspopup='true'
             aria-controls='toggleNavbar'
             aria-expanded={hamburgerOpen}
-            aria-label='Open menu'
+            aria-label={hamburgerOpen ? 'Close menu' : 'Open menu'}
           />
-          <span className='visually-hidden'>
-            {hamburgerOpen ? 'Close menu' : 'Open menu'}
-          </span>
           <span></span>
           <span></span>
           <span></span>

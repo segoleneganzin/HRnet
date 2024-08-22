@@ -21,7 +21,12 @@ export const createThunkAction = (type, apiFunction) => {
  * @param {string} slicer - The key in the state object where the data slice will be stored.
  * @param {string} statusKey - The key in the state object where the status (loading, succeeded, failed) will be stored.
  */
-export const handleAsyncActions = (builder, thunk, slicer, statusKey) => {
+export const handleAsyncActions = (
+  builder,
+  thunk,
+  slicer,
+  statusKey = 'status'
+) => {
   builder
     .addCase(thunk.pending, (state) => {
       state[statusKey] = 'loading';
