@@ -12,11 +12,18 @@ import FormData from './FormData';
 import DatePicker from '../components/DatePicker ';
 import Button from '../components/Button';
 
+/**
+ * Component that renders a form for creating a new employee.
+ *
+ * @param {Object} props
+ * @param {Function} props.toggleModal - Function to toggle the visibility of the modal after form submission.
+ * @returns {JSX.Element}
+ */
 const CreateEmployeeForm = ({ toggleModal }) => {
-  const dispatch = useDispatch();
-
+  // Get departments from the Redux store
   const departments = useSelector((state) => selectDepartments(state));
-
+  const dispatch = useDispatch();
+  // Initialize the react-hook-form methods
   const {
     register,
     handleSubmit,
@@ -27,7 +34,7 @@ const CreateEmployeeForm = ({ toggleModal }) => {
 
   /**
    * Function to obtain the error class for a given field.
-   * @param {string} field
+   * @param {string} fieldName
    * @returns {string} - Field error class.
    */
   const fieldErrorClass = (fieldName) => {
@@ -36,12 +43,11 @@ const CreateEmployeeForm = ({ toggleModal }) => {
 
   /**
    * Function to handle form submission
-   * @param {object} data - Form data
+   * @param {object} formData
    */
   const formSubmit = (formData) => {
-    // Generate a unique ID for the new employee
     const newEmployee = {
-      id: uuidv4(),
+      id: uuidv4(), // Generate a unique ID for the new employee
       ...formData,
       birth: dayjs(formData.birth).toISOString(),
       startDate: dayjs(formData.startDate).toISOString(),
@@ -58,7 +64,6 @@ const CreateEmployeeForm = ({ toggleModal }) => {
       id={'createEmployeeForm'}
       noValidate
     >
-      {/* First Name Field */}
       <FormData
         field={{ name: 'firstName', label: 'First Name' }}
         errors={errors}
@@ -70,7 +75,6 @@ const CreateEmployeeForm = ({ toggleModal }) => {
         />
       </FormData>
 
-      {/* Last Name Field */}
       <FormData
         field={{ name: 'lastName', label: 'Last Name' }}
         errors={errors}
@@ -82,7 +86,6 @@ const CreateEmployeeForm = ({ toggleModal }) => {
         />
       </FormData>
 
-      {/* Birth Date Field */}
       <FormData
         field={{ name: 'birth', label: 'Date of Birth' }}
         errors={errors}
@@ -91,13 +94,11 @@ const CreateEmployeeForm = ({ toggleModal }) => {
           control={control}
           field={{
             name: 'birth',
-            maxDate: dayjs().subtract(16, 'year'),
           }}
           fieldErrorClass={fieldErrorClass}
         />
       </FormData>
 
-      {/* Start Date Field */}
       <FormData
         field={{ name: 'startDate', label: 'Start Date' }}
         errors={errors}
@@ -114,6 +115,7 @@ const CreateEmployeeForm = ({ toggleModal }) => {
       {/* Address Fieldset */}
       <fieldset className={'address'}>
         <legend>Address</legend>
+
         <FormData field={{ name: 'street', label: 'Street' }} errors={errors}>
           <Input
             field={{ name: 'street' }}
@@ -154,7 +156,6 @@ const CreateEmployeeForm = ({ toggleModal }) => {
         </FormData>
       </fieldset>
 
-      {/* Department Field */}
       <FormData
         field={{ name: 'department', label: 'Department' }}
         errors={errors}

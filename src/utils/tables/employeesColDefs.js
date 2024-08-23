@@ -1,3 +1,4 @@
+// columns properties to render into EmployeeListTable (AgGridReact)
 export const colDefs = [
   {
     headerName: 'First Name',

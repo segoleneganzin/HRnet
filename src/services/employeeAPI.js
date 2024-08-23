@@ -2,6 +2,7 @@ import axios from 'axios';
 
 /**
  * Function to fetch employees data from a local JSON file.
+ * Must be updated to link to api
  * @returns {Promise<Object>} - Promise resolving to an array of employees
  * @throws {Error} - Throws an error if no employee founded
  */

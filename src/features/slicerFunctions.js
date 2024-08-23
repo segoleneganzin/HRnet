@@ -19,25 +19,19 @@ export const createThunkAction = (type, apiFunction) => {
  * @param {object} builder - The Redux Toolkit `builder` object to add case reducers.
  * @param {object} thunk - The async thunk action object containing `pending`, `fulfilled`, and `rejected` actions.
  * @param {string} slicer - The key in the state object where the data slice will be stored.
- * @param {string} statusKey - The key in the state object where the status (loading, succeeded, failed) will be stored.
  */
-export const handleAsyncActions = (
-  builder,
-  thunk,
-  slicer,
-  statusKey = 'status'
-) => {
+export const handleAsyncActions = (builder, thunk, slicer) => {
   builder
     .addCase(thunk.pending, (state) => {
-      state[statusKey] = 'loading';
+      state.status = 'loading';
     })
     .addCase(thunk.fulfilled, (state, action) => {
-      state[statusKey] = 'succeeded';
+      state.status = 'succeeded';
       state[slicer] = action.payload.body;
       state.error = null;
     })
     .addCase(thunk.rejected, (state, action) => {
-      state[statusKey] = 'failed';
+      state.status = 'failed';
       state.error = action.error.message;
     });
 };

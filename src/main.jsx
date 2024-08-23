@@ -9,6 +9,11 @@ import './stylesheet/style.scss';
 const root = createRoot(document.getElementById('root'));
 
 root.render(
+  /**
+   * Wrap the entire application in BrowserRouter to enable routing with react-router.
+   * The Provider component makes the Redux store available to the entire app.
+   * PersistGate delays the rendering of the app's UI until the persisted state has been rehydrated.
+   */
   <BrowserRouter>
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>

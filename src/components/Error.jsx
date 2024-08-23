@@ -1,7 +1,8 @@
 import PropTypes from 'prop-types';
 
 /**
- * A React functional component that displays error.
+ * Reusable error component.
+ *
  * @param {Object} props
  * @param {string} props.errorMessage
  * @returns {JSX.Element}

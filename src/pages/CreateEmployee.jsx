@@ -4,12 +4,20 @@ import { useState } from 'react';
 import { Modal } from 'sg-modal';
 import SectionLayout from '../layouts/SectionLayout';
 
+/**
+ * CreateEmployee component renders a page for creating a new employee, including a form
+ * and a modal for confirmation.
+ *
+ * @returns {JSX.Element}
+ */
 const CreateEmployee = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+
   const toggleModal = () => {
     setIsModalOpen(!isModalOpen);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({ top: 0, behavior: 'smooth' }); // scrolls the page to the top
   };
+
   return (
     <PageLayout pageTitle={'Create employee'} mainClassName={'create-employee'}>
       <SectionLayout title={'Create employee'}>
@@ -17,7 +25,9 @@ const CreateEmployee = () => {
           {/* <button onClick={toggleModal} className='btn'>
             Test modal
           </button> */}
+
           <CreateEmployeeForm toggleModal={toggleModal} />
+
           {isModalOpen && (
             <Modal
               isOpen={isModalOpen}
