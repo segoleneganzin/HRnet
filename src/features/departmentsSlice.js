@@ -10,15 +10,13 @@ export const getDepartmentsAsync = createThunkAction(
   getDepartments
 );
 
-const initialState = {
-  departments: mockDepartments,
-  status: 'idle',
-  error: null,
-};
-
 export const departmentsSlice = createSlice({
   name: 'departments',
-  initialState,
+  initialState: {
+    departments: mockDepartments,
+    status: 'idle',
+    error: null,
+  },
   reducers: {},
   extraReducers: (builder) => {
     handleAsyncActions(builder, getDepartmentsAsync, 'departments');
@@ -37,4 +35,3 @@ export const {
 } = departmentsSlice.selectors;
 
 export default departmentsSlice.reducer;
-export { initialState as departmentsInitialState };

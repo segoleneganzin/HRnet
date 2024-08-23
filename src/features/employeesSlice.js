@@ -7,15 +7,13 @@ const GET_EMPLOYEES = 'employees/getEmployees';
 
 export const getEmployeesAsync = createThunkAction(GET_EMPLOYEES, getEmployees);
 
-const initialState = {
-  employees: mockEmployees,
-  status: 'idle',
-  error: null,
-};
-
 export const employeesSlice = createSlice({
   name: 'employees',
-  initialState,
+  initialState: {
+    employees: mockEmployees,
+    status: 'idle',
+    error: null,
+  },
   reducers: {
     addEmployee: (state, action) => {
       const employees = [...state.employees, action.payload];
@@ -37,4 +35,3 @@ export const { selectEmployees, selectEmployeesStatus, selectEmployeesError } =
   employeesSlice.selectors;
 
 export default employeesSlice.reducer;
-export { initialState as employeesInitialState };

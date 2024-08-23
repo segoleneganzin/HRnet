@@ -1,33 +1,46 @@
 import { configureStore } from '@reduxjs/toolkit';
-import employeesReducer, {
-  employeesInitialState,
-} from '../features/employeesSlice';
-import departmentsReducer, {
-  departmentsInitialState,
-} from '../features/departmentsSlice';
+import {
+  persistStore,
+  persistReducer,
+  FLUSH,
+  REHYDRATE,
+  PAUSE,
+  PERSIST,
+  PURGE,
+  REGISTER,
+} from 'redux-persist';
+import storage from 'redux-persist/lib/storage/session'; // sessionStorage
+import employeesReducer from '../features/employeesSlice';
+import departmentsReducer from '../features/departmentsSlice';
 
-// Load persisted state or use mock data if not available
-const persistedState = JSON.parse(sessionStorage.getItem('reduxState')) || {
-  employees: employeesInitialState,
-  departments: departmentsInitialState,
+const persistConfig = {
+  key: 'root',
+  storage,
+  whitelist: ['employees', 'departments'], // reducers to persist
 };
 
+// Create persist reducers
+const persistedEmployeesReducer = persistReducer(
+  persistConfig,
+  employeesReducer
+);
+const persistedDepartmentsReducer = persistReducer(
+  persistConfig,
+  departmentsReducer
+);
 const store = configureStore({
   reducer: {
-    employees: employeesReducer,
-    departments: departmentsReducer,
+    employees: persistedEmployeesReducer,
+    departments: persistedDepartmentsReducer,
   },
-  preloadedState: persistedState,
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware({
+      serializableCheck: {
+        ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
+      },
+    }),
 });
 
-// Save state to sessionStorage whenever it changes
-// permitted data persistence
-store.subscribe(() => {
-  try {
-    sessionStorage.setItem('reduxState', JSON.stringify(store.getState()));
-  } catch (err) {
-    console.error('Failed to save state to sessionStorage:', err);
-  }
-});
+export const persistor = persistStore(store);
 
 export default store;
