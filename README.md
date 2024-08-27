@@ -32,33 +32,36 @@ Les états américains permettant de remplir les options du select sont récupé
 
 #### **Bibliothèques Principales :**
 
-- **[React](https://reactjs.org/)** : Une bibliothèque JavaScript pour la construction d'interfaces utilisateur.
-- **[React-DOM](https://reactjs.org/docs/react-dom.html)** : Le package qui sert de point d'entrée pour les chemins de rendu liés au DOM.
-- **[Redux](https://redux.js.org/)** : Un conteneur d'état prévisible pour les applications JavaScript.
-- **[React-Redux](https://react-redux.js.org/)** : Les liaisons officielles de React pour Redux.
-- **[React Router DOM](https://reactrouter.com/web/guides/quick-start)** : Le routage déclaratif pour React.js.
+- **[React](https://reactjs.org/)** (^18.3.1): Une bibliothèque JavaScript pour la construction d'interfaces utilisateur.
+- **[React-DOM](https://reactjs.org/docs/react-dom.html)** (^18.3.1): Le package qui sert de point d'entrée pour les chemins de rendu liés au DOM.
+- **[Redux](https://redux.js.org/)** (^2.2.7): Un gestionnaire d'état pour les applications JavaScript.
+- **[React-Redux](https://react-redux.js.org/)** (^9.1.2): Les liaisons officielles de React pour Redux.
+- **[React Router DOM](https://reactrouter.com/web/guides/quick-start)** (^6.26.0): Le routage déclaratif pour React.js.
+- **[@reduxjs/toolkit](https://redux-toolkit.js.org/)** (^2.2.7): Un ensemble d'outils pour simplifier l'utilisation de Redux et améliorer les flux de travail.
 
 #### **UI et Stylisation :**
 
-- **[MUI X Date Pickers](https://mui.com/x/react-date-pickers/)** : Un ensemble de composants pour la sélection de dates et d'heures.
-- **[AG Grid](https://www.ag-grid.com/)** : Une grille de données riche en fonctionnalités pour React.
-- **[Sass](https://sass-lang.com/)** : Un langage de préprocesseur qui est interprété ou compilé en feuilles de style en cascade (CSS).
+- **[MUI X Date Pickers](https://mui.com/x/react-date-pickers/)** (^7.12.1): Un ensemble de composants pour la sélection de dates et d'heures.
+- **[AG Grid React](https://www.ag-grid.com/)** (^32.0.2): Une grille de données riche en fonctionnalités pour React.
+- **[AG Grid Community](https://www.ag-grid.com/)** (^32.0.2): La version communautaire d'AG Grid, une grille de données riche en fonctionnalités pour React.
+- **[Sass](https://sass-lang.com/)** (^1.77.8): Un langage de préprocesseur qui est interprété ou compilé en feuilles de style en cascade (CSS).
 
 #### **Utilitaires :**
 
-- **[Axios](https://axios-http.com/)** : Un client HTTP basé sur des promesses pour le navigateur et Node.js.
-- **[Day.js](https://day.js.org/)** : Une alternative rapide et légère à Moment.js pour la gestion des dates.
-- **[Prop-Types](https://www.npmjs.com/package/prop-types)** : Vérification des types à l'exécution pour les props React et les objets similaires.
-- **[React Hook Form](https://react-hook-form.com/)** : Une bibliothèque de formulaires performante, flexible et extensible pour React.
-- **[Redux Persist](https://github.com/rt2zz/redux-persist)** : Une bibliothèque pour persister et réhydrater un store Redux.
-- **[States-US](https://www.npmjs.com/package/states-us)** : Une bibliothèque pour les données des états américains.
-- **[UUID](https://github.com/uuidjs/uuid)** : Une bibliothèque pour générer des UUIDs.
+- **[Axios](https://axios-http.com/)** (^1.7.3): Un client HTTP basé sur des promesses pour le navigateur et Node.js.
+- **[Day.js](https://day.js.org/)** (^1.11.12): Une alternative rapide et légère à Moment.js pour la gestion des dates.
+- **[Prop-Types](https://www.npmjs.com/package/prop-types)** (^15.8.1): Vérification des types à l'exécution pour les props React et les objets similaires.
+- **[React Hook Form](https://react-hook-form.com/)** (^7.52.2): Une bibliothèque de formulaires performante, flexible et extensible pour React.
+- **[Redux Persist](https://github.com/rt2zz/redux-persist)** (^6.0.0): Une bibliothèque pour persister et réhydrater un store Redux.
+- **[sg-modal-lib](https://www.npmjs.com/package/sg-modal-lib)** (^1.0.4): Composant pour la création de modale.
+- **[States-US](https://www.npmjs.com/package/states-us)** (^1.0.4): Une bibliothèque pour les données des états américains.
+- **[UUID](https://github.com/uuidjs/uuid)** (^10.0.0): Une bibliothèque pour générer des UUIDs.
 
 #### **Outils de Développement :**
 
-- **[Vite](https://vitejs.dev/)** : Un outil de développement frontend de nouvelle génération visant à fournir une expérience de développement plus rapide et plus légère.
-- **[ESLint](https://eslint.org/)** : Un outil pour identifier et signaler les motifs trouvés dans le code ECMAScript/JavaScript.
-- **[Plugins ESLint](https://eslint.org/docs/user-guide/configuring/plugins)** : Plugins pour étendre les fonctionnalités d'ESLint, y compris `eslint-plugin-react` pour des règles de linting spécifiques à React.
+- **[Vite](https://vitejs.dev/)** (^5.3.4): Un outil de développement frontend de nouvelle génération visant à fournir une expérience de développement plus rapide et plus légère.
+- **[ESLint](https://eslint.org/)** (^8.57.0): Un outil pour identifier et signaler les erreurs trouvés dans le code ECMAScript/JavaScript.
+- **[Plugins ESLint](https://eslint.org/docs/user-guide/configuring/plugins)** : Plugins pour étendre les fonctionnalités d'ESLint, y compris `eslint-plugin-react`(^7.34.3) pour des règles de linting spécifiques à React.
 
 ### 🔨 Installation du projet
 
@@ -122,33 +125,36 @@ Currently, data (employees and departments) is mocked. U.S. states for populatin
 
 #### **Core Libraries:**
 
-- **[React](https://reactjs.org/)**: A JavaScript library for building user interfaces.
-- **[React-DOM](https://reactjs.org/docs/react-dom.html)**: The package that serves as the entry point for the DOM-related rendering paths.
-- **[Redux](https://redux.js.org/)**: A predictable state container for JavaScript apps.
-- **[React-Redux](https://react-redux.js.org/)**: Official React bindings for Redux.
-- **[React Router DOM](https://reactrouter.com/web/guides/quick-start)**: Declarative routing for React.js.
+- **[React](https://reactjs.org/)** (^18.3.1): A JavaScript library for building user interfaces.
+- **[React-DOM](https://reactjs.org/docs/react-dom.html)** (^18.3.1): The package that serves as the entry point for the DOM-related rendering paths.
+- **[Redux](https://redux.js.org/)** (^2.2.7): A predictable state container for JavaScript apps.
+- **[React-Redux](https://react-redux.js.org/)** (^9.1.2): Official React bindings for Redux.
+- **[React Router DOM](https://reactrouter.com/web/guides/quick-start)** (^6.26.0): Declarative routing for React.js.
+- **[@reduxjs/toolkit](https://redux-toolkit.js.org/)** (^2.2.7): A set of tools to simplify the use of Redux and improve workflows.
 
 #### **UI and Styling:**
 
-- **[MUI X Date Pickers](https://mui.com/x/react-date-pickers/)**: A set of components for date and time picking.
-- **[AG Grid](https://www.ag-grid.com/)**: A feature-rich data grid for React.
-- **[Sass](https://sass-lang.com/)**: A preprocessor scripting language that is interpreted or compiled into Cascading Style Sheets (CSS).
+- **[MUI X Date Pickers](https://mui.com/x/react-date-pickers/)** (^7.12.1): A set of components for date and time picking.
+- **[AG Grid React](https://www.ag-grid.com/)** (^32.0.2): A feature-rich data grid for React.
+- **[AG Grid Community](https://www.ag-grid.com/)** (^32.0.2): The community version of AG Grid, a feature-rich data grid for React.
+- **[Sass](https://sass-lang.com/)** (^1.77.8): A preprocessor scripting language that is interpreted or compiled into Cascading Style Sheets (CSS).
 
 #### **Utilities:**
 
-- **[Axios](https://axios-http.com/)**: A promise-based HTTP client for the browser and Node.js.
-- **[Day.js](https://day.js.org/)**: A fast and lightweight alternative to Moment.js for date handling.
-- **[Prop-Types](https://www.npmjs.com/package/prop-types)**: Runtime type checking for React props and similar objects.
-- **[React Hook Form](https://react-hook-form.com/)**: A performant, flexible, and extensible forms library for React.
-- **[Redux Persist](https://github.com/rt2zz/redux-persist)**: A library to persist and rehydrate a Redux store.
-- **[States-US](https://www.npmjs.com/package/states-us)**: A library for US state data.
-- **[UUID](https://github.com/uuidjs/uuid)**: A library for generating UUIDs.
+- **[Axios](https://axios-http.com/)** (^1.7.3): A promise-based HTTP client for the browser and Node.js.
+- **[Day.js](https://day.js.org/)** (^1.11.12): A fast and lightweight alternative to Moment.js for date handling.
+- **[Prop-Types](https://www.npmjs.com/package/prop-types)** (^15.8.1): Runtime type checking for React props and similar objects.
+- **[React Hook Form](https://react-hook-form.com/)** (^7.52.2): A performant, flexible, and extensible forms library for React.
+- **[Redux Persist](https://github.com/rt2zz/redux-persist)** (^6.0.0): A library to persist and rehydrate a Redux store.
+- **[sg-modal-lib](https://www.npmjs.com/package/sg-modal-lib)** (^1.0.4): Component for modal creation.
+- **[States-US](https://www.npmjs.com/package/states-us)** (^1.0.4): A library for US state data.
+- **[UUID](https://github.com/uuidjs/uuid)** (^10.0.0): A library for generating UUIDs.
 
 #### **Development Tools:**
 
-- **[Vite](https://vitejs.dev/)**: A next-generation frontend tooling that aims to provide a faster and leaner development experience.
-- **[ESLint](https://eslint.org/)**: A tool for identifying and reporting on patterns found in ECMAScript/JavaScript code.
-- **[ESLint Plugins](https://eslint.org/docs/user-guide/configuring/plugins)**: Plugins to extend ESLint functionality, including `eslint-plugin-react` for React-specific linting rules.
+- **[Vite](https://vitejs.dev/)** (^5.3.4): A next-generation frontend tooling that aims to provide a faster and leaner development experience.
+- **[ESLint](https://eslint.org/)** (^8.57.0): A tool for identifying and reporting on patterns found in ECMAScript/JavaScript code.
+- **[ESLint Plugins](https://eslint.org/docs/user-guide/configuring/plugins)**: Plugins to extend ESLint functionality, including `eslint-plugin-react` (^7.34.3) for React-specific linting rules.
 
 ### 🔨 Project Installation
 
