@@ -39,7 +39,7 @@ a,
 /****************************************************** FONTS */
 body,
 .btn,
-.sg-modal__btn,
+.sg-modal-lib__btn,
 .ag-cell,
 .select,
 .input {
@@ -70,7 +70,8 @@ h1,
 
 .ag-paging-page-size,
 .ag-paging-row-summary-panel,
-.ag-paging-page-summary-panel {
+.ag-paging-page-summary-panel,
+.footer {
   font-size: 0.8rem;
 }
 
