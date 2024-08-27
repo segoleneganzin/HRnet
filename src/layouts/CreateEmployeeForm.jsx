@@ -9,7 +9,7 @@ import dayjs from 'dayjs';
 import Input from '../components/Input';
 import Select from '../components/Select';
 import FormData from './FormData';
-import DatePicker from '../components/DatePicker ';
+import DatePicker from '../components/DatePicker';
 import Button from '../components/Button';
 
 /**
