@@ -8,6 +8,7 @@ export default defineConfig({
     open: true, // Automatically open the app in the browser
   },
   build: {
-    chunkSizeWarningLimit: 2000, // Set limit to 1000 kB (default is 500 kB)
+    minify: 'esbuild',
+    chunkSizeWarningLimit: 1000,
   },
 });

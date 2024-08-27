@@ -1,7 +1,7 @@
 import PageLayout from '../layouts/PageLayout';
 import HomeCard from '../components/HomeCard';
-import currentEmployeesIcon from '../assets/currentEmployeesIcon.svg';
-import createEmployeeIcon from '../assets/createEmployeeIcon.svg';
+import currentEmployeesIcon from '../assets/img/currentEmployeesIcon.svg';
+import createEmployeeIcon from '../assets/img/createEmployeeIcon.svg';
 
 /**
  * Home component serves as the landing page of the application.

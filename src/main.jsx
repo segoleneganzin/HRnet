@@ -4,6 +4,8 @@ import Router from './Router';
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
 import store, { persistor } from './utils/store';
+import 'ag-grid-community/styles/ag-grid.css'; // Mandatory CSS required by the Data Grid
+import 'ag-grid-community/styles/ag-theme-quartz.css'; // Optional Theme applied to the Data Grid
 import 'sg-modal-lib/style.css';
 import './stylesheet/style.scss';
 
