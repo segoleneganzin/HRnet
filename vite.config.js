@@ -8,7 +8,7 @@ export default defineConfig({
     open: true, // Automatically open the app in the browser
   },
   build: {
+    chunkSizeWarningLimit: 900,
     minify: 'esbuild',
-    chunkSizeWarningLimit: 1000,
   },
 });

@@ -67,7 +67,11 @@ const Menu = () => {
             )}
           </ul>
         </nav>
-        <label className='menu__burger' htmlFor='burger'>
+        <label
+          className='menu__burger'
+          htmlFor='burger'
+          aria-label={hamburgerOpen ? 'close menu' : 'open menu'}
+        >
           <input
             ref={checkBurger}
             type='checkbox'

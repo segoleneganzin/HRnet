@@ -32,7 +32,7 @@
 .ag-paging-panel {
   height: fit-content;
   padding: 10px 0;
-  @include media-breakpoint($breakpoint-mobileXl) {
+  @include max-media-breakpoint($breakpoint-mobileXl) {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: auto auto;

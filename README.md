@@ -65,7 +65,11 @@ Les états américains permettant de remplir les options du select sont récupé
 
 ### 🔨 Installation du projet
 
-Le projet utilise NodeJS(v20.11.1)<br>
+#### **Prérequis**
+
+- **[NodeJS](https://nodejs.org/fr/)** (^20.11.1)
+- **[Git](https://git-scm.com/))** (^2.44.0)
+- **[npm](https://www.npmjs.com/)** (^10.2.4)
 
 ➡ Cloner le projet<br>
 ➡ Ouvrir le dossier dans VSCode (ou tout autre IDE)<br>
@@ -89,6 +93,10 @@ Le projet utilise NodeJS(v20.11.1)<br>
 ➡ Déployer une application front-end.<br>
 ➡ Refondre une application pour réduire la dette technique.<br>
 ➡ Produire de la documentation technique pour une application.<br>
+
+### Auteurs
+
+- **Ségolène Ganzin** ([GitHub Profile](https://github.com/segoleneganzin/))
 
 # English version
 
@@ -158,7 +166,11 @@ Currently, data (employees and departments) is mocked. U.S. states for populatin
 
 ### 🔨 Project Installation
 
-The project uses NodeJS(v20.11.1) and `pnpm`.<br>
+#### **Prerequisites**
+
+- **[NodeJS](https://nodejs.org/fr/)** (^20.11.1)
+- **[Git](https://git-scm.com/))** (^2.44.0)
+- **[npm](https://www.npmjs.com/)** (^10.2.4)
 
 ➡ Clone the project<br>
 ➡ Open the folder in VSCode (or any other IDE)<br>
@@ -182,3 +194,7 @@ The project uses NodeJS(v20.11.1) and `pnpm`.<br>
 ➡ Deploy a front-end application.<br>
 ➡ Refactor an application to reduce technical debt.<br>
 ➡ Produce technical documentation for an application.<br>
+
+### Author
+
+- **Ségolène Ganzin** - Initial work and main development ([GitHub Profile](https://github.com/segoleneganzin/))

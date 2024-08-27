@@ -1,8 +1,12 @@
+import { lazy, Suspense } from 'react';
+import { useState } from 'react';
 import CreateEmployeeForm from '../layouts/CreateEmployeeForm';
 import PageLayout from '../layouts/PageLayout';
-import { useState } from 'react';
-import { Modal } from 'sg-modal-lib';
 import SectionLayout from '../layouts/SectionLayout';
+
+const Modal = lazy(() =>
+  import('sg-modal-lib').then((module) => ({ default: module.Modal }))
+);
 
 /**
  * CreateEmployee component renders a page for creating a new employee, including a form
@@ -29,15 +33,17 @@ const CreateEmployee = () => {
           <CreateEmployeeForm toggleModal={toggleModal} />
 
           {isModalOpen && (
-            <Modal
-              isOpen={isModalOpen}
-              toggleModal={toggleModal}
-              infos={{ btnText: 'Close' }}
-              // styleTheme={'light'}
-              // styleTheme={'dark'}
-            >
-              <p>Employee Created !</p>
-            </Modal>
+            <Suspense fallback={<div>Loading...</div>}>
+              <Modal
+                isOpen={isModalOpen}
+                toggleModal={toggleModal}
+                infos={{ btnText: 'Close' }}
+                // styleTheme={'light'}
+                // styleTheme={'dark'}
+              >
+                <p>Employee Created !</p>
+              </Modal>
+            </Suspense>
           )}
         </>
       </SectionLayout>
