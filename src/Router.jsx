@@ -1,11 +1,11 @@
 import React, { Suspense } from 'react';
 import { Routes, Route } from 'react-router-dom';
-import CreateEmployee from './pages/CreateEmployee';
-// import EmployeeList from './pages/EmployeeList';
-// import Home from './pages/Home';
 import Loader from './components/Loader';
+
+// Reducing the initial load time by loading components only when they are needed
 const Home = React.lazy(() => import('./pages/Home'));
 const EmployeeList = React.lazy(() => import('./pages/EmployeeList'));
+const CreateEmployee = React.lazy(() => import('./pages/CreateEmployee'));
 
 const Router = () => {
   return (
