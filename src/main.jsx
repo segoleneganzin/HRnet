@@ -4,6 +4,7 @@ import Router from './Router';
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
 import store, { persistor } from './utils/store';
+import 'sg-modal-lib/style.css';
 import './stylesheet/style.scss';
 
 const root = createRoot(document.getElementById('root'));

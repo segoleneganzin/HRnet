@@ -1,7 +1,7 @@
 import CreateEmployeeForm from '../layouts/CreateEmployeeForm';
 import PageLayout from '../layouts/PageLayout';
 import { useState } from 'react';
-import { Modal } from 'sg-modal';
+import { Modal } from 'sg-modal-lib';
 import SectionLayout from '../layouts/SectionLayout';
 
 /**
@@ -22,9 +22,9 @@ const CreateEmployee = () => {
     <PageLayout pageTitle={'Create employee'} mainClassName={'create-employee'}>
       <SectionLayout title={'Create employee'}>
         <>
-          {/* <button onClick={toggleModal} className='btn'>
+          <button onClick={toggleModal} className='btn'>
             Test modal
-          </button> */}
+          </button>
 
           <CreateEmployeeForm toggleModal={toggleModal} />
 
