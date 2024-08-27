@@ -1,10 +1,15 @@
-import Menu from '../components/Menu';
+import Menu from './Menu';
+import logo from '../assets/logo.png';
 
 const Header = () => {
   return (
-    <header>
-      <h1>HRnet</h1>
-      {document.title !== 'HRnet' && <Menu />}
+    <header className='header'>
+      <img src={logo} alt='' className='header__img' />
+      <div className='header__titles'>
+        <h1 className='title'>WEALTH HEALTH</h1>
+        <h2 className='title'>HRnet</h2>
+      </div>
+      <Menu />
     </header>
   );
 };

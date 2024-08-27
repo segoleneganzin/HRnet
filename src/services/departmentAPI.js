@@ -2,12 +2,15 @@ import axios from 'axios';
 
 /**
  * Function to fetch departments data from a local JSON file.
+ * Must be updated to link to api
  * @returns {Promise<Object>} - Promise resolving to an array of departments
  * @throws {Error} - Throws an error if no department founded
  */
 export const getDepartments = async () => {
   try {
-    const res = await axios.get(window.location.origin + '/departments.json');
+    const res = await axios.get(
+      window.location.origin + '/mockDepartments.json'
+    );
     const datas = res.data;
 
     if (!datas) {

@@ -2,16 +2,24 @@ import { createRoot } from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 import Router from './Router';
 import { Provider } from 'react-redux';
-import store from './utils/store';
+import { PersistGate } from 'redux-persist/integration/react';
+import store, { persistor } from './utils/store';
+import 'sg-modal-lib/style.css';
 import './stylesheet/style.scss';
-import InitializeDataMocked from './components/InitializeDataMocked';
 
 const root = createRoot(document.getElementById('root'));
+
 root.render(
+  /**
+   * Wrap the entire application in BrowserRouter to enable routing with react-router.
+   * The Provider component makes the Redux store available to the entire app.
+   * PersistGate delays the rendering of the app's UI until the persisted state has been rehydrated.
+   */
   <BrowserRouter>
-    <Provider store={store} stabilityCheck='always'>
-      <InitializeDataMocked /> {/* middleware */}
-      <Router />
+    <Provider store={store}>
+      <PersistGate loading={null} persistor={persistor}>
+        <Router />
+      </PersistGate>
     </Provider>
   </BrowserRouter>
 );

@@ -1,25 +1,22 @@
-// -----------------------------------------------------------------------------
-// This file contains all application-wide Sass variables.
-// -----------------------------------------------------------------------------
-$text-color: #000000;
+$principal-brand-color: #5a6e0c;
+$second-brand-color: #babe98;
+$third-brand-color: rgb(17, 73, 17);
+$light-color: #e8e8e8;
 
-$link-color: #000000;
-
-$brand-color: #ff6060;
-
-$grey: #f6f6f6;
-
-$light-grey: #fbfbfb;
+$text-color: $light-color;
+$error-color: rgb(233, 113, 113);
 
 /// *********************** BREAKPOINTS
 $breakpoint-mobileXS: 360px;
 $breakpoint-mobile: 425px;
+$breakpoint-mobileXl: 580px;
 $breakpoint-tablet: 768px;
-$breakpoint-laptop: 1024px;
-$breakpoint-laptopXL: 1400px;
-$breakpoint-desktopXL: 1850px;
 
 /// *********************** RADIUS
-$smallRadius: 5px;
-$mediumRadius: 10px;
-$largeRadius: 25px;
+$small-radius: 5px;
+$medium-radius: 10px;
+$large-radius: 100px;
+$full-radius: 100%;
+
+/// *********************** RADIUS
+$base-gap: 50px;

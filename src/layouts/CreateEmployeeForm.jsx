@@ -1,83 +1,69 @@
 import PropTypes from 'prop-types';
-import { useForm, Controller } from 'react-hook-form';
-import { useEffect } from 'react';
+import { useForm } from 'react-hook-form';
 import { v4 as uuidv4 } from 'uuid';
+import { useDispatch, useSelector } from 'react-redux';
+import { addEmployee } from '../features/employeesSlice';
+import { selectDepartments } from '../features/departmentsSlice';
+import { usStates } from '../utils/usStates';
+import dayjs from 'dayjs';
 import Input from '../components/Input';
 import Select from '../components/Select';
 import FormData from './FormData';
-import { useDispatch } from 'react-redux';
-import { addEmployee } from '../features/employeesSlice';
-import { usStates } from '../utils/usStates';
-import { getDepartments } from '../services/departmentAPI';
-import { useState } from 'react';
-import DatePicker from 'react-date-picker';
-// import 'react-datepicker/dist/react-datepicker.css';
-import 'react-date-picker/dist/DatePicker.css';
-// import 'react-calendar/dist/Calendar.css';
+import DatePicker from '../components/DatePicker';
+import Button from '../components/Button';
 
+/**
+ * Component that renders a form for creating a new employee.
+ *
+ * @param {Object} props
+ * @param {Function} props.toggleModal - Function to toggle the visibility of the modal after form submission.
+ * @returns {JSX.Element}
+ */
 const CreateEmployeeForm = ({ toggleModal }) => {
+  // Get departments from the Redux store
+  const departments = useSelector((state) => selectDepartments(state));
   const dispatch = useDispatch();
+  // Initialize the react-hook-form methods
   const {
     register,
     handleSubmit,
     control,
     formState: { errors },
+    reset,
   } = useForm();
-
-  const [birthDate, setBirthDate] = useState('');
-  const [minStartDate, setMinStartDate] = useState(null);
-  useEffect(() => {
-    if (birthDate) {
-      const minDate = new Date(birthDate);
-      minDate.setFullYear(minDate.getFullYear() + 16);
-      setMinStartDate(minDate);
-    } else {
-      setMinStartDate(null);
-    }
-  }, [birthDate]);
-
-  const [departments, setDepartments] = useState([]);
-  const fetchDepartments = async () => {
-    try {
-      const data = await getDepartments();
-      setDepartments(data);
-    } catch (error) {
-      console.log(error.message);
-    }
-  };
-  // Effect to fetch mocked departments data
-  useEffect(() => {
-    fetchDepartments();
-  }, []);
 
   /**
    * Function to obtain the error class for a given field.
-   * @param {string} field
+   * @param {string} fieldName
    * @returns {string} - Field error class.
    */
-  const fieldClass = (fieldName) => {
-    return errors[fieldName] ? 'field--error' : 'field';
+  const fieldErrorClass = (fieldName) => {
+    return errors[fieldName] ? 'field--error' : '';
   };
 
   /**
    * Function to handle form submission
-   * @param {object} data - Form data
+   * @param {object} formData
    */
   const formSubmit = (formData) => {
-    // Generate a unique ID for the new employee
-    const newEmployee = { id: uuidv4(), ...formData };
+    const newEmployee = {
+      id: uuidv4(), // Generate a unique ID for the new employee
+      ...formData,
+      birth: dayjs(formData.birth).toISOString(),
+      startDate: dayjs(formData.startDate).toISOString(),
+    };
     dispatch(addEmployee(newEmployee));
     toggleModal();
+    reset(); // reinitialize form when addEmployee succeeded
   };
 
   return (
     <form
       onSubmit={handleSubmit(formSubmit)}
-      className={'form'}
+      className={'form create-employee__form'}
       id={'createEmployeeForm'}
       noValidate
     >
-      {/* First Name Field */}
       <FormData
         field={{ name: 'firstName', label: 'First Name' }}
         errors={errors}
@@ -85,11 +71,10 @@ const CreateEmployeeForm = ({ toggleModal }) => {
         <Input
           field={{ name: 'firstName' }}
           register={register}
-          fieldClass={fieldClass}
+          fieldErrorClass={fieldErrorClass}
         />
       </FormData>
 
-      {/* Last Name Field */}
       <FormData
         field={{ name: 'lastName', label: 'Last Name' }}
         errors={errors}
@@ -97,66 +82,45 @@ const CreateEmployeeForm = ({ toggleModal }) => {
         <Input
           field={{ name: 'lastName' }}
           register={register}
-          fieldClass={fieldClass}
+          fieldErrorClass={fieldErrorClass}
         />
       </FormData>
 
-      {/* Birth Date Field */}
       <FormData
         field={{ name: 'birth', label: 'Date of Birth' }}
         errors={errors}
       >
-        <Controller
+        <DatePicker
           control={control}
-          name='birth'
-          rules={{ required: 'Please enter a date of Birth' }}
-          render={({ field }) => (
-            <DatePicker
-              className='input'
-              // placeholderText='Select date'
-              onChange={(date) => {
-                field.onChange(date ? date.toISOString() : '');
-                setBirthDate(date);
-              }}
-              // selected={field.value}
-              value={field.value}
-              format='MM/dd/y'
-            />
-          )}
+          field={{
+            name: 'birth',
+          }}
+          fieldErrorClass={fieldErrorClass}
         />
       </FormData>
 
-      {/* Start Date Field */}
       <FormData
         field={{ name: 'startDate', label: 'Start Date' }}
         errors={errors}
       >
-        <Controller
+        <DatePicker
           control={control}
-          name='startDate'
-          rules={{ required: 'Please enter a start Date' }}
-          render={({ field }) => (
-            <DatePicker
-              className='input'
-              // minDate={minStartDate}
-              onChange={(date) =>
-                field.onChange(date ? date.toISOString() : '')
-              }
-              value={field.value}
-              format='MM/dd/yyyy'
-            />
-          )}
+          field={{
+            name: 'startDate',
+          }}
+          fieldErrorClass={fieldErrorClass}
         />
       </FormData>
 
       {/* Address Fieldset */}
-      <fieldset className={fieldClass('address')}>
+      <fieldset className={'address'}>
         <legend>Address</legend>
+
         <FormData field={{ name: 'street', label: 'Street' }} errors={errors}>
           <Input
             field={{ name: 'street' }}
             register={register}
-            fieldClass={fieldClass}
+            fieldErrorClass={fieldErrorClass}
           />
         </FormData>
 
@@ -164,7 +128,7 @@ const CreateEmployeeForm = ({ toggleModal }) => {
           <Input
             field={{ name: 'city' }}
             register={register}
-            fieldClass={fieldClass}
+            fieldErrorClass={fieldErrorClass}
           />
         </FormData>
 
@@ -176,7 +140,7 @@ const CreateEmployeeForm = ({ toggleModal }) => {
               options: usStates,
             }}
             register={register}
-            fieldClass={fieldClass}
+            fieldErrorClass={fieldErrorClass}
           />
         </FormData>
 
@@ -185,14 +149,13 @@ const CreateEmployeeForm = ({ toggleModal }) => {
           errors={errors}
         >
           <Input
-            field={{ name: 'zipCode', type: 'number' }}
+            field={{ name: 'zipCode', type: 'number', pattern: /^\d{5}$/ }} // 5 numbers only
             register={register}
-            fieldClass={fieldClass}
+            fieldErrorClass={fieldErrorClass}
           />
         </FormData>
       </fieldset>
 
-      {/* Department Field */}
       <FormData
         field={{ name: 'department', label: 'Department' }}
         errors={errors}
@@ -204,15 +167,14 @@ const CreateEmployeeForm = ({ toggleModal }) => {
             options: departments,
           }}
           register={register}
-          fieldClass={fieldClass}
+          fieldErrorClass={fieldErrorClass}
         />
       </FormData>
-      <button>Create</button>
+      <Button text='Create' className='bold' />
     </form>
   );
 };
 CreateEmployeeForm.propTypes = {
-  isModalOpen: PropTypes.bool,
   toggleModal: PropTypes.func,
 };
 export default CreateEmployeeForm;

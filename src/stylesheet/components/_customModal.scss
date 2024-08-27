@@ -1,0 +1,13 @@
+.sg-modal-lib {
+  &__body {
+    background-color: $second-brand-color;
+    border: none;
+  }
+  &__btn {
+    background-color: $principal-brand-color;
+    @include on-event {
+      background-color: $third-brand-color;
+      box-shadow: 0 0 5px $second-brand-color;
+    }
+  }
+}

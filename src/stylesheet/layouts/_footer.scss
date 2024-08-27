@@ -1,2 +1,14 @@
 .footer {
+  @include flex-col;
+  align-items: center;
+  background-color: $second-brand-color;
+  gap: 10px;
+  padding: 20px;
+  text-align: center;
+
+  @include min-media-breakpoint($breakpoint-mobileXl) {
+    border-radius: $large-radius;
+    margin: 10px;
+    padding: 10px;
+  }
 }

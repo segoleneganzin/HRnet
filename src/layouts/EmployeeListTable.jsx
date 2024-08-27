@@ -1,128 +1,81 @@
-import { useState, useRef, useEffect, useCallback } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import { useState } from 'react';
+import { useSelector } from 'react-redux';
 import { AgGridReact } from 'ag-grid-react'; // React Data Grid Component
 import 'ag-grid-community/styles/ag-grid.css'; // Mandatory CSS required by the Data Grid
 import 'ag-grid-community/styles/ag-theme-quartz.css'; // Optional Theme applied to the Data Grid
 import {
-  // getEmployeesAsync,
   selectEmployees,
   selectEmployeesError,
   selectEmployeesStatus,
-  selectPreviousEmployees,
-  setPreviousEmployees,
 } from '../features/employeesSlice';
 import Loader from '../components/Loader';
 import Error from '../components/Error';
+import { colDefs } from '../utils/tables/employeesColDefs';
 
+/**
+ * Component that displays a table of employees using ag-Grid.
+ *
+ * It connects to the Redux store to retrieve employee data and handles different
+ * states of data fetching (loading, error, and success). It includes a filter
+ * input to search through the employee list and supports pagination.
+ *
+ * @returns {JSX.Element}
+ */
 const EmployeeListTable = () => {
-  const dispatch = useDispatch();
-  const employees = useSelector((state) => selectEmployees(state));
-  const employeesStatus = useSelector((state) => selectEmployeesStatus(state));
-  const employeesError = useSelector((state) => selectEmployeesError(state));
-  const previousEmployees = useSelector((state) =>
-    selectPreviousEmployees(state)
-  );
-
-  const gridApiRef = useRef(null);
-  const [apiReady, setApiReady] = useState(false);
-  const [filterText, setFilterText] = useState('');
-
   const pagination = true;
   const paginationPageSize = 10;
   const paginationPageSizeSelector = [5, 10, 25, 50, 100];
 
-  const colDefs = [
-    { headerName: 'First Name', field: 'firstName' },
-    { headerName: 'Last Name', field: 'lastName' },
-    {
-      headerName: 'Start Date',
-      field: 'startDate',
-      valueFormatter: (p) =>
-        new Date(p.value).toLocaleDateString('en-US', {
-          year: 'numeric',
-          month: '2-digit',
-          day: '2-digit',
-        }),
-    },
-    { headerName: 'Department', field: 'department' },
-    {
-      headerName: 'Date of Birth',
-      field: 'birth',
-      valueFormatter: (p) =>
-        new Date(p.value).toLocaleDateString('en-US', {
-          year: 'numeric',
-          month: '2-digit',
-          day: '2-digit',
-        }),
-    },
-    { headerName: 'Street', field: 'street' },
-    { headerName: 'City', field: 'city' },
-    { headerName: 'State', field: 'state' },
-    { headerName: 'Zip Code', field: 'zipCode' },
-  ];
+  const [filterText, setFilterText] = useState('');
 
+  // Retrieve data from the Redux store
+  const employees = useSelector((state) => selectEmployees(state));
+  const employeesStatus = useSelector((state) => selectEmployeesStatus(state));
+  const employeesError = useSelector((state) => selectEmployeesError(state));
+
+  /**
+   * Updates the filter text state when the input value changes.
+   * @param {React.ChangeEvent<HTMLInputElement>} e - The change event from the input.
+   */
   const onFilterTextChange = (e) => {
     setFilterText(e.target.value);
   };
 
-  // Memoize onGridReady callback to avoid recreating the function on every render
-  const onGridReady = useCallback((params) => {
-    gridApiRef.current = params.api;
-    setApiReady(true);
-  }, []);
+  // Message to display if no employees in the table (overlayNoRowsTemplate)
+  const noRows = `<p>
+      No data available in table
+    </p>`;
 
-  useEffect(() => {
-    if (apiReady && gridApiRef.current) {
-      // Get all existing row nodes
-      const existingRowNodes = [];
-      gridApiRef.current.forEachNode((node) => existingRowNodes.push(node));
-      const existingEmployeeId = new Set(
-        existingRowNodes.map((row) => row.data.id)
-      );
-      // Determine which rows to add
-      const updatedRows = employees.filter(
-        (employee) => !existingEmployeeId.has(employee.id)
-      );
-      console.log('Rows to be Added:', updatedRows);
-
-      if (updatedRows.length > 0) {
-        console.log(
-          'Updated Row IDs:',
-          updatedRows.map((row) => row.id)
-        );
-        gridApiRef.current.applyTransaction({ add: updatedRows });
-        dispatch(setPreviousEmployees());
-      }
-    }
-  }, [employees, apiReady, dispatch]);
-
+  // Render different UI based on the employees status
   if (employeesStatus === 'loading') {
     return <Loader />;
   }
+
   if (employeesStatus === 'failed') {
     return <Error errorMessage={employeesError} />;
   }
 
   return (
-    <div>
+    <div className='current-employee__table-container'>
       <input
+        id='filter'
         type='text'
         placeholder='Filter...'
         value={filterText}
         onChange={onFilterTextChange}
-        className='current-employee__table-filter'
+        className='current-employee__table-filter input'
       />
       <div className='ag-theme-quartz current-employee__table'>
         <AgGridReact
-          rowData={previousEmployees}
+          rowData={employees}
           columnDefs={colDefs}
+          domLayout='autoHeight'
           pagination={pagination}
           paginationPageSize={paginationPageSize}
           paginationPageSizeSelector={paginationPageSizeSelector}
           quickFilterText={filterText}
-          deltaRowDataMode={true} // Only update changed rows
-          getRowNodeId={(data) => data.id}
-          onGridReady={onGridReady}
+          deltaRowDataMode={true} // Only update changed rows (AgGridReact intern cache)
+          overlayNoRowsTemplate={noRows}
         />
       </div>
     </div>

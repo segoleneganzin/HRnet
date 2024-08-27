@@ -1,7 +1,17 @@
 .current-employee__table {
-  height: 500px;
-  width: 1400px;
+  width: 100%;
   &-filter {
     margin: 0 0 10px 10px;
+    height: 20px;
+    max-width: 200px;
+  }
+  @include min-media-breakpoint($breakpoint-mobileXl) {
+    &-container {
+      margin: 0 auto;
+      width: 95%;
+    }
+    &-filter {
+      margin: 0 0 10px;
+    }
   }
 }

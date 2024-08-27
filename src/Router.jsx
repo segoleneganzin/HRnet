@@ -9,6 +9,7 @@ const Router = () => {
       <Route index element={<Home />} />
       <Route path='/create-employee' element={<CreateEmployee />} />
       <Route path='/employee-list' element={<EmployeeList />} />
+      <Route path='*' element={<Home />} />
     </Routes>
   );
 };
