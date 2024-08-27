@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { getDepartments } from '../services/departmentAPI';
 import { createThunkAction, handleAsyncActions } from './slicerFunctions';
-import mockDepartments from '../../public/mockDepartments.json';
+import mockDepartments from '../assets/mocks/mockDepartments.json';
 
 const GET_DEPARTMENTS = 'employees/getDepartments';
 

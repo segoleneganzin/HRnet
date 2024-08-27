@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { getEmployees } from '../services/employeeAPI';
 import { createThunkAction, handleAsyncActions } from './slicerFunctions';
-import mockEmployees from '../../public/mockEmployees.json';
+import mockEmployees from '../assets/mocks/mockEmployees.json';
 
 const GET_EMPLOYEES = 'employees/getEmployees';
 
