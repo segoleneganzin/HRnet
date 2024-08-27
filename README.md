@@ -28,26 +28,6 @@ Les états américains permettant de remplir les options du select sont récupé
 
 [![My Skills](https://skillicons.dev/icons?i=html,react,sass,vite,github,pnpm,redux)](https://skillicons.dev)
 
-### 📈 Rapports de performances
-
-### 🔨 Installation du projet
-
-Le projet utilise NodeJS(v20.11.1) et `pnpm`<br>
-
-➡ Cloner le projet<br>
-➡ Ouvrir le dossier dans VSCode (ou tout autre IDE)<br>
-➡ Installer les dépendances : `pnpm install`<br>
-
-### 🚀 Lancement du projet
-
-➡ Lancer l'application : `pnpm run dev`<br>
-
-### ⚙ Contraintes techniques
-
-➡ Utiliser Redux pour gérer le state de l'ensemble de l'application.<br>
-➡ Coder en utilisant le paradigme de la programmation fonctionnelle.<br>
-➡ Amélioration du style de l'application.<br>
-
 ### 📦 Dépendances
 
 #### **Bibliothèques Principales :**
@@ -79,6 +59,26 @@ Le projet utilise NodeJS(v20.11.1) et `pnpm`<br>
 - **[Vite](https://vitejs.dev/)** : Un outil de développement frontend de nouvelle génération visant à fournir une expérience de développement plus rapide et plus légère.
 - **[ESLint](https://eslint.org/)** : Un outil pour identifier et signaler les motifs trouvés dans le code ECMAScript/JavaScript.
 - **[Plugins ESLint](https://eslint.org/docs/user-guide/configuring/plugins)** : Plugins pour étendre les fonctionnalités d'ESLint, y compris `eslint-plugin-react` pour des règles de linting spécifiques à React.
+
+### 🔨 Installation du projet
+
+Le projet utilise NodeJS(v20.11.1)<br>
+
+➡ Cloner le projet<br>
+➡ Ouvrir le dossier dans VSCode (ou tout autre IDE)<br>
+➡ Installer les dépendances : `pnpm install`<br>
+
+### 🚀 Lancement du projet
+
+➡ Lancer l'application : `pnpm run dev`<br>
+
+### ⚙ Contraintes techniques
+
+➡ Utiliser Redux pour gérer le state de l'ensemble de l'application.<br>
+➡ Coder en utilisant le paradigme de la programmation fonctionnelle.<br>
+➡ Amélioration du style de l'application.<br>
+
+### 📈 Rapports de performances
 
 ### 🏆 Compétences évaluées
 
@@ -118,26 +118,6 @@ Currently, data (employees and departments) is mocked. U.S. states for populatin
 
 [![My Skills](https://skillicons.dev/icons?i=html,react,sass,vite,github,pnpm,redux)](https://skillicons.dev)
 
-### 📈 Performance Reports
-
-### 🔨 Project Installation
-
-The project uses NodeJS(v20.11.1) and `pnpm`.<br>
-
-➡ Clone the project<br>
-➡ Open the folder in VSCode (or any other IDE)<br>
-➡ Install dependencies : `pnpm install`<br>
-
-### 🚀 Running the Project
-
-➡ Start the application: `pnpm run dev`<br>
-
-### ⚙ Technical Constraints
-
-➡ Use Redux to manage the state of the entire application. <br>
-➡ Code using the functional programming paradigm.<br>
-➡ Improve the styling of the application.<br>
-
 ### 📦 Dependencies
 
 #### **Core Libraries:**
@@ -169,6 +149,26 @@ The project uses NodeJS(v20.11.1) and `pnpm`.<br>
 - **[Vite](https://vitejs.dev/)**: A next-generation frontend tooling that aims to provide a faster and leaner development experience.
 - **[ESLint](https://eslint.org/)**: A tool for identifying and reporting on patterns found in ECMAScript/JavaScript code.
 - **[ESLint Plugins](https://eslint.org/docs/user-guide/configuring/plugins)**: Plugins to extend ESLint functionality, including `eslint-plugin-react` for React-specific linting rules.
+
+### 🔨 Project Installation
+
+The project uses NodeJS(v20.11.1) and `pnpm`.<br>
+
+➡ Clone the project<br>
+➡ Open the folder in VSCode (or any other IDE)<br>
+➡ Install dependencies : `pnpm install`<br>
+
+### 🚀 Running the Project
+
+➡ Start the application: `pnpm run dev`<br>
+
+### ⚙ Technical Constraints
+
+➡ Use Redux to manage the state of the entire application. <br>
+➡ Code using the functional programming paradigm.<br>
+➡ Improve the styling of the application.<br>
+
+### 📈 Performance Reports
 
 ### 🏆 Evaluated Skills
 
