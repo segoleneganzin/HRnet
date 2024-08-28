@@ -1,6 +1,8 @@
-import { lazy, Suspense } from 'react';
-import { useState } from 'react';
 import { useSelector } from 'react-redux';
+import {
+  MaterialReactTable,
+  useMaterialReactTable,
+} from 'material-react-table';
 import {
   selectEmployees,
   selectEmployeesError,
@@ -9,16 +11,7 @@ import {
 import Loader from '../components/Loader';
 import Error from '../components/Error';
 import { colDefs } from '../utils/tables/employeesColDefs';
-
-const AgGridReact = lazy(() =>
-  import('ag-grid-react').then((module) => ({ default: module.AgGridReact }))
-);
-
-// constants for table
-const PAGINATION_PAGE_SIZE = 10;
-const PAGINATION_PAGE_SIZE_SELECTOR = [5, 10, 25, 50, 100];
-
-const NO_ROWS_MESSAGE = `<p>No data available in table</p>`; // Message to display if no employees in the table (overlayNoRowsTemplate)
+import { useMemo } from 'react';
 
 /**
  * Component that displays a table of employees using ag-Grid.
@@ -29,20 +22,23 @@ const NO_ROWS_MESSAGE = `<p>No data available in table</p>`; // Message to displ
  * @returns {JSX.Element}
  */
 const EmployeeListTable = () => {
-  const [filterText, setFilterText] = useState('');
-
   // Retrieve data from the Redux store
   const employees = useSelector((state) => selectEmployees(state));
   const employeesStatus = useSelector((state) => selectEmployeesStatus(state));
   const employeesError = useSelector((state) => selectEmployeesError(state));
 
-  /**
-   * Updates the filter text state when the input value changes.
-   * @param {React.ChangeEvent<HTMLInputElement>} e - The change event from the input.
-   */
-  const onFilterTextChange = (e) => {
-    setFilterText(e.target.value);
-  };
+  const columns = useMemo(() => colDefs, []);
+
+  const table = useMaterialReactTable({
+    columns,
+    data: employees,
+    enableColumnActions: false,
+    enableColumnFilters: false,
+    enableHiding: false,
+    enableDensityToggle: false,
+    enableFullScreenToggle: false,
+    enableStickyHeader: true,
+  });
 
   // Render different UI based on the employees status
   if (employeesStatus === 'loading') {
@@ -55,33 +51,7 @@ const EmployeeListTable = () => {
 
   return (
     <div className='current-employee__table-container'>
-      <label htmlFor='filter' className='visually-hidden'>
-        Table filter
-      </label>
-      <input
-        id='filter'
-        name='filter'
-        type='text'
-        placeholder='Filter...'
-        value={filterText}
-        onChange={onFilterTextChange}
-        className='current-employee__table-filter input'
-      />
-      <div className='ag-theme-quartz current-employee__table'>
-        <Suspense fallback={<div>Loading table ...</div>}>
-          <AgGridReact
-            rowData={employees}
-            columnDefs={colDefs}
-            domLayout='autoHeight'
-            pagination
-            paginationPageSize={PAGINATION_PAGE_SIZE}
-            paginationPageSizeSelector={PAGINATION_PAGE_SIZE_SELECTOR}
-            quickFilterText={filterText}
-            deltaRowDataMode // Only update changed rows (AgGridReact intern cache)
-            overlayNoRowsTemplate={NO_ROWS_MESSAGE}
-          />
-        </Suspense>
-      </div>
+      <MaterialReactTable table={table} />
     </div>
   );
 };
