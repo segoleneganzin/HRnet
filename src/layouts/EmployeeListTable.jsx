@@ -1,4 +1,4 @@
-import { lazy, Suspense } from 'react';
+// import { lazy, Suspense } from 'react';
 import { useState } from 'react';
 import { useSelector } from 'react-redux';
 import {
@@ -9,10 +9,12 @@ import {
 import Loader from '../components/Loader';
 import Error from '../components/Error';
 import { colDefs } from '../utils/tables/employeesColDefs';
+import { useMemo } from 'react';
+import { AgGridReact } from 'ag-grid-react';
 
-const AgGridReact = lazy(() =>
-  import('ag-grid-react').then((module) => ({ default: module.AgGridReact }))
-);
+// const AgGridReact = lazy(() =>
+//   import('ag-grid-react').then((module) => ({ default: module.AgGridReact }))
+// );
 
 // constants for table
 const PAGINATION_PAGE_SIZE = 10;
@@ -35,6 +37,8 @@ const EmployeeListTable = () => {
   const employees = useSelector((state) => selectEmployees(state));
   const employeesStatus = useSelector((state) => selectEmployeesStatus(state));
   const employeesError = useSelector((state) => selectEmployeesError(state));
+
+  const columns = useMemo(() => colDefs, []);
 
   /**
    * Updates the filter text state when the input value changes.
@@ -68,19 +72,19 @@ const EmployeeListTable = () => {
         className='current-employee__table-filter input'
       />
       <div className='ag-theme-quartz current-employee__table'>
-        <Suspense fallback={<div>Loading table ...</div>}>
-          <AgGridReact
-            rowData={employees}
-            columnDefs={colDefs}
-            domLayout='autoHeight'
-            pagination
-            paginationPageSize={PAGINATION_PAGE_SIZE}
-            paginationPageSizeSelector={PAGINATION_PAGE_SIZE_SELECTOR}
-            quickFilterText={filterText}
-            deltaRowDataMode // Only update changed rows (AgGridReact intern cache)
-            overlayNoRowsTemplate={NO_ROWS_MESSAGE}
-          />
-        </Suspense>
+        {/* <Suspense fallback={<div>Loading table ...</div>}> */}
+        <AgGridReact
+          rowData={employees}
+          columnDefs={columns}
+          domLayout='autoHeight'
+          pagination
+          paginationPageSize={PAGINATION_PAGE_SIZE}
+          paginationPageSizeSelector={PAGINATION_PAGE_SIZE_SELECTOR}
+          quickFilterText={filterText}
+          deltaRowDataMode // Only update changed rows (AgGridReact intern cache)
+          overlayNoRowsTemplate={NO_ROWS_MESSAGE}
+        />
+        {/* </Suspense> */}
       </div>
     </div>
   );
