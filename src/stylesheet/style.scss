@@ -15,9 +15,9 @@
   'layouts/menu';
 
 // 5. Components
-@import 'components/button', 'components/customModal', 'components/customAgGrid',
-  'components/loader', 'components/input', 'components/select',
-  'components/homeCard';
+@import 'components/button', 'components/customModal', 'components/loader',
+  'components/input', 'components/select', 'components/homeCard',
+  'components/error', 'components/customMaterialReactTable';
 
 // 6. Page-specific styles
 @import 'pages/home';

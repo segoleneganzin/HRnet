@@ -19,7 +19,7 @@ Les plugins JQuery ont été remplacés :<br>
 - Select : composant interne
 - Modal : [sg-modal-lib](https://www.npmjs.com/package/sg-modal-lib)
 - Date picker : [MUIDatePicker](https://mui.com/x/react-date-pickers/date-picker/)
-- Table : [AG GRid React](https://www.ag-grid.com/react-data-grid/getting-started/)
+- Table : [Material React Table](https://www.material-react-table.com/)
 
 Pour le moment, les données sont mockées (employees et departments). <br>
 Les états américains permettant de remplir les options du select sont récupérés grâce à la bibliothèque [states-us](https://www.npmjs.com/package/states-us).
@@ -41,14 +41,15 @@ Les états américains permettant de remplir les options du select sont récupé
 
 #### **UI et Stylisation :**
 
+- **[MUI](https://mui.com/)** (^6.0.0): Une bibliothèque de composants React suivant les spécifications Material Design.
 - **[MUI X Date Pickers](https://mui.com/x/react-date-pickers/)** (^7.12.1): Un ensemble de composants pour la sélection de dates et d'heures.
-- **[AG Grid React](https://www.ag-grid.com/)** (^32.0.2): Une grille de données riche en fonctionnalités pour React.
-- **[AG Grid Community](https://www.ag-grid.com/)** (^32.0.2): La version communautaire d'AG Grid, une grille de données riche en fonctionnalités pour React.
 - **[Sass](https://sass-lang.com/)** (^1.77.8): Un langage de préprocesseur qui est interprété ou compilé en feuilles de style en cascade (CSS).
+- **[Material React Table ](https://www.material-react-table.com/)** (^2.13.1): Une bibliothèque de tableaux de données pour React basée sur Material UI et TanStack Table.
 
 #### **Utilitaires :**
 
 - **[Axios](https://axios-http.com/)** (^1.7.3): Un client HTTP basé sur des promesses pour le navigateur et Node.js.
+- **[Date-Fns](https://date-fns.org/)** (^3.6.0): Une bibliothèque pour manipuler facilement des objets Date.
 - **[Day.js](https://day.js.org/)** (^1.11.12): Une alternative rapide et légère à Moment.js pour la gestion des dates.
 - **[Prop-Types](https://www.npmjs.com/package/prop-types)** (^15.8.1): Vérification des types à l'exécution pour les props React et les objets similaires.
 - **[React Hook Form](https://react-hook-form.com/)** (^7.52.2): Une bibliothèque de formulaires performante, flexible et extensible pour React.
@@ -120,7 +121,7 @@ jQuery plugins have been replaced with :<br>
 - Select : internal component
 - Modal : [sg-modal-lib](https://www.npmjs.com/package/sg-modal-lib)
 - Date picker : [MUIDatePicker](https://mui.com/x/react-date-pickers/date-picker/)
-- Table : [AG GRid React](https://www.ag-grid.com/react-data-grid/getting-started/)
+- Table : [Material React Table](https://www.material-react-table.com/)
 
 Pour le moment, les données sont mockées (employees et departments). <br>
 Currently, data (employees and departments) is mocked. U.S. states for populating the select options are retrieved using the [states-us](https://www.npmjs.com/package/states-us) library.
@@ -142,14 +143,15 @@ Currently, data (employees and departments) is mocked. U.S. states for populatin
 
 #### **UI and Styling:**
 
+- **[MUI](https://mui.com/)** (^6.0.0): A library of React components based on Material Design specifications.
 - **[MUI X Date Pickers](https://mui.com/x/react-date-pickers/)** (^7.12.1): A set of components for date and time picking.
-- **[AG Grid React](https://www.ag-grid.com/)** (^32.0.2): A feature-rich data grid for React.
-- **[AG Grid Community](https://www.ag-grid.com/)** (^32.0.2): The community version of AG Grid, a feature-rich data grid for React.
 - **[Sass](https://sass-lang.com/)** (^1.77.8): A preprocessor scripting language that is interpreted or compiled into Cascading Style Sheets (CSS).
+- **[Material React Table ](https://www.material-react-table.com/)** (^2.13.1): A data table library for React based on Material UI and TanStack Table.
 
 #### **Utilities:**
 
 - **[Axios](https://axios-http.com/)** (^1.7.3): A promise-based HTTP client for the browser and Node.js.
+- **[Date-Fns](https://date-fns.org/)** (^3.6.0): A library for easy manipulation of Date objects.
 - **[Day.js](https://day.js.org/)** (^1.11.12): A fast and lightweight alternative to Moment.js for date handling.
 - **[Prop-Types](https://www.npmjs.com/package/prop-types)** (^15.8.1): Runtime type checking for React props and similar objects.
 - **[React Hook Form](https://react-hook-form.com/)** (^7.52.2): A performant, flexible, and extensible forms library for React.

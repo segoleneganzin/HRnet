@@ -1,18 +1,21 @@
 .header {
   align-items: center;
-  background-color: $second-brand-color;
+  background-color: $third-brand-color;
   display: flex;
   gap: 10px;
   padding: 20px 10px;
   &__img {
     height: 50px;
   }
-  @include min-media-breakpoint($breakpoint-mobileXS) {
+  @include min-media-breakpoint($breakpoint-mobile-xs) {
     gap: 30px;
   }
-  @include min-media-breakpoint($breakpoint-mobileXl) {
+  @include min-media-breakpoint($breakpoint-mobile-md) {
     border-radius: $large-radius;
     margin: 10px;
     padding: 10px;
+  }
+  @include min-media-breakpoint($breakpoint-tablet) {
+    padding: 10px 15px;
   }
 }

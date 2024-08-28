@@ -14,7 +14,7 @@ import { colDefs } from '../utils/tables/employeesColDefs';
 import { useMemo } from 'react';
 
 /**
- * Component that displays a table of employees using ag-Grid.
+ * Component that displays a table of employees using material-react-table (Material UI + TanStack Table).
  * It connects to the Redux store to retrieve employee data and handles different
  * states of data fetching (loading, error, and success). It includes a filter
  * input to search through the employee list and supports pagination.
@@ -38,6 +38,12 @@ const EmployeeListTable = () => {
     enableDensityToggle: false,
     enableFullScreenToggle: false,
     enableStickyHeader: true,
+    renderEmptyRowsFallback: () => (
+      <Error errorMessage={'No employee to display'} />
+    ),
+    muiPaginationProps: {
+      rowsPerPageOptions: [5, 10, 25, 50, 100],
+    },
   });
 
   // Render different UI based on the employees status
@@ -51,7 +57,9 @@ const EmployeeListTable = () => {
 
   return (
     <div className='current-employee__table-container'>
+      {/* <ThemeProvider theme={tableTheme}> */}
       <MaterialReactTable table={table} />
+      {/* </ThemeProvider> */}
     </div>
   );
 };

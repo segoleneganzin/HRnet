@@ -1,12 +1,12 @@
 .footer {
   @include flex-col;
   align-items: center;
-  background-color: $second-brand-color;
+  background-color: $third-brand-color;
   gap: 10px;
   padding: 20px;
   text-align: center;
 
-  @include min-media-breakpoint($breakpoint-mobileXl) {
+  @include min-media-breakpoint($breakpoint-mobile-md) {
     border-radius: $large-radius;
     margin: 10px;
     padding: 10px;

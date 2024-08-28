@@ -1,6 +1,6 @@
 import { format } from 'date-fns';
 
-// columns properties to render into EmployeeListTable (AgGridReact)
+// columns properties to render into EmployeeListTable (MaterialReactTable )
 export const colDefs = [
   {
     accessorKey: 'firstName',
@@ -15,24 +15,28 @@ export const colDefs = [
   {
     accessorKey: 'startDate',
     header: 'Start Date',
-    size: 120,
+    size: 100,
+    accessorFn: (row) => format(new Date(row.startDate), 'MM/dd/yyyy'),
     Cell: ({ cell }) => format(cell.getValue(), 'MM/dd/yyyy'),
+    filterFn: 'includesString',
   },
   {
     accessorKey: 'department',
     header: 'Department',
-    size: 150,
+    size: 120,
   },
   {
     accessorKey: 'birth',
     header: 'Date of Birth',
-    size: 150,
+    size: 100,
+    accessorFn: (row) => format(new Date(row.birth), 'MM/dd/yyyy'),
     Cell: ({ cell }) => format(cell.getValue(), 'MM/dd/yyyy'),
+    filterFn: 'includesString',
   },
   {
     accessorKey: 'street',
     header: 'Street',
-    size: 150,
+    size: 200,
   },
   {
     accessorKey: 'city',
@@ -42,7 +46,7 @@ export const colDefs = [
   {
     accessorKey: 'state',
     header: 'State',
-    size: 150,
+    size: 50,
   },
   {
     accessorKey: 'zipCode',

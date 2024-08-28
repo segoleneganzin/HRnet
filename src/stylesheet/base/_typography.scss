@@ -5,17 +5,12 @@
 
 /****************************************************** COLORS */
 body,
-a,
-.ag-header-cell-text,
-.ag-paging-panel,
-.ag-icon {
+a {
   color: $text-color;
 }
 
-.header__titles,
-.menu__item-link,
-.footer,
-.btn {
+.btn,
+.section__title {
   color: $third-brand-color;
 }
 
@@ -25,13 +20,8 @@ a,
   }
 }
 
-.header__titles,
-.footer,
-.ag-picker-field-display {
-  color: $third-brand-color;
-}
-
-.error-message {
+.error-message,
+.form-data__error-message {
   color: $error-color;
 }
 
@@ -39,7 +29,6 @@ a,
 body,
 .btn,
 .sg-modal-lib__btn,
-.ag-cell,
 .select,
 .input {
   font-family: 'Nunito', sans-serif;
@@ -67,9 +56,6 @@ h1,
   font-size: 0.9rem;
 }
 
-.ag-paging-page-size,
-.ag-paging-row-summary-panel,
-.ag-paging-page-summary-panel,
 .footer {
   font-size: 0.8rem;
 }

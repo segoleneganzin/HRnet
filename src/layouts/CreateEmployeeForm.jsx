@@ -60,102 +60,102 @@ const CreateEmployeeForm = ({ toggleModal }) => {
   return (
     <form
       onSubmit={handleSubmit(formSubmit)}
-      className={'form create-employee__form'}
+      className={'form create-employee-form'}
       id={'createEmployeeForm'}
       noValidate
     >
-      <FormData
-        field={{ name: 'firstName', label: 'First Name' }}
-        errors={errors}
-      >
-        <Input
-          field={{ name: 'firstName' }}
-          register={register}
-          fieldErrorClass={fieldErrorClass}
-        />
-      </FormData>
-
-      <FormData
-        field={{ name: 'lastName', label: 'Last Name' }}
-        errors={errors}
-      >
-        <Input
-          field={{ name: 'lastName' }}
-          register={register}
-          fieldErrorClass={fieldErrorClass}
-        />
-      </FormData>
-
-      <FormData
-        field={{ name: 'birth', label: 'Date of Birth' }}
-        errors={errors}
-      >
-        <DatePicker
-          control={control}
-          field={{
-            name: 'birth',
-          }}
-          fieldErrorClass={fieldErrorClass}
-        />
-      </FormData>
-
-      <FormData
-        field={{ name: 'startDate', label: 'Start Date' }}
-        errors={errors}
-      >
-        <DatePicker
-          control={control}
-          field={{
-            name: 'startDate',
-          }}
-          fieldErrorClass={fieldErrorClass}
-        />
-      </FormData>
-
-      {/* Address Fieldset */}
-      <fieldset className={'address'}>
-        <legend>Address</legend>
-
-        <FormData field={{ name: 'street', label: 'Street' }} errors={errors}>
-          <Input
-            field={{ name: 'street' }}
-            register={register}
-            fieldErrorClass={fieldErrorClass}
-          />
-        </FormData>
-
-        <FormData field={{ name: 'city', label: 'City' }} errors={errors}>
-          <Input
-            field={{ name: 'city' }}
-            register={register}
-            fieldErrorClass={fieldErrorClass}
-          />
-        </FormData>
-
-        <FormData field={{ name: 'state', label: 'State' }} errors={errors}>
-          <Select
-            field={{
-              name: 'state',
-              defaultValue: 'Choose a state',
-              options: usStates,
-            }}
-            register={register}
-            fieldErrorClass={fieldErrorClass}
-          />
-        </FormData>
-
-        <FormData
-          field={{ name: 'zipCode', label: 'Zip Code' }}
-          errors={errors}
-        >
-          <Input
-            field={{ name: 'zipCode', type: 'number', pattern: /^\d{5}$/ }} // 5 numbers only
-            register={register}
-            fieldErrorClass={fieldErrorClass}
-          />
-        </FormData>
-      </fieldset>
-
+      <div className='create-employee-form__fields-container'>
+        <div className='create-employee-form__section'>
+          <FormData
+            field={{ name: 'firstName', label: 'First Name' }}
+            errors={errors}
+          >
+            <Input
+              field={{ name: 'firstName' }}
+              register={register}
+              fieldErrorClass={fieldErrorClass}
+            />
+          </FormData>
+          <FormData
+            field={{ name: 'lastName', label: 'Last Name' }}
+            errors={errors}
+          >
+            <Input
+              field={{ name: 'lastName' }}
+              register={register}
+              fieldErrorClass={fieldErrorClass}
+            />
+          </FormData>
+          <FormData
+            field={{ name: 'birth', label: 'Date of Birth' }}
+            errors={errors}
+          >
+            <DatePicker
+              control={control}
+              field={{
+                name: 'birth',
+              }}
+              errors={errors}
+            />
+          </FormData>
+          <FormData
+            field={{ name: 'startDate', label: 'Start Date' }}
+            errors={errors}
+          >
+            <DatePicker
+              control={control}
+              field={{
+                name: 'startDate',
+              }}
+              errors={errors}
+            />
+          </FormData>
+        </div>
+        <div className='create-employee-form__section'>
+          {/* Address Fieldset */}
+          <fieldset className={'create-employee-form__address'}>
+            <legend>Address</legend>
+            <FormData
+              field={{ name: 'street', label: 'Street' }}
+              errors={errors}
+            >
+              <Input
+                field={{ name: 'street' }}
+                register={register}
+                fieldErrorClass={fieldErrorClass}
+              />
+            </FormData>
+            <FormData field={{ name: 'city', label: 'City' }} errors={errors}>
+              <Input
+                field={{ name: 'city' }}
+                register={register}
+                fieldErrorClass={fieldErrorClass}
+              />
+            </FormData>
+            <FormData field={{ name: 'state', label: 'State' }} errors={errors}>
+              <Select
+                field={{
+                  name: 'state',
+                  defaultValue: 'Choose a state',
+                  options: usStates,
+                }}
+                register={register}
+                fieldErrorClass={fieldErrorClass}
+              />
+            </FormData>
+            <FormData
+              field={{ name: 'zipCode', label: 'Zip Code' }}
+              errors={errors}
+            >
+              <Input
+                field={{ name: 'zipCode', type: 'number', pattern: /^\d{5}$/ }} // 5 numbers only
+                register={register}
+                fieldErrorClass={fieldErrorClass}
+              />
+            </FormData>
+          </fieldset>
+        </div>
+      </div>
       <FormData
         field={{ name: 'department', label: 'Department' }}
         errors={errors}
@@ -170,7 +170,7 @@ const CreateEmployeeForm = ({ toggleModal }) => {
           fieldErrorClass={fieldErrorClass}
         />
       </FormData>
-      <Button text='Create' className='bold' />
+      <Button text='Create' className='bold create-employee-form__btn' />
     </form>
   );
 };

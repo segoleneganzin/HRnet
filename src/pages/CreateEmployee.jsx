@@ -26,9 +26,9 @@ const CreateEmployee = () => {
     <PageLayout pageTitle={'Create employee'} mainClassName={'create-employee'}>
       <SectionLayout title={'Create employee'}>
         <>
-          <button onClick={toggleModal} className='btn'>
+          {/* <button onClick={toggleModal} className='btn'>
             Test modal
-          </button>
+          </button> */}
 
           <CreateEmployeeForm toggleModal={toggleModal} />
 
