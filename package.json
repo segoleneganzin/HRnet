@@ -32,7 +32,7 @@
     "react-router-dom": "^6.26.0",
     "redux-persist": "^6.0.0",
     "sass": "^1.77.8",
-    "sg-modal-lib": "^1.0.4",
+    "sg-modal-lib": "^1.0.5",
     "states-us": "^1.0.4",
     "uuid": "^10.0.0"
   },

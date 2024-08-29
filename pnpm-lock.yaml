@@ -54,8 +54,8 @@ importers:
         specifier: ^1.77.8
         version: 1.77.8
       sg-modal-lib:
-        specifier: ^1.0.4
-        version: 1.0.4(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: ^1.0.5
+        version: 1.0.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       states-us:
         specifier: ^1.0.4
         version: 1.0.4
@@ -1744,8 +1744,8 @@ packages:
     resolution: {integrity: sha512-7PGFlmtwsEADb0WYyvCMa1t+yke6daIG4Wirafur5kcf+MhUnPms1UeR0CKQdTZD81yESwMHbtn+TR+dMviakQ==}
     engines: {node: '>= 0.4'}
 
-  sg-modal-lib@1.0.4:
-    resolution: {integrity: sha512-cfor9EYNfD60faVv882lPBG+OpVDvDf55rhNcMGMrmdNyAOT+lzbEPEoa0oMMqcwy5rvWBLcNPzRMwUiYRyFyg==}
+  sg-modal-lib@1.0.5:
+    resolution: {integrity: sha512-ODgpTf1a0zIblV9uTIGK/fFbmgshLzek9e9jGL5aXLyWccnOE6C5e77hYPDtTYzN/RG0SlcitWIy7yCxM6ILcA==}
     peerDependencies:
       react: ^18.3.1
       react-dom: ^18.3.1
@@ -3698,7 +3698,7 @@ snapshots:
       functions-have-names: 1.2.3
       has-property-descriptors: 1.0.2
 
-  sg-modal-lib@1.0.4(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
+  sg-modal-lib@1.0.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
     dependencies:
       prop-types: 15.8.1
       react: 18.3.1
