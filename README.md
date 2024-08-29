@@ -2,7 +2,7 @@
 
 ## Faire passer une librairie jQuery vers React
 
-![Visuel du site](src/assets/img/screenshot.png)
+![Visuel du site](src/assets/img/screenshot3.png)
 
 ### 📚 Présentation
 
