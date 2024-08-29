@@ -105,7 +105,7 @@ Les états américains permettant de remplir les options du select sont récupé
 
 ## Migrating a jQuery Library to React
 
-![Visuel du site](src/assets/screenshot.png)
+![Visuel du site](src/assets/img/screenshot3.png)
 
 ### 📚 Overview
 
