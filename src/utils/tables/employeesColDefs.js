@@ -1,5 +1,3 @@
-import { format } from 'date-fns';
-
 // columns properties to render into EmployeeListTable (MaterialReactTable )
 export const colDefs = [
   {
@@ -16,9 +14,6 @@ export const colDefs = [
     accessorKey: 'startDate',
     header: 'Start Date',
     size: 100,
-    accessorFn: (row) => format(new Date(row.startDate), 'MM/dd/yyyy'),
-    Cell: ({ cell }) => format(cell.getValue(), 'MM/dd/yyyy'),
-    filterFn: 'includesString',
   },
   {
     accessorKey: 'department',
@@ -29,9 +24,6 @@ export const colDefs = [
     accessorKey: 'birth',
     header: 'Date of Birth',
     size: 100,
-    accessorFn: (row) => format(new Date(row.birth), 'MM/dd/yyyy'),
-    Cell: ({ cell }) => format(cell.getValue(), 'MM/dd/yyyy'),
-    filterFn: 'includesString',
   },
   {
     accessorKey: 'street',

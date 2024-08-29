@@ -49,9 +49,10 @@ const CreateEmployeeForm = ({ toggleModal }) => {
     const newEmployee = {
       id: uuidv4(), // Generate a unique ID for the new employee
       ...formData,
-      birth: dayjs(formData.birth).toISOString(),
-      startDate: dayjs(formData.startDate).toISOString(),
+      birth: dayjs(formData.birth).format('MM/DD/YYYY'),
+      startDate: dayjs(formData.startDate).format('MM/DD/YYYY'),
     };
+    console.log(newEmployee);
     dispatch(addEmployee(newEmployee));
     toggleModal();
     reset(); // reinitialize form when addEmployee succeeded
