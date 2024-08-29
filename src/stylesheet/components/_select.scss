@@ -9,11 +9,11 @@
   transition: all 0.2s ease-in-out;
   width: 100%;
   &:focus {
-    outline: 2px solid $principal-brand-color;
+    outline: 2px solid $third-color;
   }
   &:hover {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    border-color: $principal-brand-color;
+    border-color: $third-color;
   }
 }
 .field--error {

@@ -8,6 +8,6 @@
     width: fit-content;
   }
   @include min-media-breakpoint($breakpoint-tablet) {
-    gap: $base-gap;
+    gap: 40px;
   }
 }

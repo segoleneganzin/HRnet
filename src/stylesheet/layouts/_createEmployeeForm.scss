@@ -1,6 +1,6 @@
 .create-employee-form {
   @include flex-col;
-  background-color: $third-brand-color;
+  background-color: $primary-color;
   gap: 20px;
   padding: 20px;
   &__fields-container,
@@ -10,7 +10,7 @@
   }
   &__address {
     @include flex-col;
-    border-color: $second-brand-color;
+    border-color: $second-color;
     border-radius: $small-radius;
     gap: 16px;
   }

@@ -27,8 +27,10 @@ const EmployeeListTable = () => {
   const employeesStatus = useSelector((state) => selectEmployeesStatus(state));
   const employeesError = useSelector((state) => selectEmployeesError(state));
 
+  // Memoize columns definition
   const columns = useMemo(() => colDefs, []);
 
+  // Memoize table configuration
   const table = useMaterialReactTable({
     columns,
     data: employees,

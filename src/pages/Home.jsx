@@ -17,7 +17,7 @@ const Home = () => (
       <div className='home__content'>
         <HomeCard
           icon={currentEmployeesIcon}
-          title={'Current employees'}
+          title={'CURRENT EMPLOYEES'}
           description={
             'View and manage the list of all current employees. Access detailed information, filter, search, and sort employee records easily'
           }
@@ -26,7 +26,7 @@ const Home = () => (
         />
         <HomeCard
           icon={createEmployeeIcon}
-          title={'Create employees'}
+          title={'CREATE EMPLOYEE'}
           description={
             'Add a new employee to the system. Fill out the form to enter all necessary details and onboard new team members effortlessly.'
           }

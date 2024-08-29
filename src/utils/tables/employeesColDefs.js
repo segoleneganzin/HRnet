@@ -43,6 +43,6 @@ export const colDefs = [
   {
     accessorKey: 'zipCode',
     header: 'Zip Code',
-    size: 150,
+    size: 100,
   },
 ];

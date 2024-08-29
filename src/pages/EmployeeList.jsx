@@ -10,7 +10,7 @@ import SectionLayout from '../layouts/SectionLayout';
  */
 const EmployeeList = () => (
   <PageLayout pageTitle={'Current Employees'} mainClassName={'employee-list'}>
-    <SectionLayout title={'Current employees'}>
+    <SectionLayout title={'CURRENT EMPLOYEES'}>
       <EmployeeListTable />
     </SectionLayout>
   </PageLayout>
