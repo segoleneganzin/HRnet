@@ -1,7 +1,7 @@
 import PageLayout from '../layouts/PageLayout';
 import HomeCard from '../components/HomeCard';
-import currentEmployeesIcon from '../assets/currentEmployeesIcon.svg';
-import createEmployeeIcon from '../assets/createEmployeeIcon.svg';
+import currentEmployeesIcon from '../assets/img/currentEmployeesIcon.svg';
+import createEmployeeIcon from '../assets/img/createEmployeeIcon.svg';
 
 /**
  * Home component serves as the landing page of the application.
@@ -17,7 +17,7 @@ const Home = () => (
       <div className='home__content'>
         <HomeCard
           icon={currentEmployeesIcon}
-          title={'Current employees'}
+          title={'CURRENT EMPLOYEES'}
           description={
             'View and manage the list of all current employees. Access detailed information, filter, search, and sort employee records easily'
           }
@@ -26,7 +26,7 @@ const Home = () => (
         />
         <HomeCard
           icon={createEmployeeIcon}
-          title={'Create employees'}
+          title={'CREATE EMPLOYEE'}
           description={
             'Add a new employee to the system. Fill out the form to enter all necessary details and onboard new team members effortlessly.'
           }

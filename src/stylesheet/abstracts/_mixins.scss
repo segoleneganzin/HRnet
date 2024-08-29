@@ -12,7 +12,7 @@
 }
 
 // mixin for media queries
-@mixin media-breakpoint($breakpoint) {
+@mixin max-media-breakpoint($breakpoint) {
   @media screen and (max-width: $breakpoint) {
     @content;
   }

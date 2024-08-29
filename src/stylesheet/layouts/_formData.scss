@@ -1,4 +1,7 @@
 .form-data {
   @include flex-col;
   gap: 8px;
+  &__error-message {
+    padding-bottom: 10px;
+  }
 }

@@ -13,36 +13,47 @@ import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
  * @param {Object} props.field - The field configuration object.
  * @param {string} props.field.name - The name of the field, used for form registration.
  * @param {boolean} [props.field.isRequired=true] - Indicates if the field is required, default to `true`.
- * @param {function} [props.fieldErrorClass] - A function that returns a string with error classes based on the field name.
+ * @param {function} props.errors - The errors object to manage UI.
  * @returns {JSX.Element}
  */
-const DatePicker = ({ control, field, fieldErrorClass }) => {
+const DatePicker = ({ control, field, errors }) => {
   const { name, isRequired = true } = field;
+
+  const inputStyles = {
+    borderRadius: '4px',
+    border: errors[name] ? '2px solid rgb(233, 113, 113)' : '1px solid #e8e8e8',
+  };
 
   return (
     // provides the necessary methods for date manipulation and formatting
-    <LocalizationProvider dateAdapter={AdapterDayjs}>
-      <Controller
-        control={control}
-        name={name}
-        rules={{ required: isRequired }}
-        render={({ field: { onChange } }) => (
+    <Controller
+      control={control}
+      name={name}
+      defaultValue={null}
+      rules={{ required: isRequired }}
+      render={({ field: { onChange, value } }) => (
+        <LocalizationProvider dateAdapter={AdapterDayjs}>
           <MUIDatePicker
             name={name}
-            className={'input ' + fieldErrorClass(name)}
+            className={'input '}
             format='MM/DD/YYYY'
+            value={value}
             onChange={(date) => {
-              onChange(date && dayjs(date));
+              onChange(dayjs(date));
             }}
             slotProps={{
               textField: {
                 id: name,
+                sx: inputStyles,
+              },
+              actionBar: {
+                actions: ['cancel', 'today', 'accept'],
               },
             }}
           />
-        )}
-      />
-    </LocalizationProvider>
+        </LocalizationProvider>
+      )}
+    />
   );
 };
 DatePicker.propTypes = {
@@ -51,6 +62,6 @@ DatePicker.propTypes = {
     name: PropTypes.string.isRequired,
     isRequired: PropTypes.bool,
   }).isRequired,
-  fieldErrorClass: PropTypes.func,
+  errors: PropTypes.object.isRequired,
 };
 export default DatePicker;

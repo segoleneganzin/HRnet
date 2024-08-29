@@ -1,22 +1,20 @@
-$principal-brand-color: #5a6e0c;
-$second-brand-color: #babe98;
-$third-brand-color: rgb(17, 73, 17);
+$primary-color: #114911;
+$second-color: #babe98;
+$third-color: #5a6e0c;
+$extra-color: #ed7f10;
 $light-color: #e8e8e8;
-
 $text-color: $light-color;
-$error-color: rgb(233, 113, 113);
+$error-color: #e97171;
 
 /// *********************** BREAKPOINTS
-$breakpoint-mobileXS: 360px;
-$breakpoint-mobile: 425px;
-$breakpoint-mobileXl: 580px;
+$breakpoint-mobile-xs: 360px;
+$breakpoint-mobile-md: 585px;
 $breakpoint-tablet: 768px;
+$breakpoint-desktop: 1024px;
+$breakpoint-desktop-md: 1440px;
 
 /// *********************** RADIUS
 $small-radius: 5px;
 $medium-radius: 10px;
 $large-radius: 100px;
 $full-radius: 100%;
-
-/// *********************** RADIUS
-$base-gap: 50px;

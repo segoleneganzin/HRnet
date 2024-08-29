@@ -1,22 +1,43 @@
-.create-employee__form {
+.create-employee-form {
   @include flex-col;
-  background-color: $third-brand-color;
-  gap: 16px;
+  background-color: $primary-color;
+  gap: 20px;
   padding: 20px;
-  .address {
+  &__fields-container,
+  &__section {
     @include flex-col;
-    border-color: $second-brand-color;
+    gap: 16px;
+  }
+  &__address {
+    @include flex-col;
+    border-color: $second-color;
     border-radius: $small-radius;
     gap: 16px;
   }
-  .btn {
+  &__btn {
     margin-top: 20px;
     text-transform: uppercase;
   }
-  @include min-media-breakpoint($breakpoint-mobileXl) {
+  @include min-media-breakpoint($breakpoint-mobile-md) {
     border-radius: $small-radius;
     margin: auto;
     padding: 30px;
     width: 500px;
+  }
+
+  @include min-media-breakpoint($breakpoint-desktop) {
+    width: 80%;
+    &__fields-container {
+      align-items: center;
+      flex-direction: row;
+      justify-content: center;
+    }
+    &__section {
+      width: 50%;
+    }
+  }
+
+  @include min-media-breakpoint($breakpoint-desktop-md) {
+    width: 60%;
   }
 }

@@ -40,7 +40,7 @@ const Menu = () => {
                 className='menu__item-link'
                 onClick={hamburgerOpen ? toggleResponsiveMenu : null}
               >
-                Home
+                HOME
               </Link>
             </li>
             {currentPath !== '/employee-list' && (
@@ -50,7 +50,7 @@ const Menu = () => {
                   className='menu__item-link'
                   onClick={hamburgerOpen ? toggleResponsiveMenu : null}
                 >
-                  Current Employees
+                  CURRENT EMPLOYEES
                 </Link>
               </li>
             )}
@@ -61,13 +61,17 @@ const Menu = () => {
                   className='menu__item-link'
                   onClick={hamburgerOpen ? toggleResponsiveMenu : null}
                 >
-                  Create Employee
+                  CREATE EMPLOYEE
                 </Link>
               </li>
             )}
           </ul>
         </nav>
-        <label className='menu__burger' htmlFor='burger'>
+        <label
+          className='menu__burger'
+          htmlFor='burger'
+          aria-label={hamburgerOpen ? 'close menu' : 'open menu'}
+        >
           <input
             ref={checkBurger}
             type='checkbox'

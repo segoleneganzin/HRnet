@@ -1,8 +1,8 @@
-import { useState } from 'react';
 import { useSelector } from 'react-redux';
-import { AgGridReact } from 'ag-grid-react'; // React Data Grid Component
-import 'ag-grid-community/styles/ag-grid.css'; // Mandatory CSS required by the Data Grid
-import 'ag-grid-community/styles/ag-theme-quartz.css'; // Optional Theme applied to the Data Grid
+import {
+  MaterialReactTable,
+  useMaterialReactTable,
+} from 'material-react-table';
 import {
   selectEmployees,
   selectEmployeesError,
@@ -11,10 +11,10 @@ import {
 import Loader from '../components/Loader';
 import Error from '../components/Error';
 import { colDefs } from '../utils/tables/employeesColDefs';
+import { useMemo } from 'react';
 
 /**
- * Component that displays a table of employees using ag-Grid.
- *
+ * Component that displays a table of employees using material-react-table (Material UI + TanStack Table).
  * It connects to the Redux store to retrieve employee data and handles different
  * states of data fetching (loading, error, and success). It includes a filter
  * input to search through the employee list and supports pagination.
@@ -22,29 +22,31 @@ import { colDefs } from '../utils/tables/employeesColDefs';
  * @returns {JSX.Element}
  */
 const EmployeeListTable = () => {
-  const pagination = true;
-  const paginationPageSize = 10;
-  const paginationPageSizeSelector = [5, 10, 25, 50, 100];
-
-  const [filterText, setFilterText] = useState('');
-
   // Retrieve data from the Redux store
   const employees = useSelector((state) => selectEmployees(state));
   const employeesStatus = useSelector((state) => selectEmployeesStatus(state));
   const employeesError = useSelector((state) => selectEmployeesError(state));
 
-  /**
-   * Updates the filter text state when the input value changes.
-   * @param {React.ChangeEvent<HTMLInputElement>} e - The change event from the input.
-   */
-  const onFilterTextChange = (e) => {
-    setFilterText(e.target.value);
-  };
+  // Memoize columns definition
+  const columns = useMemo(() => colDefs, []);
 
-  // Message to display if no employees in the table (overlayNoRowsTemplate)
-  const noRows = `<p>
-      No data available in table
-    </p>`;
+  // Memoize table configuration
+  const table = useMaterialReactTable({
+    columns,
+    data: employees,
+    enableColumnActions: false,
+    enableColumnFilters: false,
+    enableHiding: false,
+    enableDensityToggle: false,
+    enableFullScreenToggle: false,
+    enableStickyHeader: true,
+    renderEmptyRowsFallback: () => (
+      <Error errorMessage={'No employee to display'} />
+    ),
+    muiPaginationProps: {
+      rowsPerPageOptions: [5, 10, 25, 50, 100],
+    },
+  });
 
   // Render different UI based on the employees status
   if (employeesStatus === 'loading') {
@@ -57,27 +59,9 @@ const EmployeeListTable = () => {
 
   return (
     <div className='current-employee__table-container'>
-      <input
-        id='filter'
-        type='text'
-        placeholder='Filter...'
-        value={filterText}
-        onChange={onFilterTextChange}
-        className='current-employee__table-filter input'
-      />
-      <div className='ag-theme-quartz current-employee__table'>
-        <AgGridReact
-          rowData={employees}
-          columnDefs={colDefs}
-          domLayout='autoHeight'
-          pagination={pagination}
-          paginationPageSize={paginationPageSize}
-          paginationPageSizeSelector={paginationPageSizeSelector}
-          quickFilterText={filterText}
-          deltaRowDataMode={true} // Only update changed rows (AgGridReact intern cache)
-          overlayNoRowsTemplate={noRows}
-        />
-      </div>
+      {/* <ThemeProvider theme={tableTheme}> */}
+      <MaterialReactTable table={table} />
+      {/* </ThemeProvider> */}
     </div>
   );
 };

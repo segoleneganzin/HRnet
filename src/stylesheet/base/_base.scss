@@ -12,7 +12,7 @@ html {
 }
 
 body {
-  background-color: $principal-brand-color;
+  background-color: $light-color;
 }
 
 /**
@@ -27,8 +27,11 @@ body {
 main {
   @include flex-col;
   flex: 1;
-  gap: $base-gap;
-  margin: 27px 0px;
+  gap: 20px;
+  margin: 15px 0px;
+  @include min-media-breakpoint($breakpoint-tablet) {
+    margin: 15px 0px;
+  }
 }
 
 a {

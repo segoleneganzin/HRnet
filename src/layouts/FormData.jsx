@@ -27,7 +27,7 @@ const FormData = ({ field, errors, children }) => {
       {children}
 
       {hasError && (
-        <p className={'error-message'}>
+        <p className={'form-data__error-message'}>
           {errors[name]?.type === 'required' &&
             `Please enter a ${label.toLowerCase()}`}
           {errors[name]?.type === 'pattern' && 'Invalid field'}
