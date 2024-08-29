@@ -49,10 +49,9 @@ const CreateEmployeeForm = ({ toggleModal }) => {
     const newEmployee = {
       id: uuidv4(), // Generate a unique ID for the new employee
       ...formData,
-      birth: dayjs(formData.birth).format('MM/DD/YYYY'),
+      dateOfBirth: dayjs(formData.dateOfBirth).format('MM/DD/YYYY'),
       startDate: dayjs(formData.startDate).format('MM/DD/YYYY'),
     };
-    console.log(newEmployee);
     dispatch(addEmployee(newEmployee));
     toggleModal();
     reset(); // reinitialize form when addEmployee succeeded
@@ -88,13 +87,13 @@ const CreateEmployeeForm = ({ toggleModal }) => {
             />
           </FormData>
           <FormData
-            field={{ name: 'birth', label: 'Date of Birth' }}
+            field={{ name: 'dateOfBirth', label: 'Date of birth' }}
             errors={errors}
           >
             <DatePicker
               control={control}
               field={{
-                name: 'birth',
+                name: 'dateOfBirth',
               }}
               errors={errors}
             />

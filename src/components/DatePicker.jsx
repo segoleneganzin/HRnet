@@ -26,16 +26,18 @@ const DatePicker = ({ control, field, errors }) => {
 
   return (
     // provides the necessary methods for date manipulation and formatting
-    <LocalizationProvider dateAdapter={AdapterDayjs}>
-      <Controller
-        control={control}
-        name={name}
-        rules={{ required: isRequired }}
-        render={({ field: { onChange } }) => (
+    <Controller
+      control={control}
+      name={name}
+      defaultValue={null}
+      rules={{ required: isRequired }}
+      render={({ field: { onChange, value } }) => (
+        <LocalizationProvider dateAdapter={AdapterDayjs}>
           <MUIDatePicker
             name={name}
             className={'input '}
             format='MM/DD/YYYY'
+            value={value}
             onChange={(date) => {
               onChange(dayjs(date));
             }}
@@ -44,11 +46,14 @@ const DatePicker = ({ control, field, errors }) => {
                 id: name,
                 sx: inputStyles,
               },
+              actionBar: {
+                actions: ['cancel', 'today', 'accept'],
+              },
             }}
           />
-        )}
-      />
-    </LocalizationProvider>
+        </LocalizationProvider>
+      )}
+    />
   );
 };
 DatePicker.propTypes = {

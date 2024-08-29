@@ -21,7 +21,7 @@ export const colDefs = [
     size: 120,
   },
   {
-    accessorKey: 'birth',
+    accessorKey: 'dateOfBirth',
     header: 'Date of Birth',
     size: 100,
   },
