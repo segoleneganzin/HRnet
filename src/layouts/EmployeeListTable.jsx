@@ -58,7 +58,7 @@ const EmployeeListTable = () => {
   }
 
   return (
-    <div className='current-employee__table-container'>
+    <div className='employee-list__table-container'>
       {/* <ThemeProvider theme={tableTheme}> */}
       <MaterialReactTable table={table} />
       {/* </ThemeProvider> */}
