@@ -1,4 +1,4 @@
-# HRnet
+# HRnet (English version below)
 
 ## Faire passer une librairie jQuery vers React
 
