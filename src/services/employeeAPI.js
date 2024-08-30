@@ -1,19 +1,11 @@
-import axios from 'axios';
-
 /**
- * Function to fetch employees data from a local JSON file.
+ * Function mock up to fetch  employees data.
  * Must be updated to link to api
- * @returns {Promise<Object>} - Promise resolving to an array of employees
- * @throws {Error} - Throws an error if no employee founded
+ * @throws {Error}
  */
 export const getEmployees = async () => {
   try {
-    const res = await axios.get(window.location.origin + '/mockEmployees.json');
-    const datas = res.data;
-    if (!datas) {
-      throw new Error('No employee found');
-    }
-    return { body: datas };
+    console.log('Have to add function to fetch employees');
   } catch (error) {
     throw new Error(error);
   }
