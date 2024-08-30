@@ -2,8 +2,8 @@
   padding: 0 10px;
   &__content {
     @include flex-col;
-    gap: 90px;
-    margin: 40px auto;
+    gap: 100px;
+    margin: 60px auto;
     @include min-media-breakpoint($breakpoint-tablet) {
       flex-direction: row;
       gap: 50px;

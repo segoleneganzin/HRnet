@@ -114,7 +114,7 @@ const CreateEmployeeForm = ({ toggleModal }) => {
         <div className='create-employee-form__section'>
           {/* Address Fieldset */}
           <fieldset className={'create-employee-form__address'}>
-            <legend>Address</legend>
+            <legend className='fieldset-legend'>Address</legend>
             <FormData
               field={{ name: 'street', label: 'Street' }}
               errors={errors}

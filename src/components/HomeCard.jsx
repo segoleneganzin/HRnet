@@ -14,7 +14,9 @@ import { Link } from 'react-router-dom';
  */
 const HomeCard = ({ icon, title, description, link, linkText }) => (
   <article className='home-card'>
-    <img src={icon} alt={`${title} icon`} className='home-card__icon' />
+    <div className='home-card__icon-bg'>
+      <img src={icon} alt={`${title} icon`} className='home-card__icon' />
+    </div>
 
     <h3 className='home-card__title title'>{title}</h3>
 

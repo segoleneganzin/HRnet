@@ -1,4 +1,4 @@
-# HRnet
+# HRnet (English version below)
 
 ## Faire passer une librairie jQuery vers React
 
@@ -48,8 +48,6 @@ Les états américains permettant de remplir les options du select sont récupé
 
 #### **Utilitaires :**
 
-- **[Axios](https://axios-http.com/)** (^1.7.3): Un client HTTP basé sur des promesses pour le navigateur et Node.js.
-- **[Date-Fns](https://date-fns.org/)** (^3.6.0): Une bibliothèque pour manipuler facilement des objets Date.
 - **[Day.js](https://day.js.org/)** (^1.11.12): Une alternative rapide et légère à Moment.js pour la gestion des dates.
 - **[Prop-Types](https://www.npmjs.com/package/prop-types)** (^15.8.1): Vérification des types à l'exécution pour les props React et les objets similaires.
 - **[React Hook Form](https://react-hook-form.com/)** (^7.52.2): Une bibliothèque de formulaires performante, flexible et extensible pour React.
@@ -105,7 +103,7 @@ Les états américains permettant de remplir les options du select sont récupé
 
 ## Migrating a jQuery Library to React
 
-![Visuel du site](src/assets/screenshot.png)
+![Visuel du site](src/assets/img/screenshot3.png)
 
 ### 📚 Overview
 
@@ -136,7 +134,7 @@ Currently, data (employees and departments) is mocked. U.S. states for populatin
 
 - **[React](https://reactjs.org/)** (^18.3.1): A JavaScript library for building user interfaces.
 - **[React-DOM](https://reactjs.org/docs/react-dom.html)** (^18.3.1): The package that serves as the entry point for the DOM-related rendering paths.
-- **[Redux](https://redux.js.org/)** (^2.2.7): A predictable state container for JavaScript apps.
+- **[Redux](https://redux.js.org/)** (^2.2.7): A predifabble state container for JavaScript apps.
 - **[React-Redux](https://react-redux.js.org/)** (^9.1.2): Official React bindings for Redux.
 - **[React Router DOM](https://reactrouter.com/web/guides/quick-start)** (^6.26.0): Declarative routing for React.js.
 - **[@reduxjs/toolkit](https://redux-toolkit.js.org/)** (^2.2.7): A set of tools to simplify the use of Redux and improve workflows.
@@ -150,8 +148,6 @@ Currently, data (employees and departments) is mocked. U.S. states for populatin
 
 #### **Utilities:**
 
-- **[Axios](https://axios-http.com/)** (^1.7.3): A promise-based HTTP client for the browser and Node.js.
-- **[Date-Fns](https://date-fns.org/)** (^3.6.0): A library for easy manipulation of Date objects.
 - **[Day.js](https://day.js.org/)** (^1.11.12): A fast and lightweight alternative to Moment.js for date handling.
 - **[Prop-Types](https://www.npmjs.com/package/prop-types)** (^15.8.1): Runtime type checking for React props and similar objects.
 - **[React Hook Form](https://react-hook-form.com/)** (^7.52.2): A performant, flexible, and extensible forms library for React.
