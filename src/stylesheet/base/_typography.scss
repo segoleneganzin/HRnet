@@ -7,7 +7,9 @@ a {
 }
 
 .btn,
-.section__title {
+.section__title,
+.label,
+.fieldset-legend {
   color: $primary-color;
 }
 
@@ -37,10 +39,6 @@ body,
 }
 
 /***************************************** font size */
-body,
-h2 {
-  font-size: 0.9rem;
-}
 
 h1,
 .section__title,
@@ -48,12 +46,19 @@ h1,
   font-size: 1.3rem;
 }
 
+.fieldset-legend {
+  font-size: 1rem;
+}
+body,
+h2,
+.label,
 .input,
 .select {
   font-size: 0.9rem;
 }
 
-.footer {
+.footer,
+.fab-btn__text {
   font-size: 0.8rem;
 }
 

@@ -1,0 +1,40 @@
+.fab-btn {
+  align-items: center;
+  background-color: $primary-color;
+  border: 1px solid $primary-color;
+  border-radius: 9999px;
+  color: $text-color;
+  display: inline-flex;
+  justify-content: center;
+  padding: 10px;
+  transition: all 0.2s ease;
+
+  &__icon {
+    height: 40px;
+    width: 40px;
+  }
+
+  &__text {
+    display: none;
+  }
+
+  @include min-media-breakpoint($breakpoint-mobile-md) {
+    padding: 5px 20px 5px 15px;
+
+    &:hover {
+      background-color: transparent;
+      color: $primary-color;
+    }
+
+    &__icon {
+      height: 30px;
+      width: 30px;
+    }
+
+    &__text {
+      display: block;
+      line-height: 1;
+      padding-left: 10px;
+    }
+  }
+}

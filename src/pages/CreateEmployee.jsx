@@ -1,8 +1,10 @@
 import { lazy, Suspense } from 'react';
 import { useState } from 'react';
+import FABButton from '../components/FABButton';
 import CreateEmployeeForm from '../layouts/CreateEmployeeForm';
 import PageLayout from '../layouts/PageLayout';
 import SectionLayout from '../layouts/SectionLayout';
+import currentEmployeesIcon from '../assets/img/currentEmployeesIcon.svg';
 
 const Modal = lazy(() =>
   import('sg-modal-lib').then((module) => ({ default: module.Modal }))
@@ -17,6 +19,14 @@ const Modal = lazy(() =>
 const CreateEmployee = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
+  const CustomFABButton = (
+    <FABButton
+      icon={currentEmployeesIcon}
+      text={'View employees'}
+      link='/employee-list'
+    />
+  );
+
   const toggleModal = () => {
     setIsModalOpen(!isModalOpen);
     window.scrollTo({ top: 0, behavior: 'smooth' }); // scrolls the page to the top
@@ -24,7 +34,10 @@ const CreateEmployee = () => {
 
   return (
     <PageLayout pageTitle={'Create employee'} mainClassName={'create-employee'}>
-      <SectionLayout title={'CREATE EMPLOYEE'}>
+      <SectionLayout
+        title={'CREATE EMPLOYEE'}
+        buttonComponent={CustomFABButton}
+      >
         <>
           {/* <button onClick={toggleModal} className='btn'>
             Test modal

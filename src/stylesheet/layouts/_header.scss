@@ -1,15 +1,15 @@
 .header {
-  align-items: center;
   background-color: $primary-color;
-  display: flex;
-  gap: 10px;
   padding: 20px 10px;
+  &__content {
+    align-items: center;
+    display: flex;
+    gap: 10px;
+  }
   &__img {
     height: 50px;
   }
-  @include min-media-breakpoint($breakpoint-mobile-xs) {
-    gap: 30px;
-  }
+
   @include min-media-breakpoint($breakpoint-tablet) {
     border-radius: $large-radius;
     margin: 10px;

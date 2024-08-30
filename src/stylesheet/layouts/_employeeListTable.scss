@@ -1,4 +1,4 @@
-.current-employee__table {
+.employee-list__table {
   @include min-media-breakpoint($breakpoint-mobile-md) {
     &-container {
       margin: 0 auto;
