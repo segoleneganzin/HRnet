@@ -1,5 +1,0 @@
-# Robots.txt for internal application
-
-User-agent: *
-Disallow: /
-
