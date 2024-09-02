@@ -1,0 +1,17 @@
+{
+  "name": "Wealth Health - HRnet",
+  "short_name": "HRnet",
+  "description": "Internal web application for managing employees.",
+  "start_url": "/index.html",
+  "display": "minimal-ui",
+  "background_color": "#e8e8e8",
+  "theme_color": "#114911",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/favicons/android-chrome-144x144.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    }
+  ]
+}

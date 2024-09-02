@@ -7,13 +7,15 @@ a {
 }
 
 .btn,
+.sg-modal-lib__btn,
 .section__title,
 .label,
 .fieldset-legend {
   color: $primary-color;
 }
 
-.btn {
+.btn,
+.sg-modal-lib__btn {
   @include on-event {
     color: $second-color;
   }
@@ -46,9 +48,11 @@ h1,
   font-size: 1.3rem;
 }
 
-.fieldset-legend {
+.fieldset-legend,
+.sg-modal-lib__btn {
   font-size: 1rem;
 }
+
 body,
 h2,
 .label,

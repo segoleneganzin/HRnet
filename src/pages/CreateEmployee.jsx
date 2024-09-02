@@ -4,7 +4,7 @@ import FABButton from '../components/FABButton';
 import CreateEmployeeForm from '../layouts/CreateEmployeeForm';
 import PageLayout from '../layouts/PageLayout';
 import SectionLayout from '../layouts/SectionLayout';
-import currentEmployeesIcon from '../assets/img/currentEmployeesIcon.svg';
+import currentEmployeesFabIcon from '../assets/img/currentEmployeesFabIcon.svg';
 
 const Modal = lazy(() =>
   import('sg-modal-lib').then((module) => ({ default: module.Modal }))
@@ -21,7 +21,7 @@ const CreateEmployee = () => {
 
   const CustomFABButton = (
     <FABButton
-      icon={currentEmployeesIcon}
+      icon={currentEmployeesFabIcon}
       text={'View employees'}
       link='/employee-list'
     />

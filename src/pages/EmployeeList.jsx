@@ -2,7 +2,7 @@ import FABButton from '../components/FABButton';
 import EmployeeListTable from '../layouts/EmployeeListTable';
 import PageLayout from '../layouts/PageLayout';
 import SectionLayout from '../layouts/SectionLayout';
-import createEmployeeIcon from '../assets/img/createEmployeeIcon.svg';
+import createEmployeeFabIcon from '../assets/img/createEmployeeFabIcon.svg';
 
 /**
  * EmployeeList component renders a page displaying the list of current employees.
@@ -13,7 +13,7 @@ import createEmployeeIcon from '../assets/img/createEmployeeIcon.svg';
 const EmployeeList = () => {
   const CustomFABButton = (
     <FABButton
-      icon={createEmployeeIcon}
+      icon={createEmployeeFabIcon}
       text={'Add employee'}
       link='/create-employee'
     />

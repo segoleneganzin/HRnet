@@ -40,6 +40,7 @@ const EmployeeListTable = () => {
     enableDensityToggle: false,
     enableFullScreenToggle: false,
     enableStickyHeader: true,
+    globalFilterFn: 'contains',
     renderEmptyRowsFallback: () => (
       <Error errorMessage={'No employee to display'} />
     ),
