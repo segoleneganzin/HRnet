@@ -1,8 +1,10 @@
 .fab-btn {
   align-items: center;
   background-color: $primary-color;
-  border: 1px solid $primary-color;
+  border: 1px solid $light-color;
   border-radius: 9999px;
+  box-shadow: 0 0.5px 0.5px 1px rgba(255, 255, 255, 0.2),
+    0 10px 20px rgba(0, 0, 0, 0.2), 0 4px 5px 0px rgba(0, 0, 0, 0.05);
   color: $text-color;
   display: inline-flex;
   justify-content: center;
@@ -23,6 +25,7 @@
     right: 20px;
   }
   @include min-media-breakpoint($breakpoint-mobile-md) {
+    border-color: $primary-color;
     padding: 5px 20px 5px 15px;
 
     &:hover {
