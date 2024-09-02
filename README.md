@@ -42,7 +42,7 @@ Les états américains permettant de remplir les options du select sont récupé
 
 ### 📦 Dépendances
 
-#### **Bibliothèques Principales **
+#### Bibliothèques Principales
 
 - **[React](https://reactjs.org/)** (^18.3.1): Une bibliothèque JavaScript pour la construction d'interfaces utilisateur.
 - **[React-DOM](https://reactjs.org/docs/react-dom.html)** (^18.3.1): Le package qui sert de point d'entrée pour les chemins de rendu liés au DOM.
@@ -51,14 +51,14 @@ Les états américains permettant de remplir les options du select sont récupé
 - **[React Router DOM](https://reactrouter.com/web/guides/quick-start)** (^6.26.0): Le routage déclaratif pour React.js.
 - **[@reduxjs/toolkit](https://redux-toolkit.js.org/)** (^2.2.7): Un ensemble d'outils pour simplifier l'utilisation de Redux et améliorer les flux de travail.
 
-#### **UI et Stylisation **
+#### \*UI et Stylisation
 
 - **[MUI](https://mui.com/)** (^6.0.0): Une bibliothèque de composants React suivant les spécifications Material Design.
 - **[MUI X Date Pickers](https://mui.com/x/react-date-pickers/)** (^7.12.1): Un ensemble de composants pour la sélection de dates et d'heures.
 - **[Sass](https://sass-lang.com/)** (^1.77.8): Un langage de préprocesseur qui est interprété ou compilé en feuilles de style en cascade (CSS).
 - **[Material React Table ](https://www.material-react-table.com/)** (^2.13.1): Une bibliothèque de tableaux de données pour React basée sur Material UI et TanStack Table.
 
-#### **Utilitaires **
+#### Utilitaires
 
 - **[Day.js](https://day.js.org/)** (^1.11.12): Une alternative rapide et légère à Moment.js pour la gestion des dates.
 - **[Prop-Types](https://www.npmjs.com/package/prop-types)** (^15.8.1): Vérification des types à l'exécution pour les props React et les objets similaires.
@@ -68,7 +68,7 @@ Les états américains permettant de remplir les options du select sont récupé
 - **[States-US](https://www.npmjs.com/package/states-us)** (^1.0.4): Une bibliothèque pour les données des états américains.
 - **[UUID](https://github.com/uuidjs/uuid)** (^10.0.0): Une bibliothèque pour générer des UUIDs.
 
-#### **Outils de Développement **
+#### Outils de Développement
 
 - **[Vite](https://vitejs.dev/)** (^5.3.4): Un outil de développement frontend de nouvelle génération visant à fournir une expérience de développement plus rapide et plus légère.
 - **[ESLint](https://eslint.org/)** (^8.57.0): Un outil pour identifier et signaler les erreurs trouvés dans le code ECMAScript/JavaScript.
@@ -76,10 +76,10 @@ Les états américains permettant de remplir les options du select sont récupé
 
 ### 🔨 Installation du projet
 
-#### **Prérequis**
+#### Prérequis
 
 - **[NodeJS](https://nodejs.org/fr/)** (^20.11.1)
-- **[Git](https://git-scm.com/))** (^2.44.0)
+- **[Git](https://git-scm.com/)** (^2.44.0)
 - **[npm](https://www.npmjs.com/)** (^10.2.4)
 
 ➡ Cloner le projet<br>
@@ -154,7 +154,7 @@ Currently, data (employees and departments) is mocked. U.S. states for populatin
 
 ### 📦 Dependencies
 
-#### **Core Libraries**
+#### Core Libraries
 
 - **[React](https://reactjs.org/)** (^18.3.1): A JavaScript library for building user interfaces.
 - **[React-DOM](https://reactjs.org/docs/react-dom.html)** (^18.3.1): The package that serves as the entry point for the DOM-related rendering paths.
@@ -163,14 +163,14 @@ Currently, data (employees and departments) is mocked. U.S. states for populatin
 - **[React Router DOM](https://reactrouter.com/web/guides/quick-start)** (^6.26.0): Declarative routing for React.js.
 - **[@reduxjs/toolkit](https://redux-toolkit.js.org/)** (^2.2.7): A set of tools to simplify the use of Redux and improve workflows.
 
-#### **UI and Styling**
+#### UI and Styling
 
 - **[MUI](https://mui.com/)** (^6.0.0): A library of React components based on Material Design specifications.
 - **[MUI X Date Pickers](https://mui.com/x/react-date-pickers/)** (^7.12.1): A set of components for date and time picking.
 - **[Sass](https://sass-lang.com/)** (^1.77.8): A preprocessor scripting language that is interpreted or compiled into Cascading Style Sheets (CSS).
 - **[Material React Table ](https://www.material-react-table.com/)** (^2.13.1): A data table library for React based on Material UI and TanStack Table.
 
-#### **Utilities**
+#### Utilities
 
 - **[Day.js](https://day.js.org/)** (^1.11.12): A fast and lightweight alternative to Moment.js for date handling.
 - **[Prop-Types](https://www.npmjs.com/package/prop-types)** (^15.8.1): Runtime type checking for React props and similar objects.
@@ -180,7 +180,7 @@ Currently, data (employees and departments) is mocked. U.S. states for populatin
 - **[States-US](https://www.npmjs.com/package/states-us)** (^1.0.4): A library for US state data.
 - **[UUID](https://github.com/uuidjs/uuid)** (^10.0.0): A library for generating UUIDs.
 
-#### **Development Tools**
+#### Development Tools
 
 - **[Vite](https://vitejs.dev/)** (^5.3.4): A next-generation frontend tooling that aims to provide a faster and leaner development experience.
 - **[ESLint](https://eslint.org/)** (^8.57.0): A tool for identifying and reporting on patterns found in ECMAScript/JavaScript code.
@@ -188,10 +188,10 @@ Currently, data (employees and departments) is mocked. U.S. states for populatin
 
 ### 🔨 Project Installation
 
-#### **Prerequisites**
+#### Prerequisites
 
 - **[NodeJS](https://nodejs.org/fr/)** (^20.11.1)
-- **[Git](https://git-scm.com/))** (^2.44.0)
+- **[Git](https://git-scm.com/)** (^2.44.0)
 - **[npm](https://www.npmjs.com/)** (^10.2.4)
 
 ➡ Clone the project<br>
