@@ -51,7 +51,7 @@ Les états américains permettant de remplir les options du select sont récupé
 - **[React Router DOM](https://reactrouter.com/web/guides/quick-start)** (^6.26.0): Le routage déclaratif pour React.js.
 - **[@reduxjs/toolkit](https://redux-toolkit.js.org/)** (^2.2.7): Un ensemble d'outils pour simplifier l'utilisation de Redux et améliorer les flux de travail.
 
-#### \*UI et Stylisation
+#### UI et Stylisation
 
 - **[MUI](https://mui.com/)** (^6.0.0): Une bibliothèque de composants React suivant les spécifications Material Design.
 - **[MUI X Date Pickers](https://mui.com/x/react-date-pickers/)** (^7.12.1): Un ensemble de composants pour la sélection de dates et d'heures.
