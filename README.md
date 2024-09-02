@@ -3,8 +3,6 @@
 ## Faire passer une librairie jQuery vers React
 
 ![Visuel de la page d'accueil](src/assets/img/screenshot-mock/home.png)
-![Visuel de la page de création d'employé](src/assets/img/screenshot-mock/create-employee.png)
-![Visuel de la page de la liste d'employés](src/assets/img/screenshot-mock/employees-list.png)
 
 ### 📚 Présentation
 
@@ -99,13 +97,18 @@ Les états américains permettant de remplir les options du select sont récupé
 
 - **Ségolène Ganzin** ([GitHub Profile](https://github.com/segoleneganzin/))
 
+### Mock-up du site
+
+![Visuel de la page de création d'employé](src/assets/img/screenshot-mock/create-employee.png)
+![Visuel de la page de la liste d'employés](src/assets/img/screenshot-mock/employees-list.png)
+
 # English version
 
 # HRnet
 
 ## Migrating a jQuery Library to React
 
-![Visuel du site](src/assets/img/screenshot3.png)
+![Site visual](src/assets/img/screenshot3.png)
 
 ### 📚 Overview
 
@@ -198,3 +201,8 @@ Currently, data (employees and departments) is mocked. U.S. states for populatin
 ### Author
 
 - **Ségolène Ganzin** - Initial work and main development ([GitHub Profile](https://github.com/segoleneganzin/))
+
+### Site mock up
+
+![Create employee page visual](src/assets/img/screenshot-mock/create-employee.png)
+![Employees list page visual](src/assets/img/screenshot-mock/employees-list.png)
