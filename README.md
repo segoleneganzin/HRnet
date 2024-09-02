@@ -2,7 +2,9 @@
 
 ## Faire passer une librairie jQuery vers React
 
-![Visuel du site](src/assets/img/screenshot3.png)
+![Visuel de la page d'accueil](src/assets/img/screenshot-mock/home.png)
+![Visuel de la page de création d'employé](src/assets/img/screenshot-mock/create-employee.png)
+![Visuel de la page de la liste d'employés](src/assets/img/screenshot-mock/employees-list.png)
 
 ### 📚 Présentation
 

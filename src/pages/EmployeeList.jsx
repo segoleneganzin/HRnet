@@ -2,7 +2,7 @@ import FABButton from '../components/FABButton';
 import EmployeeListTable from '../layouts/EmployeeListTable';
 import PageLayout from '../layouts/PageLayout';
 import SectionLayout from '../layouts/SectionLayout';
-import createEmployeeFabIcon from '../assets/img/fab-add-employee.svg';
+import createEmployeeFabIcon from '../assets/img/createEmployeeFabIcon.svg';
 
 /**
  * EmployeeList component renders a page displaying the list of current employees.

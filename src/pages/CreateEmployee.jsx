@@ -4,7 +4,7 @@ import FABButton from '../components/FABButton';
 import CreateEmployeeForm from '../layouts/CreateEmployeeForm';
 import PageLayout from '../layouts/PageLayout';
 import SectionLayout from '../layouts/SectionLayout';
-import currentEmployeesFabIcon from '../assets/img/fab-view-employees.svg';
+import currentEmployeesFabIcon from '../assets/img/currentEmployeesFabIcon.svg';
 
 const Modal = lazy(() =>
   import('sg-modal-lib').then((module) => ({ default: module.Modal }))
