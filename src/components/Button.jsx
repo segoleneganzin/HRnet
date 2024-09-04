@@ -10,7 +10,10 @@ import PropTypes from 'prop-types';
  * @returns {JSX.Element}
  */
 const Button = ({ text, className, handleOnClick }) => (
-  <button className={`btn ${className}`} onClick={handleOnClick}>
+  <button
+    className={className ? `btn ${className}` : 'btn'}
+    onClick={handleOnClick}
+  >
     {text}
   </button>
 );

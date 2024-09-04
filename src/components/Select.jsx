@@ -18,7 +18,7 @@ const Select = ({ field, register, fieldErrorClass }) => {
     name,
     isRequired = true,
     defaultValue = 'Choose an option',
-    options,
+    options = [],
   } = field;
 
   return (
@@ -29,6 +29,8 @@ const Select = ({ field, register, fieldErrorClass }) => {
       {...register(name, {
         required: isRequired,
       })}
+      aria-required={isRequired}
+      aria-invalid={fieldErrorClass(name) === 'field--error'}
     >
       <option value=''>{defaultValue}</option>
       {options.map((option, index) => {

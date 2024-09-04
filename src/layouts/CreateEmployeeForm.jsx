@@ -62,6 +62,7 @@ const CreateEmployeeForm = ({ toggleModal }) => {
       onSubmit={handleSubmit(formSubmit)}
       className={'form create-employee-form'}
       id={'createEmployeeForm'}
+      data-testid='create-employee-form'
       noValidate
     >
       <div className='create-employee-form__fields-container'>

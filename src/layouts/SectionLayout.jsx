@@ -10,11 +10,15 @@ import PropTypes from 'prop-types';
  * @returns {JSX.Element}
  */
 const SectionLayout = ({ title, buttonComponent, children }) => (
-  <section className='section'>
-    <div className='section__header'>
-      {title && <h3 className='title section__title'>{title}</h3>}
-      {buttonComponent && buttonComponent}
-    </div>
+  <section className='section' data-testid='section'>
+    {title || buttonComponent ? (
+      <div className='section__header'>
+        {title && <h3 className='title section__title'>{title}</h3>}
+        {buttonComponent && buttonComponent}
+      </div>
+    ) : (
+      ''
+    )}
     {children}
   </section>
 );
