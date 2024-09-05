@@ -11,6 +11,17 @@ import { Link } from 'react-router-dom';
  * @param {string} props.link - The URL path to navigate to when the link is clicked.
  * @param {string} props.linkText - The text to display for the link.
  * @returns {JSX.Element} The rendered home card component.
+ *
+ * @example
+ * <HomeCard
+ *    icon={sampleIcon}
+ *    title={'Sample title'}
+ *    description={
+ *        'lorem ipsum ...'
+ *     }
+ *    link={'/sample-link'}
+ *    linkText={'View sample element'}
+ * />
  */
 const HomeCard = ({ icon, title, description, link, linkText }) => (
   <article className='home-card'>

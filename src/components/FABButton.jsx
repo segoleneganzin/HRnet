@@ -10,6 +10,13 @@ import { Link } from 'react-router-dom';
  * @param {string} props.text - The text to display next to the icon inside the button.
  * @param {string} props.link - The URL path to navigate to when the button is clicked.
  * @returns {JSX.Element}
+ *
+ * @example
+ * <FABButton
+ *    icon={sampleIcon}
+ *    text={'Click me'}
+ *    link='/sample-link'
+ * />
  */
 const FABButton = ({ icon, text, link }) => {
   return (

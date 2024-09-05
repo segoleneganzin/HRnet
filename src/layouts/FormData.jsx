@@ -9,6 +9,18 @@ import PropTypes from 'prop-types';
  * @param {Object} props.errors - The errors object to manage UI.
  * @param {ReactNode} props.children - The child elements of the layout.
  * @returns {JSX.Element}
+ *
+ * @example
+ * <FormData
+ *   field={{ name: 'firstName', label: 'First Name' }}
+ *   errors={errors}
+ * >
+ *   <Input
+ *     field={{ name: 'firstName' }}
+ *     register={register}
+ *     fieldErrorClass={fieldErrorClass}
+ *   />
+ * </FormData>
  */
 const FormData = ({ field, errors, children }) => {
   const { name, label } = field;

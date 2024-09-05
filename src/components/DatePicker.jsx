@@ -7,6 +7,8 @@ import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 
 /**
  * Custom date picker component integrated with react-hook-form and MUI DatePicker.
+ * This component allows selecting a date through a Material-UI DatePicker,
+ * while managing form state using react-hook-form's `Controller`.
  *
  * @param {Object} props
  * @param {Object} props.control - The react-hook-form control object for managing form state.
@@ -15,6 +17,14 @@ import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
  * @param {boolean} [props.field.isRequired=true] - Indicates if the field is required, default to `true`.
  * @param {function} props.errors - The errors object to manage UI.
  * @returns {JSX.Element}
+ *
+ * @example usage within a form
+ * <DatePicker
+ *   control={control}
+ *   field={{ name: 'birthDate', isRequired: true }}
+ *   errors={errors}
+ * />
+ *
  */
 const DatePicker = ({ control, field, errors }) => {
   const { name, isRequired = true } = field;
@@ -25,7 +35,6 @@ const DatePicker = ({ control, field, errors }) => {
   };
 
   return (
-    // provides the necessary methods for date manipulation and formatting
     <Controller
       control={control}
       name={name}

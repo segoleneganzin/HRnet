@@ -12,6 +12,14 @@ import PropTypes from 'prop-types';
  * @param {function} props.register - The `register` function from react-hook-form used to register the input field.
  * @param {function} [props.fieldErrorClass] - A function that returns CSS classes for error styling based on the field's name.
  * @returns {JSX.Element}
+ *
+ * @example
+ * <Input
+ *   field={{ name: 'zipCode', type: 'number', pattern: /^\d{5}$/ }}
+ *   register={register}
+ *   fieldErrorClass={fieldErrorClass}
+ * />
+ *
  */
 const Input = ({ field, register, fieldErrorClass }) => {
   const { name, type = 'text', isRequired = true, pattern = null } = field;

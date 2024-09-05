@@ -8,6 +8,13 @@ import PropTypes from 'prop-types';
  * @param {string} [props.className] - Optional additional CSS classes to apply to the button.
  * @param {function} [props.handleOnClick] - Optional click handler function to execute when the button is clicked.
  * @returns {JSX.Element}
+ *
+ * @example
+ * <Button
+ *   text={'Click me'}
+ *   className={'test'}
+ *   handleOnClick={handleOnClick}
+ * />
  */
 const Button = ({ text, className, handleOnClick }) => (
   <button

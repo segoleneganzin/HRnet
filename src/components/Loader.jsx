@@ -1,5 +1,6 @@
 /**
  * Loader component
+ * Three point with alternate size animation
  * @returns {JSX.Element}
  */
 const Loader = () => {

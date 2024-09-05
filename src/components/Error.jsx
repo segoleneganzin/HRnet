@@ -6,6 +6,11 @@ import PropTypes from 'prop-types';
  * @param {Object} props
  * @param {string} props.errorMessage
  * @returns {JSX.Element}
+ *
+ * @example
+ * <Error
+ *   errorMessage={'No data found'}
+ * />
  */
 const Error = ({ errorMessage }) => {
   return <p className='error-message'>{errorMessage}</p>;
