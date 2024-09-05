@@ -22,53 +22,53 @@ describe('<CreateEmployeeForm>', () => {
 
   it('renders all form fields correctly', () => {
     setup();
-    expect(screen.getByLabelText(/First Name/i)).toBeInTheDocument();
-    expect(screen.getByLabelText(/Last Name/i)).toBeInTheDocument();
-    expect(screen.getByLabelText(/Date of birth/i)).toBeInTheDocument();
-    expect(screen.getByLabelText(/Start Date/i)).toBeInTheDocument();
-    expect(screen.getByText(/Address/i)).toBeInTheDocument();
-    expect(screen.getByLabelText(/Street/i)).toBeInTheDocument();
-    expect(screen.getByLabelText(/City/i)).toBeInTheDocument();
-    expect(screen.getByLabelText(/State/i)).toBeInTheDocument();
-    expect(screen.getByLabelText(/Zip Code/i)).toBeInTheDocument();
-    expect(screen.getByLabelText(/Department/i)).toBeInTheDocument();
-    expect(screen.getByRole('button', { name: /Create/i })).toBeInTheDocument();
+    expect(screen.getByLabelText('First Name')).toBeInTheDocument();
+    expect(screen.getByLabelText('Last Name')).toBeInTheDocument();
+    expect(screen.getByLabelText('Date of birth')).toBeInTheDocument();
+    expect(screen.getByLabelText('Start Date')).toBeInTheDocument();
+    expect(screen.getByText('Address')).toBeInTheDocument();
+    expect(screen.getByLabelText('Street')).toBeInTheDocument();
+    expect(screen.getByLabelText('City')).toBeInTheDocument();
+    expect(screen.getByLabelText('State')).toBeInTheDocument();
+    expect(screen.getByLabelText('Zip Code')).toBeInTheDocument();
+    expect(screen.getByLabelText('Department')).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: 'Create' })).toBeInTheDocument();
   });
 
   it('fills and submits the form correctly', async () => {
     setup();
 
     // Fill in the form fields
-    fireEvent.change(screen.getByLabelText(/First Name/i), {
+    fireEvent.change(screen.getByLabelText('First Name'), {
       target: { value: 'John' },
     });
-    fireEvent.change(screen.getByLabelText(/Last Name/i), {
+    fireEvent.change(screen.getByLabelText('Last Name'), {
       target: { value: 'Doe' },
     });
-    fireEvent.change(screen.getByLabelText(/Date of birth/i), {
+    fireEvent.change(screen.getByLabelText('Date of birth'), {
       target: { value: '01/01/2000' },
     });
-    fireEvent.change(screen.getByLabelText(/Start Date/i), {
+    fireEvent.change(screen.getByLabelText('Start Date'), {
       target: { value: '01/01/2024' },
     });
-    fireEvent.change(screen.getByLabelText(/Street/i), {
+    fireEvent.change(screen.getByLabelText('Street'), {
       target: { value: '123 Main St' },
     });
-    fireEvent.change(screen.getByLabelText(/City/i), {
+    fireEvent.change(screen.getByLabelText('City'), {
       target: { value: 'Anytown' },
     });
-    fireEvent.change(screen.getByLabelText(/State/i), {
+    fireEvent.change(screen.getByLabelText('State'), {
       target: { value: usStates[0].value },
     });
-    fireEvent.change(screen.getByLabelText(/Zip Code/i), {
+    fireEvent.change(screen.getByLabelText('Zip Code'), {
       target: { value: '12345' },
     });
-    fireEvent.change(screen.getByLabelText(/Department/i), {
+    fireEvent.change(screen.getByLabelText('Department'), {
       target: { value: 'Sales' },
     });
 
     // Submit the form
-    fireEvent.click(screen.getByRole('button', { name: /Create/i }));
+    fireEvent.click(screen.getByRole('button', { name: 'Create' }));
 
     await waitFor(() => {
       // Check if dispatch has been called

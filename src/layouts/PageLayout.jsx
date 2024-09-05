@@ -16,11 +16,12 @@ const PageLayout = ({
   children,
   pageTitle = 'Wealth Health - HRnet',
   mainClassName = '',
+  dataTestId = '',
 }) => {
   document.title = pageTitle;
 
   return (
-    <div>
+    <div data-testid={dataTestId}>
       <Header />
 
       <main className={'main ' + mainClassName}>{children}</main>
@@ -33,5 +34,6 @@ PageLayout.propTypes = {
   children: PropTypes.node.isRequired,
   pageTitle: PropTypes.string,
   mainClassName: PropTypes.string,
+  dataTestId: PropTypes.string,
 };
 export default PageLayout;

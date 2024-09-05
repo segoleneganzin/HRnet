@@ -17,7 +17,7 @@ describe('<FormData />', () => {
   it('renders the label correctly', () => {
     setup();
     // Check if the label is rendered
-    expect(screen.getByLabelText(/Test Field/i)).toBeInTheDocument();
+    expect(screen.getByLabelText('Test Field')).toBeInTheDocument();
   });
 
   it('renders the children correctly', () => {
@@ -33,7 +33,7 @@ describe('<FormData />', () => {
     };
     setup(propsWithError);
     // Check if the error message for required field is displayed
-    expect(screen.getByText(/Please enter a test field/i)).toBeInTheDocument();
+    expect(screen.getByText('Please enter a test field')).toBeInTheDocument();
   });
 
   it('shows generic error message for pattern errors', () => {
@@ -43,15 +43,15 @@ describe('<FormData />', () => {
     };
     setup(propsWithPatternError);
     // Check if the generic error message for pattern is displayed
-    expect(screen.getByText(/Invalid field/i)).toBeInTheDocument();
+    expect(screen.getByText('Invalid field')).toBeInTheDocument();
   });
 
   it('does not render error message when no error exists', () => {
     setup();
     // Check that no error message is displayed when there is no error
     expect(
-      screen.queryByText(/Please enter a test field/i)
+      screen.queryByText('Please enter a test field')
     ).not.toBeInTheDocument();
-    expect(screen.queryByText(/Invalid field/i)).not.toBeInTheDocument();
+    expect(screen.queryByText('Invalid field')).not.toBeInTheDocument();
   });
 });

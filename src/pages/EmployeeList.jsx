@@ -19,7 +19,11 @@ const EmployeeList = () => {
     />
   );
   return (
-    <PageLayout pageTitle={'Current Employees'} mainClassName={'employee-list'}>
+    <PageLayout
+      pageTitle='Current Employees'
+      mainClassName='employee-list'
+      dataTestId='employee-list'
+    >
       <SectionLayout
         title={'CURRENT EMPLOYEES'}
         buttonComponent={CustomFABButton}

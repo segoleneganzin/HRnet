@@ -5,7 +5,7 @@
  */
 const Loader = () => {
   return (
-    <div className='loader' aria-label='Loading'>
+    <div className='loader' aria-label='Loading' data-testid='loader'>
       <span className='loader__element loader__element--1'></span>
       <span className='loader__element loader__element--2'></span>
       <span className='loader__element loader__element--3'></span>

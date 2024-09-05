@@ -16,10 +16,10 @@ describe('<Header />', () => {
     expect(logoImage).toHaveAttribute('src', '/src/assets/img/logo.webp');
 
     // Check that the main title is present
-    expect(screen.getByText(/WEALTH HEALTH/i)).toBeInTheDocument();
+    expect(screen.getByText('WEALTH HEALTH')).toBeInTheDocument();
 
     // Check that the subtitle is present
-    expect(screen.getByText(/HRnet/i)).toBeInTheDocument();
+    expect(screen.getByText('HRnet')).toBeInTheDocument();
 
     // Check that the link leads to the right URL
     const link = screen.getByRole('link');

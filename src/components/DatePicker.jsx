@@ -54,6 +54,7 @@ const DatePicker = ({ control, field, errors }) => {
               textField: {
                 id: name,
                 sx: inputStyles,
+                'data-testid': 'datepicker-input',
               },
               actionBar: {
                 actions: ['cancel', 'today', 'accept'],

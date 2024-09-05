@@ -13,7 +13,11 @@ import PropTypes from 'prop-types';
  * />
  */
 const Error = ({ errorMessage }) => {
-  return <p className='error-message'>{errorMessage}</p>;
+  return (
+    <p className='error-message' data-testid='error'>
+      {errorMessage}
+    </p>
+  );
 };
 Error.propTypes = {
   errorMessage: PropTypes.string.isRequired,

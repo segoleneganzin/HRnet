@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { lazy, Suspense } from 'react';
 import { useState } from 'react';
 import FABButton from '../components/FABButton';
@@ -16,8 +17,8 @@ const Modal = lazy(() =>
  *
  * @returns {JSX.Element}
  */
-const CreateEmployee = () => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
+const CreateEmployee = ({ initialModalOpen = false }) => {
+  const [isModalOpen, setIsModalOpen] = useState(initialModalOpen);
 
   const CustomFABButton = (
     <FABButton
@@ -33,7 +34,11 @@ const CreateEmployee = () => {
   };
 
   return (
-    <PageLayout pageTitle={'Create employee'} mainClassName={'create-employee'}>
+    <PageLayout
+      pageTitle='Create employee'
+      mainClassName='create-employee'
+      dataTestId='create-employee'
+    >
       <SectionLayout
         title={'CREATE EMPLOYEE'}
         buttonComponent={CustomFABButton}
@@ -62,6 +67,9 @@ const CreateEmployee = () => {
       </SectionLayout>
     </PageLayout>
   );
+};
+CreateEmployee.propTypes = {
+  initialModalOpen: PropTypes.bool,
 };
 
 export default CreateEmployee;
