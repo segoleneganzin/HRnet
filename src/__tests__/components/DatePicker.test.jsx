@@ -4,7 +4,7 @@ import { useForm } from 'react-hook-form';
 import DatePicker from '../../components/DatePicker'; // Change path as needed
 
 // Create a TestWrapper component to use react-hook-form's useForm hook
-// eslint-disable-next-line react/prop-types
+ 
 const TestWrapper = ({ errors }) => {
   const { control } = useForm();
   return (

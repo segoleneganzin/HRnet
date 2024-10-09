@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import { render, screen, waitFor } from '@testing-library/react';
 import { describe, it, expect } from 'vitest';
 import { MemoryRouter } from 'react-router-dom';
