@@ -1,7 +1,17 @@
 import { render, screen } from '@testing-library/react';
-import { describe, it, expect } from 'vitest';
+import { describe, it, expect, vi } from 'vitest';
 import { MemoryRouter } from 'react-router-dom';
 import HomeCard from '../../components/HomeCard';
+import { useNavigate } from 'react-router-dom';
+
+const mockedUseNavigate = vi.fn();
+vi.mock('react-router-dom', async () => {
+  const actual = await vi.importActual('react-router-dom');
+  return {
+    ...actual,
+    useNavigate: () => mockedUseNavigate,
+  };
+});
 
 describe('<HomeCard>', () => {
   const defaultProps = {
@@ -43,11 +53,10 @@ describe('<HomeCard>', () => {
     expect(descriptionElement.className).toBe('home-card__description');
   });
 
-  it('renders the link with correct text and href', () => {
+  it('renders the link with correct text and onClick', () => {
     setup();
-    const linkElement = screen.getByRole('link', { name: 'Learn More' });
-    expect(linkElement).toBeInTheDocument();
-    expect(linkElement).toHaveAttribute('href', '/sample-path');
-    expect(linkElement.className).toBe('home-card__link btn bold');
+    const buttonElement = screen.getByRole('button', { name: 'Learn More' });
+    expect(buttonElement).toBeInTheDocument();
+    expect(buttonElement.className).toBe('btn home-card__btn bold');
   });
 });

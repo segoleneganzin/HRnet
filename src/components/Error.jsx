@@ -14,7 +14,7 @@ import PropTypes from 'prop-types';
  */
 const Error = ({ errorMessage }) => {
   return (
-    <p className='error-message' data-testid='error'>
+    <p className='error__message' data-testid='error'>
       {errorMessage}
     </p>
   );

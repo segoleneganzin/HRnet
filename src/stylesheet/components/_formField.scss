@@ -1,4 +1,7 @@
 .form-field {
   @include flex-col;
   gap: 5px;
+  .label {
+    color: color(primary);
+  }
 }

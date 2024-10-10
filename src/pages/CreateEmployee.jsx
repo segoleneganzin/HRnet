@@ -38,10 +38,6 @@ const CreateEmployee = ({ initialModalOpen = false }) => {
     >
       <SectionLayout title={'CREATE EMPLOYEE'} buttonComponent={CustomFAB}>
         <>
-          <button onClick={toggleModal} className='btn'>
-            Test modal
-          </button>
-
           <CreateEmployeeForm toggleModal={toggleModal} />
 
           <Modal

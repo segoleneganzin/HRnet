@@ -11,15 +11,21 @@
   }
 }
 
-// mixin for media queries
-@mixin max-media-breakpoint($breakpoint) {
-  @media screen and (max-width: $breakpoint) {
-    @content;
-  }
-}
-
-@mixin min-media-breakpoint($breakpoint) {
-  @media screen and (min-width: $breakpoint) {
-    @content;
+@mixin media-breakpoint($type, $breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    @if $type == 'min' {
+      @media screen and (min-width: #{map-get($breakpoints, $breakpoint)}) {
+        @content;
+      }
+    } @else if $type == 'max' {
+      @media screen and (max-width: #{map-get($breakpoints, $breakpoint)}) {
+        @content;
+      }
+    } @else {
+      @warn "Invalid type `#{$type}` provided. Use either 'min' or 'max'.";
+    }
+  } @else {
+    @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+        + "Please make sure it is defined in `$breakpoints` map.";
   }
 }

@@ -11,8 +11,8 @@
   &__element {
     animation: loader 2s infinite ease-in-out;
     animation-fill-mode: both;
-    background-color: $second-color;
-    border-radius: $full-radius;
+    background-color: color(second);
+    border-radius: radius(full);
     opacity: 1;
     z-index: 99;
     height: 20px;

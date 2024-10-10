@@ -1,0 +1,23 @@
+@function color($key) {
+  @if map-has-key($colors, $key) {
+    @return map-get($colors, $key);
+  }
+  @warn "Unknown `#{$key}` in $colors.";
+  @return null;
+}
+
+@function radius($key) {
+  @if map-has-key($radius, $key) {
+    @return map-get($radius, $key);
+  }
+  @warn "Unknown `#{$key}` in $radius.";
+  @return null;
+}
+
+@function fontSize($key) {
+  @if map-has-key($font-sizes, $key) {
+    @return map-get($font-sizes, $key);
+  }
+  @warn "Unknown `#{$key}` in $font-sizes.";
+  @return null;
+}

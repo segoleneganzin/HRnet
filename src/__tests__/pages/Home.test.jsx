@@ -23,11 +23,11 @@ describe('<Home>', () => {
     setup();
     expect(screen.getByText('CREATE EMPLOYEE')).toBeInTheDocument();
     expect(screen.getByText('CURRENT EMPLOYEES')).toBeInTheDocument();
-    const linkElementView = screen.getByRole('link', {
+    const linkElementView = screen.getByRole('button', {
       name: 'View employees',
     });
     expect(linkElementView).toBeInTheDocument();
-    const linkElementCreate = screen.getByRole('link', {
+    const linkElementCreate = screen.getByRole('button', {
       name: 'Create employee',
     });
     expect(linkElementCreate).toBeInTheDocument();

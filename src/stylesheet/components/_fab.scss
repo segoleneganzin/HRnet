@@ -1,13 +1,12 @@
 .fab {
   align-items: center;
-  background-color: $primary-color;
-  border: 1px solid $light-color;
+  display: inline-flex;
+  justify-content: center;
+  background-color: color(primary);
+  border: 1px solid color(light);
   border-radius: 9999px;
   box-shadow: 0 0.5px 0.5px 1px rgba(255, 255, 255, 0.2),
     0 10px 20px rgba(0, 0, 0, 0.2), 0 4px 5px 0px rgba(0, 0, 0, 0.05);
-  color: $text-color;
-  display: inline-flex;
-  justify-content: center;
   padding: 10px;
   transition: all 0.2s ease;
   z-index: 99;
@@ -19,18 +18,18 @@
   &__text {
     display: none;
   }
-  @include max-media-breakpoint($breakpoint-mobile-xl) {
+  @include media-breakpoint('max', medium-mobile) {
     bottom: 20px;
     position: fixed;
     right: 20px;
   }
-  @include min-media-breakpoint($breakpoint-mobile-xl) {
-    border-color: $primary-color;
+  @include media-breakpoint('min', medium-mobile) {
+    border-color: color(primary);
     padding: 5px 20px 5px 15px;
 
     &:hover {
       background-color: transparent;
-      color: $primary-color;
+      color: color(primary);
     }
 
     &__icon {
@@ -40,6 +39,8 @@
 
     &__text {
       display: block;
+      color: color(light);
+      font-size: fontSize(small);
       line-height: 1;
       padding-left: 10px;
     }

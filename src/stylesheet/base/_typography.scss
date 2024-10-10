@@ -1,87 +1,26 @@
-/***************************** TYPOGRAPHY *****************************/
-
-/****************************************************** COLORS */
 body,
-a {
-  color: $text-color;
-}
-
-.btn,
-.sg-modal-lib__btn,
-.section__title,
-.label,
-.fieldset-legend {
-  color: $primary-color;
-}
-
-.btn,
-.sg-modal-lib__btn {
-  @include on-event {
-    color: $second-color;
-  }
-}
-
-.error-message,
-.form-field__error-message {
-  color: $error-color;
-}
-
-/****************************************************** FONTS */
-body,
-.btn,
-.sg-modal-lib__btn,
-.select,
-.input {
+button,
+select,
+input {
+  color: color(text);
   font-family: 'Nunito', sans-serif;
   letter-spacing: 0.05rem;
+  font-size: fontSize(small);
 }
-
-.title {
-  font-family: Roboto, sans-serif;
-}
-
-/***************************************** font size */
 
 h1,
-.section__title,
-.home-card__title {
-  font-size: 1.3rem;
+h2 {
+  font-size: fontSize(large);
 }
 
-.fieldset-legend,
-.sg-modal-lib__btn {
-  font-size: 1rem;
-}
-
-body,
+h1,
 h2,
-.label,
-.input,
-.select {
-  font-size: 0.9rem;
-}
-
-.footer,
-.fab-btn__text {
-  font-size: 0.8rem;
-}
-
-@include min-media-breakpoint($breakpoint-tablet) {
-  h1,
-  .section__title {
-    font-size: 1.4rem;
-  }
-  h2,
-  h3 {
-    font-size: 1.2rem;
-  }
-}
-
-/***************************************** font weight */
-.bold {
-  font-weight: 600;
-}
-
-.title {
+h3 {
+  color: color(light);
   font-weight: 500;
+}
+
+p {
+  color: color(light);
+  font-size: fontSize(small);
 }

@@ -23,8 +23,12 @@
   }
 
   &__address {
-    border-color: $second-color;
-    border-radius: $small-radius;
+    border-color: color(second);
+    border-radius: radius(small);
+    .fieldset-legend {
+      color: color(primary);
+      font-size: fontSize(medium);
+    }
   }
 
   &__section:last-child {
@@ -35,14 +39,14 @@
     margin-top: 20px;
     text-transform: uppercase;
   }
-  @include min-media-breakpoint($breakpoint-mobile-md) {
-    border-radius: $small-radius;
+  @include media-breakpoint('min', medium-mobile) {
+    border-radius: radius(small);
     margin: auto;
     padding: 30px;
     width: 90%;
   }
 
-  @include min-media-breakpoint($breakpoint-tablet) {
+  @include media-breakpoint('min', tablet) {
     &__fields {
       grid-template-columns: repeat(2, 1fr);
     }

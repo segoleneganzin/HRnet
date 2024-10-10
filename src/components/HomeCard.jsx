@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
+import Button from './Button';
+import { useNavigate } from 'react-router-dom/dist';
 
 /**
  * Card component for displaying information on the home page.
@@ -23,21 +24,31 @@ import { Link } from 'react-router-dom';
  *    linkText={'View sample element'}
  * />
  */
-const HomeCard = ({ icon, title, description, link, linkText }) => (
-  <article className='home-card'>
-    <div className='home-card__icon-bg'>
-      <img src={icon} alt={`${title} icon`} className='home-card__icon' />
-    </div>
+const HomeCard = ({ icon, title, description, link, linkText }) => {
+  const navigate = useNavigate();
 
-    <h3 className='home-card__title title'>{title}</h3>
+  const handleClick = () => {
+    navigate(link);
+  };
 
-    <p className='home-card__description'>{description}</p>
+  return (
+    <article className='home-card'>
+      <div className='home-card__icon-bg'>
+        <img src={icon} alt={`${title} icon`} className='home-card__icon' />
+      </div>
 
-    <Link to={link} className='home-card__link btn bold'>
-      {linkText}
-    </Link>
-  </article>
-);
+      <h3 className='home-card__title title'>{title}</h3>
+
+      <p className='home-card__description'>{description}</p>
+
+      <Button
+        handleOnClick={handleClick}
+        className='home-card__btn bold'
+        text={linkText}
+      />
+    </article>
+  );
+};
 
 HomeCard.propTypes = {
   icon: PropTypes.elementType.isRequired,

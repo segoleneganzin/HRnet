@@ -1,5 +1,7 @@
-.error-message {
-  margin: auto;
-  padding: 20px;
+.error__message {
+  color: color(error);
   width: fit-content;
+}
+.employee-list__table .error__message {
+  padding: 20px;
 }

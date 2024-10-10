@@ -123,7 +123,7 @@ const CreateEmployeeForm = ({ toggleModal }) => {
         </div>
       </div>
 
-      <Button text='Create' className='bold create-employee-form__btn' />
+      <Button text='Create' className='create-employee-form__btn bold' />
     </form>
   );
 };

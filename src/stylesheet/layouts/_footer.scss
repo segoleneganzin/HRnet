@@ -1,14 +1,14 @@
 .footer {
   @include flex-col;
   align-items: center;
-  background-color: $primary-color;
+  background-color: color(primary);
   gap: 10px;
   margin-top: 10px;
   padding: 20px;
   text-align: center;
 
-  @include min-media-breakpoint($breakpoint-tablet) {
-    border-radius: $large-radius;
+  @include media-breakpoint('min', tablet) {
+    border-radius: radius(large);
     margin: 10px;
     padding: 10px;
   }

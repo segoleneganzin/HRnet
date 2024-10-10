@@ -1,21 +1,32 @@
-$primary-color: #114911;
-$second-color: #babe98;
-$third-color: #5a6e0c;
-$extra-color: #ed7f10;
-$light-color: #e8e8e8;
-$text-color: $light-color;
-$error-color: #e97171;
+$colors: (
+  primary: rgb(17, 73, 17),
+  second: rgb(186, 190, 152),
+  third: rgb(90, 110, 12),
+  extra: rgb(237, 127, 16),
+  light: rgb(232, 232, 232),
+  text: rgb(17, 73, 17),
+  error: rgb(233, 113, 113),
+);
 
-/// *********************** BREAKPOINTS
-$breakpoint-mobile-xs: 360px;
-$breakpoint-mobile-md: 425px;
-$breakpoint-mobile-xl: 585px;
-$breakpoint-tablet: 768px;
-$breakpoint-desktop: 1024px;
-$breakpoint-desktop-md: 1440px;
+$breakpoints: (
+  small-mobile: 360px,
+  medium-mobile: 425px,
+  large-mobile: 585px,
+  tablet: 768px,
+  laptop: 1024px,
+  desktop: 1440px,
+  large-desktop: 1920px,
+);
 
-/// *********************** RADIUS
-$small-radius: 5px;
-$medium-radius: 10px;
-$large-radius: 100px;
-$full-radius: 100%;
+$radius: (
+  small: 5px,
+  medium: 10px,
+  large: 25px,
+  full: 100%,
+);
+
+$font-sizes: (
+  small: 0.85rem,
+  medium: 1rem,
+  large: 1.4rem,
+);

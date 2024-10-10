@@ -1,18 +1,20 @@
 .btn {
-  background-color: $second-color;
-  border: 3px dashed $second-color;
-  border-radius: $medium-radius;
+  color: color(primary);
+  display: block;
+  cursor: pointer;
+  letter-spacing: 2px;
+  background-color: color(second);
+  border: 3px dashed color(second);
+  border-radius: radius(medium);
   box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
     rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
-  cursor: pointer;
-  display: block;
-  letter-spacing: 2px;
-  margin: 0 auto;
   padding: 12.5px 30px;
+  margin: 0 auto;
   transition: 0.2s;
   width: fit-content;
   @include on-event {
-    background-color: $primary-color;
-    border-color: $extra-color;
+    color: color(second);
+    background-color: color(primary);
+    border-color: color(extra);
   }
 }
