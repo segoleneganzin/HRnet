@@ -5,8 +5,8 @@ import PropTypes from 'prop-types';
  *
  * @param {object} props
  * @param {string} [props.title] - The optional title to be displayed at the top of the section.
- * @param {ReactNode} props.children - The content to be rendered within the section.
  * @param {ReactNode} [props.buttonComponent] - An optional button component to be displayed in the section.
+ * @param {ReactNode} props.children - The content to be rendered within the section.
  * @returns {JSX.Element}
  */
 const SectionLayout = ({ title, buttonComponent, children }) => (
@@ -25,8 +25,8 @@ const SectionLayout = ({ title, buttonComponent, children }) => (
 
 SectionLayout.propTypes = {
   title: PropTypes.string,
-  children: PropTypes.node.isRequired,
   buttonComponent: PropTypes.node,
+  children: PropTypes.node.isRequired,
 };
 
 export default SectionLayout;

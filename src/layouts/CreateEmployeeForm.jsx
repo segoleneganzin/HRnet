@@ -6,10 +6,7 @@ import { addEmployee } from '../features/employeesSlice';
 import { selectDepartments } from '../features/departmentsSlice';
 import { usStates } from '../utils/usStates';
 import dayjs from 'dayjs';
-import Input from '../components/Input';
-import Select from '../components/Select';
-import FormData from './FormData';
-import DatePicker from '../components/DatePicker';
+import FormField from '../components/FormField';
 import Button from '../components/Button';
 
 /**
@@ -57,6 +54,43 @@ const CreateEmployeeForm = ({ toggleModal }) => {
     reset(); // reinitialize form when addEmployee succeeded
   };
 
+  const fieldsGroup1 = [
+    { name: 'firstName', label: 'First name' },
+    { name: 'lastName', label: 'Last name' },
+    { name: 'dateOfBirth', label: 'Date of birth', type: 'datePicker' },
+    { name: 'startDate', label: 'Start date', type: 'datePicker' },
+  ];
+
+  const fieldsGroup2 = [
+    { name: 'street', label: 'Street' },
+    { name: 'city', label: 'City' },
+    {
+      name: 'state',
+      label: 'State',
+      type: 'select',
+      defaultValue: 'Choose a state',
+      options: usStates,
+    },
+    { name: 'zipCode', label: 'Zip code', type: 'number', pattern: /^\d{5}$/ }, // 5 numbers only
+  ];
+
+  const fieldsGroup3 = [
+    {
+      name: 'department',
+      label: 'Department',
+      type: 'select',
+      defaultValue: 'Choose a department',
+      options: departments,
+    },
+  ];
+
+  const defaultPropsField = {
+    register: register,
+    fieldErrorClass: fieldErrorClass,
+    errors: errors,
+    control: control,
+  };
+
   return (
     <form
       onSubmit={handleSubmit(formSubmit)}
@@ -65,117 +99,35 @@ const CreateEmployeeForm = ({ toggleModal }) => {
       data-testid='create-employee-form'
       noValidate
     >
-      <div className='create-employee-form__fields-container'>
+      <div className='create-employee-form__fields'>
         <div className='create-employee-form__section'>
-          <FormData
-            field={{ name: 'firstName', label: 'First Name' }}
-            errors={errors}
-          >
-            <Input
-              field={{ name: 'firstName' }}
-              register={register}
-              fieldErrorClass={fieldErrorClass}
-            />
-          </FormData>
-          <FormData
-            field={{ name: 'lastName', label: 'Last Name' }}
-            errors={errors}
-          >
-            <Input
-              field={{ name: 'lastName' }}
-              register={register}
-              fieldErrorClass={fieldErrorClass}
-            />
-          </FormData>
-          <FormData
-            field={{ name: 'dateOfBirth', label: 'Date of birth' }}
-            errors={errors}
-          >
-            <DatePicker
-              control={control}
-              field={{
-                name: 'dateOfBirth',
-              }}
-              errors={errors}
-            />
-          </FormData>
-          <FormData
-            field={{ name: 'startDate', label: 'Start Date' }}
-            errors={errors}
-          >
-            <DatePicker
-              control={control}
-              field={{
-                name: 'startDate',
-              }}
-              errors={errors}
-            />
-          </FormData>
+          {fieldsGroup1.map((field, index) => (
+            <FormField key={index} field={field} {...defaultPropsField} />
+          ))}
         </div>
+
         <div className='create-employee-form__section'>
           {/* Address Fieldset */}
           <fieldset className={'create-employee-form__address'}>
             <legend className='fieldset-legend'>Address</legend>
-            <FormData
-              field={{ name: 'street', label: 'Street' }}
-              errors={errors}
-            >
-              <Input
-                field={{ name: 'street' }}
-                register={register}
-                fieldErrorClass={fieldErrorClass}
-              />
-            </FormData>
-            <FormData field={{ name: 'city', label: 'City' }} errors={errors}>
-              <Input
-                field={{ name: 'city' }}
-                register={register}
-                fieldErrorClass={fieldErrorClass}
-              />
-            </FormData>
-            <FormData field={{ name: 'state', label: 'State' }} errors={errors}>
-              <Select
-                field={{
-                  name: 'state',
-                  defaultValue: 'Choose a state',
-                  options: usStates,
-                }}
-                register={register}
-                fieldErrorClass={fieldErrorClass}
-              />
-            </FormData>
-            <FormData
-              field={{ name: 'zipCode', label: 'Zip Code' }}
-              errors={errors}
-            >
-              <Input
-                field={{ name: 'zipCode', type: 'number', pattern: /^\d{5}$/ }} // 5 numbers only
-                register={register}
-                fieldErrorClass={fieldErrorClass}
-              />
-            </FormData>
+            {fieldsGroup2.map((field, index) => (
+              <FormField key={index} field={field} {...defaultPropsField} />
+            ))}
           </fieldset>
         </div>
+
+        <div className='create-employee-form__section'>
+          {fieldsGroup3.map((field, index) => (
+            <FormField key={index} field={field} {...defaultPropsField} />
+          ))}
+        </div>
       </div>
-      <FormData
-        field={{ name: 'department', label: 'Department' }}
-        errors={errors}
-      >
-        <Select
-          field={{
-            name: 'department',
-            defaultValue: 'Choose a department',
-            options: departments,
-          }}
-          register={register}
-          fieldErrorClass={fieldErrorClass}
-        />
-      </FormData>
+
       <Button text='Create' className='bold create-employee-form__btn' />
     </form>
   );
 };
 CreateEmployeeForm.propTypes = {
-  toggleModal: PropTypes.func,
+  toggleModal: PropTypes.func.isRequired,
 };
 export default CreateEmployeeForm;

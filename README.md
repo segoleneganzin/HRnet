@@ -165,9 +165,7 @@ Currently, data (employees and departments) is mocked. U.S. states for populatin
 
 #### UI and Styling
 
-- **[MUI](https://mui.com/)** (^6.0.0): A library of React components based on Material Design specifications.
 - **[MUI X Date Pickers](https://mui.com/x/react-date-pickers/)** (^7.12.1): A set of components for date and time picking.
-- **[Sass](https://sass-lang.com/)** (^1.77.8): A preprocessor scripting language that is interpreted or compiled into Cascading Style Sheets (CSS).
 - **[Material React Table ](https://www.material-react-table.com/)** (^2.13.1): A data table library for React based on Material UI and TanStack Table.
 
 #### Utilities
@@ -185,6 +183,7 @@ Currently, data (employees and departments) is mocked. U.S. states for populatin
 - **[Vite](https://vitejs.dev/)** (^5.3.4): A next-generation frontend tooling that aims to provide a faster and leaner development experience.
 - **[ESLint](https://eslint.org/)** (^8.57.0): A tool for identifying and reporting on patterns found in ECMAScript/JavaScript code.
 - **[ESLint Plugins](https://eslint.org/docs/user-guide/configuring/plugins)**: Plugins to extend ESLint functionality, including `eslint-plugin-react` (^7.34.3) for React-specific linting rules.
+- **[Sass](https://sass-lang.com/)** (^1.77.8): A preprocessor scripting language that is interpreted or compiled into Cascading Style Sheets (CSS).
 
 ### 🔨 Project Installation
 

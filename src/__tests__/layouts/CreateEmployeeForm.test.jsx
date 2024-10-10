@@ -22,15 +22,15 @@ describe('<CreateEmployeeForm>', () => {
 
   it('renders all form fields correctly', () => {
     setup();
-    expect(screen.getByLabelText('First Name')).toBeInTheDocument();
-    expect(screen.getByLabelText('Last Name')).toBeInTheDocument();
+    expect(screen.getByLabelText('First name')).toBeInTheDocument();
+    expect(screen.getByLabelText('Last name')).toBeInTheDocument();
     expect(screen.getByLabelText('Date of birth')).toBeInTheDocument();
-    expect(screen.getByLabelText('Start Date')).toBeInTheDocument();
+    expect(screen.getByLabelText('Start date')).toBeInTheDocument();
     expect(screen.getByText('Address')).toBeInTheDocument();
     expect(screen.getByLabelText('Street')).toBeInTheDocument();
     expect(screen.getByLabelText('City')).toBeInTheDocument();
     expect(screen.getByLabelText('State')).toBeInTheDocument();
-    expect(screen.getByLabelText('Zip Code')).toBeInTheDocument();
+    expect(screen.getByLabelText('Zip code')).toBeInTheDocument();
     expect(screen.getByLabelText('Department')).toBeInTheDocument();
     expect(screen.getByRole('button', { name: 'Create' })).toBeInTheDocument();
   });
@@ -39,16 +39,16 @@ describe('<CreateEmployeeForm>', () => {
     setup();
 
     // Fill in the form fields
-    fireEvent.change(screen.getByLabelText('First Name'), {
+    fireEvent.change(screen.getByLabelText('First name'), {
       target: { value: 'John' },
     });
-    fireEvent.change(screen.getByLabelText('Last Name'), {
+    fireEvent.change(screen.getByLabelText('Last name'), {
       target: { value: 'Doe' },
     });
     fireEvent.change(screen.getByLabelText('Date of birth'), {
       target: { value: '01/01/2000' },
     });
-    fireEvent.change(screen.getByLabelText('Start Date'), {
+    fireEvent.change(screen.getByLabelText('Start date'), {
       target: { value: '01/01/2024' },
     });
     fireEvent.change(screen.getByLabelText('Street'), {
@@ -60,7 +60,7 @@ describe('<CreateEmployeeForm>', () => {
     fireEvent.change(screen.getByLabelText('State'), {
       target: { value: usStates[0].value },
     });
-    fireEvent.change(screen.getByLabelText('Zip Code'), {
+    fireEvent.change(screen.getByLabelText('Zip code'), {
       target: { value: '12345' },
     });
     fireEvent.change(screen.getByLabelText('Department'), {

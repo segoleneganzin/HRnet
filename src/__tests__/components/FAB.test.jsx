@@ -1,9 +1,9 @@
 import { render, screen } from '@testing-library/react';
 import { describe, it, expect } from 'vitest';
 import { MemoryRouter } from 'react-router-dom';
-import FABButton from '../../components/FABButton';
+import FAB from '../../components/FAB';
 
-describe('<FABButton>', () => {
+describe('<FAB>', () => {
   const defaultProps = {
     icon: 'icon-url.png',
     text: 'Click Me',
@@ -13,7 +13,7 @@ describe('<FABButton>', () => {
   const setup = (props = defaultProps) => {
     return render(
       <MemoryRouter>
-        <FABButton {...props} />
+        <FAB {...props} />
       </MemoryRouter>
     );
   };
@@ -40,12 +40,12 @@ describe('<FABButton>', () => {
   it('applies the correct classes', () => {
     setup();
     const linkElement = screen.getByRole('link');
-    expect(linkElement.className).toBe('fab-btn');
+    expect(linkElement.className).toBe('fab');
 
     const iconElement = screen.getByAltText('fab icon');
-    expect(iconElement.className).toBe('fab-btn__icon');
+    expect(iconElement.className).toBe('fab__icon');
 
     const textElement = screen.getByText('Click Me');
-    expect(textElement.className).toBe('fab-btn__text');
+    expect(textElement.className).toBe('fab__text');
   });
 });

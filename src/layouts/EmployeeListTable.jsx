@@ -42,10 +42,7 @@ const EmployeeListTable = () => {
   });
 
   return (
-    <div
-      className='employee-list__table-container'
-      data-testid='employee-list-table-container'
-    >
+    <div className='employee-list__table' data-testid='employee-list-table'>
       <MaterialReactTable table={table} />
     </div>
   );

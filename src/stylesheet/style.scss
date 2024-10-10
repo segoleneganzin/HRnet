@@ -11,14 +11,13 @@
 
 // 4. Layout-related sections
 @import 'layouts/header', 'layouts/footer', 'layouts/employeeListTable',
-  'layouts/createEmployeeForm', 'layouts/formData', 'layouts/sectionLayout',
-  'layouts/menu';
+  'layouts/createEmployeeForm', 'layouts/sectionLayout', 'layouts/menu';
 
 // 5. Components
 @import 'components/button', 'components/customModal', 'components/loader',
   'components/input', 'components/select', 'components/homeCard',
-  'components/error', 'components/customMaterialReactTable',
-  'components/fabButton';
+  'components/error', 'components/customMaterialReactTable', 'components/fab',
+  'components/formField';
 
 // 6. Page-specific styles
 @import 'pages/home';

@@ -1,4 +1,4 @@
-.fab-btn {
+.fab {
   align-items: center;
   background-color: $primary-color;
   border: 1px solid $light-color;
@@ -19,12 +19,12 @@
   &__text {
     display: none;
   }
-  @include max-media-breakpoint($breakpoint-mobile-md) {
+  @include max-media-breakpoint($breakpoint-mobile-xl) {
     bottom: 20px;
     position: fixed;
     right: 20px;
   }
-  @include min-media-breakpoint($breakpoint-mobile-md) {
+  @include min-media-breakpoint($breakpoint-mobile-xl) {
     border-color: $primary-color;
     padding: 5px 20px 5px 15px;
 

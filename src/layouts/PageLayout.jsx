@@ -10,6 +10,7 @@ import Footer from './Footer';
  * @param {ReactNode} props.children - The content to be rendered within the main content area.
  * @param {string} [props.pageTitle='Wealth Health - HRnet'] - The title to be set for the document. Defaults to `Wealth Health - HRnet`.
  * @param {string} [props.mainClassName=''] - Additional CSS class names to be applied to the main content area.
+ * @param {string} [props.dataTestId=''] - Props to manage tests
  * @returns {JSX.Element}
  */
 const PageLayout = ({
