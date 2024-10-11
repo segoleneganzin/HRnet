@@ -1,5 +1,5 @@
 /**
- * Function mock up to fetch  employees data.
+ * Function mock up to fetch employees data.
  * Must be updated to link to api
  * @throws {Error}
  */

@@ -1,12 +1,12 @@
 .home-card {
-  background-color: $primary-color;
-  border-radius: $medium-radius;
+  background-color: color(primary);
+  border-radius: radius(medium);
   max-width: 600px;
   padding: 65px 30px 50px;
   position: relative;
   &__icon-bg {
-    background-color: $primary-color;
-    border-radius: $full-radius;
+    background-color: color(primary);
+    border-radius: radius(full);
     left: 50%;
     padding: 20px;
     position: absolute;
@@ -23,7 +23,7 @@
     text-align: center;
     z-index: 2;
   }
-  &__link {
+  &__btn {
     bottom: -25px;
     left: 50%;
     min-width: 180px;
@@ -32,7 +32,7 @@
     text-align: center;
     transform: translateX(-50%);
   }
-  @include min-media-breakpoint($breakpoint-tablet) {
+  @include media-breakpoint('min', tablet) {
     &__icon-bg {
       left: 30px;
       position: absolute;
@@ -52,7 +52,7 @@
     &__description {
       text-align: left;
     }
-    &__link {
+    &__btn {
       bottom: -35px;
       left: auto;
       margin: 10px 0;

@@ -12,7 +12,7 @@ import createEmployeeIcon from '../assets/img/createEmployeeIcon.svg';
  * @returns {JSX.Element}
  */
 const Home = () => (
-  <PageLayout pageTitle={'HRnet'} mainClassName={'home'}>
+  <PageLayout pageTitle='HRnet' mainClassName='home' dataTestId='home'>
     <>
       <div className='home__content'>
         <HomeCard

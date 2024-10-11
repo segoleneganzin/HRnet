@@ -4,7 +4,7 @@
     @include flex-col;
     gap: 100px;
     margin: 60px auto;
-    @include min-media-breakpoint($breakpoint-tablet) {
+    @include media-breakpoint('min', tablet) {
       flex-direction: row;
       gap: 50px;
       padding: 0 20px 0 30px;

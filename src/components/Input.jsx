@@ -9,9 +9,17 @@ import PropTypes from 'prop-types';
  * @param {string} [props.field.type='text'] - The type of the input field (e.g., 'text', 'email', 'password'). Defaults to 'text'.
  * @param {boolean} [props.field.isRequired=true] - Indicates if the field is required for form validation. Defaults to `true`.
  * @param {RegExp} [props.field.pattern=null] - A regular expression pattern for validating the input value. Defaults to `null`.
- * @param {function} props.register - The `register` function from react-hook-form used to register the input field.
+ * @param {function} [props.register] - The `register` function from react-hook-form used to register the input field.
  * @param {function} [props.fieldErrorClass] - A function that returns CSS classes for error styling based on the field's name.
  * @returns {JSX.Element}
+ *
+ * @example
+ * <Input
+ *   field={{ name: 'zipCode', type: 'number', pattern: /^\d{5}$/ }}
+ *   register={register}
+ *   fieldErrorClass={fieldErrorClass}
+ * />
+ *
  */
 const Input = ({ field, register, fieldErrorClass }) => {
   const { name, type = 'text', isRequired = true, pattern = null } = field;
@@ -39,7 +47,7 @@ Input.propTypes = {
     isRequired: PropTypes.bool,
     pattern: PropTypes.instanceOf(RegExp),
   }).isRequired,
-  register: PropTypes.func.isRequired,
+  register: PropTypes.func,
   fieldErrorClass: PropTypes.func,
 };
 

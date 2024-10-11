@@ -1,8 +1,6 @@
 .employee-list__table {
-  @include min-media-breakpoint($breakpoint-mobile-md) {
-    &-container {
-      margin: 0 auto;
-      width: 95%;
-    }
+  @include media-breakpoint('min', large-mobile) {
+    margin: 0 auto;
+    width: 95%;
   }
 }

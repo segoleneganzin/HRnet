@@ -1,24 +1,23 @@
 @charset "UTF-8";
 
 // 1. Configuration and helpers
-@import 'abstracts/variables', 'abstracts/mixins', 'abstracts/helpers';
+@import 'abstracts/variables', 'abstracts/mixins', 'abstracts/functions';
 
 // 2. Vendors
-@import 'vendors/normalize';
+@import 'vendors/materialReactTable', 'vendors/sgModalLib';
 
 // 3. Base stuff
-@import 'base/base', 'base/typography';
+@import 'base/global', 'base/typography', 'base/normalize', 'base/links',
+  'base/text';
 
 // 4. Layout-related sections
 @import 'layouts/header', 'layouts/footer', 'layouts/employeeListTable',
-  'layouts/createEmployeeForm', 'layouts/formData', 'layouts/sectionLayout',
-  'layouts/menu';
+  'layouts/createEmployeeForm', 'layouts/sectionLayout';
 
 // 5. Components
-@import 'components/button', 'components/customModal', 'components/loader',
-  'components/input', 'components/select', 'components/homeCard',
-  'components/error', 'components/customMaterialReactTable',
-  'components/fabButton';
+@import 'components/button', 'components/loader', 'components/input',
+  'components/select', 'components/homeCard', 'components/error',
+  'components/fab', 'components/formField';
 
 // 6. Page-specific styles
 @import 'pages/home';

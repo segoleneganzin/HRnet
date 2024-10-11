@@ -51,7 +51,7 @@ Les états américains permettant de remplir les options du select sont récupé
 - **[React Router DOM](https://reactrouter.com/web/guides/quick-start)** (^6.26.0): Le routage déclaratif pour React.js.
 - **[@reduxjs/toolkit](https://redux-toolkit.js.org/)** (^2.2.7): Un ensemble d'outils pour simplifier l'utilisation de Redux et améliorer les flux de travail.
 
-#### \*UI et Stylisation
+#### UI et Stylisation
 
 - **[MUI](https://mui.com/)** (^6.0.0): Une bibliothèque de composants React suivant les spécifications Material Design.
 - **[MUI X Date Pickers](https://mui.com/x/react-date-pickers/)** (^7.12.1): Un ensemble de composants pour la sélection de dates et d'heures.
@@ -165,9 +165,7 @@ Currently, data (employees and departments) is mocked. U.S. states for populatin
 
 #### UI and Styling
 
-- **[MUI](https://mui.com/)** (^6.0.0): A library of React components based on Material Design specifications.
 - **[MUI X Date Pickers](https://mui.com/x/react-date-pickers/)** (^7.12.1): A set of components for date and time picking.
-- **[Sass](https://sass-lang.com/)** (^1.77.8): A preprocessor scripting language that is interpreted or compiled into Cascading Style Sheets (CSS).
 - **[Material React Table ](https://www.material-react-table.com/)** (^2.13.1): A data table library for React based on Material UI and TanStack Table.
 
 #### Utilities
@@ -185,6 +183,7 @@ Currently, data (employees and departments) is mocked. U.S. states for populatin
 - **[Vite](https://vitejs.dev/)** (^5.3.4): A next-generation frontend tooling that aims to provide a faster and leaner development experience.
 - **[ESLint](https://eslint.org/)** (^8.57.0): A tool for identifying and reporting on patterns found in ECMAScript/JavaScript code.
 - **[ESLint Plugins](https://eslint.org/docs/user-guide/configuring/plugins)**: Plugins to extend ESLint functionality, including `eslint-plugin-react` (^7.34.3) for React-specific linting rules.
+- **[Sass](https://sass-lang.com/)** (^1.77.8): A preprocessor scripting language that is interpreted or compiled into Cascading Style Sheets (CSS).
 
 ### 🔨 Project Installation
 

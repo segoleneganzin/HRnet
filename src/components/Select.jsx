@@ -12,13 +12,24 @@ import PropTypes from 'prop-types';
  *  @param {function} props.register - The `register` function from react-hook-form used to register the select field.
  * @param {function} [props.fieldErrorClass] - A function that returns CSS classes for error styling based on the field's name.
  * @returns {JSX.Element}
+ *
+ * @example
+ * <Select
+ *    field={{
+ *      name: 'department',
+ *      defaultValue: 'Choose a department',
+ *      options: departments,
+ *    }}
+ *    register={register}
+ *    fieldErrorClass={fieldErrorClass}
+ * />
  */
 const Select = ({ field, register, fieldErrorClass }) => {
   const {
     name,
     isRequired = true,
     defaultValue = 'Choose an option',
-    options,
+    options = [],
   } = field;
 
   return (
@@ -29,6 +40,8 @@ const Select = ({ field, register, fieldErrorClass }) => {
       {...register(name, {
         required: isRequired,
       })}
+      aria-required={isRequired}
+      aria-invalid={fieldErrorClass(name) === 'field--error'}
     >
       <option value=''>{defaultValue}</option>
       {options.map((option, index) => {

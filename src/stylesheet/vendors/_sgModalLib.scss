@@ -1,0 +1,9 @@
+.sg-modal-lib {
+  p {
+    color: color(text);
+    padding-bottom: 15px;
+  }
+  &__dialog {
+    row-gap: 5px;
+  }
+}

@@ -8,16 +8,18 @@
     padding: 0 2.5% 0 0;
   }
   &__title {
-    border-bottom: 3px solid $extra-color;
-    padding: 20px 0 20px 10px;
+    color: color(primary);
+    font-size: fontSize(large);
+    border-bottom: 3px solid color(extra);
+    padding: 10px 0 10px 10px;
     width: fit-content;
   }
-  @include min-media-breakpoint($breakpoint-mobile-md) {
+  @include media-breakpoint('min', large-mobile) {
     &__header {
       padding-left: 2.5%;
     }
   }
-  @include min-media-breakpoint($breakpoint-tablet) {
+  @include media-breakpoint('min', tablet) {
     gap: 40px;
   }
 }
