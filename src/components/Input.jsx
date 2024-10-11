@@ -24,12 +24,14 @@ import PropTypes from 'prop-types';
 const Input = ({ field, register, fieldErrorClass }) => {
   const { name, type = 'text', isRequired = true, pattern = null } = field;
 
+  const errorClass = fieldErrorClass ? fieldErrorClass(name) : '';
+
   return (
     <input
       type={type}
       id={name}
       name={name}
-      className={'input ' + fieldErrorClass(name)}
+      className={`input ${errorClass}`}
       {...register(name, {
         required: isRequired,
         pattern: pattern,

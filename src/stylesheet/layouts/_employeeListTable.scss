@@ -1,4 +1,7 @@
-.employee-list__table {
+.employee-list-table {
+  &__not-found {
+    padding: 20px;
+  }
   @include media-breakpoint('min', large-mobile) {
     margin: 0 auto;
     width: 95%;

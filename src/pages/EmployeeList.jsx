@@ -18,6 +18,7 @@ const EmployeeList = () => {
       link='/create-employee'
     />
   );
+
   return (
     <PageLayout
       pageTitle='Current Employees'

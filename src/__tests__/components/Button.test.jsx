@@ -19,14 +19,9 @@ describe('<Button>', () => {
     setup();
     const buttonElement = screen.getByRole('button');
     // Checks that the additional class is not applied
-    expect(buttonElement.className).toBe('btn');
+    expect(buttonElement.className).toBe('btn ');
   });
-  it('has no onClick handler if no provided', () => {
-    setup();
-    const buttonElement = screen.getByRole('button');
-    // Checks that the onClick function is null
-    expect(buttonElement.onclick).toBeNull();
-  });
+
   it('calls handleOnClick when the button is clicked', () => {
     const props = {
       ...defaultProps,

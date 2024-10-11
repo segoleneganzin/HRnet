@@ -34,7 +34,10 @@ const EmployeeListTable = () => {
     enableStickyHeader: true,
     globalFilterFn: 'contains',
     renderEmptyRowsFallback: () => (
-      <Error errorMessage={'No employee to display'} />
+      <Error
+        errorMessage={'No employee to display'}
+        className='employee-list-table__not-found'
+      />
     ),
     muiPaginationProps: {
       rowsPerPageOptions: [5, 10, 25, 50, 100],
@@ -42,7 +45,7 @@ const EmployeeListTable = () => {
   });
 
   return (
-    <div className='employee-list__table' data-testid='employee-list-table'>
+    <div className='employee-list-table' data-testid='employee-list-table'>
       <MaterialReactTable table={table} />
     </div>
   );

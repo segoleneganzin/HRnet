@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import { useState } from 'react';
+import { useState, useCallback } from 'react';
 import FAB from '../components/FAB';
 import CreateEmployeeForm from '../layouts/CreateEmployeeForm';
 import PageLayout from '../layouts/PageLayout';
@@ -25,9 +25,13 @@ const CreateEmployee = ({ initialModalOpen = false }) => {
     />
   );
 
-  const toggleModal = () => {
-    setIsModalOpen(!isModalOpen);
-    window.scrollTo({ top: 0, behavior: 'smooth' }); // scrolls the page to the top
+  const toggleModal = useCallback(() => {
+    setIsModalOpen((prevIsOpen) => !prevIsOpen);
+    scrollToTop();
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   return (

@@ -18,14 +18,12 @@ import { Link } from 'react-router-dom';
  *    link='/sample-link'
  * />
  */
-const FAB = ({ icon, text, link }) => {
-  return (
-    <Link className='fab' to={link}>
-      <img src={icon} alt={`fab icon`} className='fab__icon' />
-      <span className='fab__text'>{text}</span>
-    </Link>
-  );
-};
+const FAB = ({ icon, text, link }) => (
+  <Link className='fab' to={link} aria-label={text}>
+    <img src={icon} alt={`${text} icon`} className='fab__icon' />
+    <span className='fab__text'>{text}</span>
+  </Link>
+);
 
 FAB.propTypes = {
   icon: PropTypes.string.isRequired,

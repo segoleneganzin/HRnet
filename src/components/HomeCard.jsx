@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom/dist';
  * Card component for displaying information on the home page.
  *
  * @param {Object} props
- * @param {string} props.icon - The URL of the icon image to display on the card.
+ * @param {string} props.icon - The SVG component to display on the card.
  * @param {string} props.title - The title to display on the card.
  * @param {string} props.description - The description text to display on the card.
  * @param {string} props.link - The URL path to navigate to when the link is clicked.
@@ -28,7 +28,9 @@ const HomeCard = ({ icon, title, description, link, linkText }) => {
   const navigate = useNavigate();
 
   const handleClick = () => {
-    navigate(link);
+    if (link) {
+      navigate(link);
+    }
   };
 
   return (
@@ -51,7 +53,7 @@ const HomeCard = ({ icon, title, description, link, linkText }) => {
 };
 
 HomeCard.propTypes = {
-  icon: PropTypes.elementType.isRequired,
+  icon: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   link: PropTypes.string.isRequired,

@@ -18,6 +18,7 @@ import Error from './Error';
  * @param {function} [props.register] - Register function from React Hook Form for input registration.
  * @param {function} [props.fieldErrorClass] - Function to determine the error class for the field.
  * @param {Object} props.errors - The errors object from React Hook Form to manage field errors.
+ * @param {string} [props.className] - Additional classes for styling the field.
  * @returns {JSX.Element} The rendered form field component. *
  * @example
  * <FormField
@@ -39,7 +40,14 @@ import Error from './Error';
  *  errors={errors}
  * />
  */
-const FormField = ({ field, control, register, fieldErrorClass, errors }) => {
+const FormField = ({
+  field,
+  control,
+  register,
+  fieldErrorClass,
+  errors,
+  className = '',
+}) => {
   const { type, name, label, defaultValue, pattern, options } = field;
 
   // Determine if there's an error for this field
@@ -81,7 +89,7 @@ const FormField = ({ field, control, register, fieldErrorClass, errors }) => {
   };
 
   return (
-    <div className='form-field'>
+    <div className={`form-field ${className}`}>
       <label htmlFor={name} className='form-field__label label'>
         {label}
       </label>
@@ -117,5 +125,6 @@ FormField.propTypes = {
   register: PropTypes.func,
   fieldErrorClass: PropTypes.func,
   errors: PropTypes.object.isRequired,
+  className: PropTypes.string,
 };
 export default FormField;

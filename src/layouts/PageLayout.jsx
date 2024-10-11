@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import Header from '../layouts/Header';
 import Footer from './Footer';
@@ -19,13 +20,15 @@ const PageLayout = ({
   mainClassName = '',
   dataTestId = '',
 }) => {
-  document.title = pageTitle;
+  useEffect(() => {
+    document.title = pageTitle; // Set the document title within useEffect to avoid side effects during rendering
+  }, [pageTitle]);
 
   return (
     <div data-testid={dataTestId}>
       <Header />
 
-      <main className={'main ' + mainClassName}>{children}</main>
+      <main className={`main ${mainClassName}`}>{children}</main>
 
       <Footer />
     </div>

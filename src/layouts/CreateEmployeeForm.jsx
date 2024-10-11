@@ -19,7 +19,9 @@ import Button from '../components/Button';
 const CreateEmployeeForm = ({ toggleModal }) => {
   // Get departments from the Redux store
   const departments = useSelector((state) => selectDepartments(state));
+
   const dispatch = useDispatch();
+
   // Initialize the react-hook-form methods
   const {
     register,
@@ -34,9 +36,8 @@ const CreateEmployeeForm = ({ toggleModal }) => {
    * @param {string} fieldName
    * @returns {string} - Field error class.
    */
-  const fieldErrorClass = (fieldName) => {
-    return errors[fieldName] ? 'field--error' : '';
-  };
+  const fieldErrorClass = (fieldName) =>
+    errors[fieldName] ? 'field--error' : '';
 
   /**
    * Function to handle form submission
@@ -101,8 +102,8 @@ const CreateEmployeeForm = ({ toggleModal }) => {
     >
       <div className='create-employee-form__fields'>
         <div className='create-employee-form__section'>
-          {fieldsGroup1.map((field, index) => (
-            <FormField key={index} field={field} {...defaultPropsField} />
+          {fieldsGroup1.map((field) => (
+            <FormField key={field.name} field={field} {...defaultPropsField} />
           ))}
         </div>
 
@@ -110,15 +111,19 @@ const CreateEmployeeForm = ({ toggleModal }) => {
           {/* Address Fieldset */}
           <fieldset className={'create-employee-form__address'}>
             <legend className='fieldset-legend'>Address</legend>
-            {fieldsGroup2.map((field, index) => (
-              <FormField key={index} field={field} {...defaultPropsField} />
+            {fieldsGroup2.map((field) => (
+              <FormField
+                key={field.name}
+                field={field}
+                {...defaultPropsField}
+              />
             ))}
           </fieldset>
         </div>
 
         <div className='create-employee-form__section'>
-          {fieldsGroup3.map((field, index) => (
-            <FormField key={index} field={field} {...defaultPropsField} />
+          {fieldsGroup3.map((field) => (
+            <FormField key={field.name} field={field} {...defaultPropsField} />
           ))}
         </div>
       </div>

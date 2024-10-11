@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import SectionHeader from './SectionHeader';
 
 /**
  * SectionLayout component renders a section with content, an optional title, and an optional customizable button.
@@ -11,14 +12,7 @@ import PropTypes from 'prop-types';
  */
 const SectionLayout = ({ title, buttonComponent, children }) => (
   <section className='section' data-testid='section'>
-    {title || buttonComponent ? (
-      <div className='section__header'>
-        {title && <h3 className='title section__title'>{title}</h3>}
-        {buttonComponent && buttonComponent}
-      </div>
-    ) : (
-      ''
-    )}
+    <SectionHeader title={title} buttonComponent={buttonComponent} />
     {children}
   </section>
 );

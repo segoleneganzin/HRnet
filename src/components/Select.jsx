@@ -32,11 +32,13 @@ const Select = ({ field, register, fieldErrorClass }) => {
     options = [],
   } = field;
 
+  const errorClass = fieldErrorClass ? fieldErrorClass(name) : '';
+
   return (
     <select
       id={name}
       name={name}
-      className={`select ` + fieldErrorClass(name)}
+      className={`select ${errorClass}`}
       {...register(name, {
         required: isRequired,
       })}

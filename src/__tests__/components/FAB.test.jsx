@@ -20,7 +20,7 @@ describe('<FAB>', () => {
 
   it('renders the icon correctly', () => {
     setup();
-    const iconElement = screen.getByAltText('fab icon');
+    const iconElement = screen.getByAltText('Click Me icon');
     expect(iconElement).toBeInTheDocument();
     expect(iconElement).toHaveAttribute('src', 'icon-url.png');
   });
@@ -42,7 +42,7 @@ describe('<FAB>', () => {
     const linkElement = screen.getByRole('link');
     expect(linkElement.className).toBe('fab');
 
-    const iconElement = screen.getByAltText('fab icon');
+    const iconElement = screen.getByAltText('Click Me icon');
     expect(iconElement.className).toBe('fab__icon');
 
     const textElement = screen.getByText('Click Me');
