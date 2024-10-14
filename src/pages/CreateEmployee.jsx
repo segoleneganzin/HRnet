@@ -25,6 +25,7 @@ const CreateEmployee = ({ initialModalOpen = false }) => {
     />
   );
 
+  //  cache function definition between re-renders
   const toggleModal = useCallback(() => {
     setIsModalOpen((prevIsOpen) => !prevIsOpen);
     scrollToTop();

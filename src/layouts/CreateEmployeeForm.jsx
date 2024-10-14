@@ -55,6 +55,7 @@ const CreateEmployeeForm = ({ toggleModal }) => {
     reset(); // reinitialize form when addEmployee succeeded
   };
 
+  // separated in groups to apply css grid
   const fieldsGroup1 = [
     { name: 'firstName', label: 'First name' },
     { name: 'lastName', label: 'Last name' },
