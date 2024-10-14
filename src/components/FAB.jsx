@@ -20,7 +20,7 @@ import { Link } from 'react-router-dom';
  */
 const FAB = ({ icon, text, link }) => (
   <Link className='fab' to={link} aria-label={text}>
-    <img src={icon} alt={`${text} icon`} className='fab__icon' />
+    <img src={icon} alt={`${text} icon`} className='fab__icon' loading='lazy' />
     <span className='fab__text'>{text}</span>
   </Link>
 );

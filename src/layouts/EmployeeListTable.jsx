@@ -1,3 +1,4 @@
+import { lazy, Suspense, useMemo } from 'react';
 import { useSelector } from 'react-redux';
 import {
   MaterialReactTable,
@@ -6,7 +7,7 @@ import {
 import { selectEmployees } from '../features/employeesSlice';
 import Error from '../components/Error';
 import { colDefs } from '../utils/tables/employeesColDefs';
-import { useMemo } from 'react';
+import Loader from '../components/Loader';
 
 /**
  * Component that displays a table of employees using material-react-table (Material UI + TanStack Table).
@@ -46,7 +47,9 @@ const EmployeeListTable = () => {
 
   return (
     <div className='employee-list-table' data-testid='employee-list-table'>
-      <MaterialReactTable table={table} />
+      <Suspense fallback={<Loader />}>
+        <MaterialReactTable table={table} />
+      </Suspense>
     </div>
   );
 };
