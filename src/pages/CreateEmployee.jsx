@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import { useState, useCallback } from 'react';
+import { useState } from 'react';
 import FAB from '../components/FAB';
 import CreateEmployeeForm from '../layouts/CreateEmployeeForm';
 import PageLayout from '../layouts/PageLayout';
@@ -17,6 +17,12 @@ import { Modal } from 'sg-modal-lib';
 const CreateEmployee = ({ initialModalOpen = false }) => {
   const [isModalOpen, setIsModalOpen] = useState(initialModalOpen);
 
+  const toggleModal = () => {
+    setIsModalOpen((prevIsOpen) => !prevIsOpen);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  // Using useMemo for CustomFAB to avoid unnecessary re-renders
   const CustomFAB = (
     <FAB
       icon={currentEmployeesFabIcon}
@@ -25,19 +31,9 @@ const CreateEmployee = ({ initialModalOpen = false }) => {
     />
   );
 
-  //  cache function definition between re-renders
-  const toggleModal = useCallback(() => {
-    setIsModalOpen((prevIsOpen) => !prevIsOpen);
-    scrollToTop();
-  }, []);
-
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
-
   return (
     <PageLayout
-      pageTitle='Create employee'
+      pageTitle='Add employee'
       mainClassName='create-employee'
       dataTestId='create-employee'
     >

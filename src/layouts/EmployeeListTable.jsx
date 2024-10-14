@@ -1,13 +1,11 @@
-import { lazy, Suspense, useMemo } from 'react';
+import { useMemo } from 'react';
 import { useSelector } from 'react-redux';
 import {
-  MaterialReactTable,
   useMaterialReactTable,
+  MaterialReactTable,
 } from 'material-react-table';
 import { selectEmployees } from '../features/employeesSlice';
-import Error from '../components/Error';
 import { colDefs } from '../utils/tables/employeesColDefs';
-import Loader from '../components/Loader';
 
 /**
  * Component that displays a table of employees using material-react-table (Material UI + TanStack Table).
@@ -35,10 +33,7 @@ const EmployeeListTable = () => {
     enableStickyHeader: true,
     globalFilterFn: 'contains',
     renderEmptyRowsFallback: () => (
-      <Error
-        errorMessage={'No employee to display'}
-        className='employee-list-table__not-found'
-      />
+      <p className='employee-list-table__not-found'>No employee to display</p>
     ),
     muiPaginationProps: {
       rowsPerPageOptions: [5, 10, 25, 50, 100],
@@ -47,9 +42,7 @@ const EmployeeListTable = () => {
 
   return (
     <div className='employee-list-table' data-testid='employee-list-table'>
-      <Suspense fallback={<Loader />}>
-        <MaterialReactTable table={table} />
-      </Suspense>
+      <MaterialReactTable table={table} />
     </div>
   );
 };

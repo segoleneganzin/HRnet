@@ -1,9 +1,15 @@
 .employee-list-table {
   &__not-found {
+    color: color(error);
     padding: 20px;
+    margin: auto;
+    width: fit-content;
   }
   @include media-breakpoint('min', large-mobile) {
     margin: 0 auto;
     width: 95%;
+    &__not-found {
+      margin: 0;
+    }
   }
 }

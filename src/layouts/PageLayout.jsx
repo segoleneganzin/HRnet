@@ -20,9 +20,7 @@ const PageLayout = ({
   mainClassName = '',
   dataTestId = '',
 }) => {
-  useEffect(() => {
-    document.title = pageTitle; // Set the document title within useEffect to avoid side effects during rendering
-  }, [pageTitle]);
+  document.title = pageTitle;
 
   return (
     <div data-testid={dataTestId}>

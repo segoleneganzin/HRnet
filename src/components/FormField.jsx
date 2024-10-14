@@ -2,7 +2,6 @@ import PropTypes from 'prop-types';
 import Input from './Input';
 import Select from './Select';
 import DatePicker from './DatePicker';
-import Error from './Error';
 
 /**
  * FormField component handles the layout of form data.
@@ -88,6 +87,17 @@ const FormField = ({
     }
   };
 
+  const getErrorMessage = (errorType, label) => {
+    switch (errorType) {
+      case 'required':
+        return `Please enter a ${label.toLowerCase()}`;
+      case 'pattern':
+        return 'Invalid field';
+      default:
+        return null; // Aucune erreur, ou erreur non gérée
+    }
+  };
+
   return (
     <div className={`form-field ${className}`}>
       <label htmlFor={name} className='form-field__label label'>
@@ -96,11 +106,10 @@ const FormField = ({
       {renderInput()}
       {hasError && (
         <>
-          {errors[name]?.type === 'required' && (
-            <Error errorMessage={`Please enter a ${label.toLowerCase()}`} />
-          )}
-          {errors[name]?.type === 'pattern' && (
-            <Error errorMessage='Invalid field' />
+          {errors[name] && (
+            <p className={`form-field__error-message`}>
+              {getErrorMessage(errors[name].type, label)}
+            </p>
           )}
         </>
       )}

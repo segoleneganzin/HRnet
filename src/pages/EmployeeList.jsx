@@ -1,11 +1,8 @@
-import { lazy, Suspense } from 'react';
 import FAB from '../components/FAB';
 import PageLayout from '../layouts/PageLayout';
 import createEmployeeFabIcon from '../assets/img/createEmployeeFabIcon.svg';
-import Loader from '../components/Loader';
-
-const SectionLayout = lazy(() => import('../layouts/SectionLayout'));
-const EmployeeListTable = lazy(() => import('../layouts/EmployeeListTable'));
+import SectionLayout from '../layouts/SectionLayout';
+import EmployeeListTable from '../layouts/EmployeeListTable';
 
 /**
  * EmployeeList component renders a page displaying the list of current employees.
@@ -28,11 +25,9 @@ const EmployeeList = () => {
       mainClassName='employee-list'
       dataTestId='employee-list'
     >
-      <Suspense fallback={<Loader />}>
-        <SectionLayout title={'CURRENT EMPLOYEES'} buttonComponent={CustomFAB}>
-          <EmployeeListTable />
-        </SectionLayout>
-      </Suspense>
+      <SectionLayout title={'CURRENT EMPLOYEES'} buttonComponent={CustomFAB}>
+        <EmployeeListTable />
+      </SectionLayout>
     </PageLayout>
   );
 };

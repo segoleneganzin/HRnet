@@ -1,6 +1,9 @@
 .form-field {
   @include flex-col;
   gap: 5px;
+  &__error-message {
+    color: color(error);
+  }
   .label {
     color: color(primary);
   }

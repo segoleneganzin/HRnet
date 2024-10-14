@@ -8,6 +8,8 @@
   }
   &__img {
     height: 50px;
+    width: 50px;
+    object-fit: cover;
   }
 
   @include media-breakpoint('min', tablet) {
