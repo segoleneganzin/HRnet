@@ -3,7 +3,6 @@ import { useSelector } from 'react-redux';
 import { selectEmployees } from '../features/employeesSlice';
 import { colDefs } from '../utils/tables/employeesColDefs';
 import DataTable from 'react-data-table-component';
-import Filter from '../components/Filter';
 import Loader from '../components/Loader';
 import { filterEmployees } from '../utils/tables/filter';
 import EmployeeTableFilter from './EmployeeTableFilter';
