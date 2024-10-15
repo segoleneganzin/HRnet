@@ -1,15 +1,23 @@
 .employee-list-table {
+  @include flex-col;
+  &__filter {
+    align-self: flex-end;
+    background-color: color(tableLight);
+    border-radius: radius(small) radius(small) 0 0;
+    border-bottom: 1px solid color(light);
+    padding: 15px 15px 10px;
+  }
+  &__filter-toggle {
+    background-color: transparent;
+    border: none;
+  }
   &__not-found {
     color: color(error);
     padding: 20px;
-    margin: auto;
     width: fit-content;
   }
   @include media-breakpoint('min', large-mobile) {
     margin: 0 auto;
     width: 95%;
-    &__not-found {
-      margin: 0;
-    }
   }
 }

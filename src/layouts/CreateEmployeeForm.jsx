@@ -129,7 +129,11 @@ const CreateEmployeeForm = ({ toggleModal }) => {
         </div>
       </div>
 
-      <Button text='Create' className='create-employee-form__btn bold' />
+      <Button
+        content='Create'
+        className='create-employee-form__btn bold'
+        ariaLabel='Create employee'
+      />
     </form>
   );
 };

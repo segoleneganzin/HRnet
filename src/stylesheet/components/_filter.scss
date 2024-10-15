@@ -1,0 +1,19 @@
+.filter {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+  &__label {
+    white-space: nowrap;
+  }
+  &__input {
+    height: 30px;
+    padding: 5px;
+  }
+  &__clear-btn {
+    background-color: transparent;
+    border: none;
+    position: absolute;
+    right: 5px;
+  }
+}

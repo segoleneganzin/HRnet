@@ -46,7 +46,7 @@ const HomeCard = ({ icon, title, description, link, linkText }) => {
       <Button
         handleOnClick={handleClick}
         className='home-card__btn bold'
-        text={linkText}
+        content={linkText}
       />
     </article>
   );
