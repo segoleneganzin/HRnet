@@ -18,11 +18,12 @@
   }
   .ddvZdT,
   .bOmZtP div:first-child {
-    overflow: unset;
+    white-space: wrap;
   }
   .dQcPXM {
-    overflow: scroll;
+    min-width: 150px;
   }
+
   @include media-breakpoint('min', large-mobile) {
     margin: 0 auto;
     width: 95%;
