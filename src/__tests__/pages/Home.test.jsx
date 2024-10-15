@@ -19,8 +19,9 @@ describe('<Home>', () => {
     );
   };
 
+  beforeEach(() => setup());
+
   it('should render Home cards', () => {
-    setup();
     expect(screen.getByText('CREATE EMPLOYEE')).toBeInTheDocument();
     expect(screen.getByText('CURRENT EMPLOYEES')).toBeInTheDocument();
     const linkElementView = screen.getByRole('button', {

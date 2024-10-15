@@ -1,4 +1,3 @@
-// src/__tests__/components/FormField.test.jsx
 import { render, screen } from '@testing-library/react';
 import { describe, it, expect } from 'vitest';
 import FormField from '../../components/FormField';

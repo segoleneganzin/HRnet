@@ -29,22 +29,21 @@ describe('<HomeCard>', () => {
     );
   };
 
+  beforeEach(() => setup());
+
   it('renders the icon correctly', () => {
-    setup();
     const iconElement = screen.getByAltText('Sample Title icon');
     expect(iconElement).toBeInTheDocument();
     expect(iconElement).toHaveAttribute('src', 'icon-url.png');
   });
 
   it('renders the title correctly', () => {
-    setup();
     const titleElement = screen.getByText('Sample Title');
     expect(titleElement).toBeInTheDocument();
     expect(titleElement.className).toBe('home-card__title title');
   });
 
   it('renders the description correctly', () => {
-    setup();
     const descriptionElement = screen.getByText(
       'This is a sample description.'
     );
@@ -53,7 +52,6 @@ describe('<HomeCard>', () => {
   });
 
   it('renders the link with correct text and onClick', () => {
-    setup();
     const buttonElement = screen.getByRole('button', { name: 'Learn More' });
     expect(buttonElement).toBeInTheDocument();
     expect(buttonElement.className).toBe('btn home-card__btn bold');

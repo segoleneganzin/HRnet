@@ -20,8 +20,9 @@ describe('<CreateEmployeeForm>', () => {
     );
   };
 
+  beforeEach(() => setup());
+
   it('renders all form fields correctly', () => {
-    setup();
     expect(screen.getByLabelText('First name')).toBeInTheDocument();
     expect(screen.getByLabelText('Last name')).toBeInTheDocument();
     expect(screen.getByLabelText('Date of birth')).toBeInTheDocument();
@@ -38,8 +39,6 @@ describe('<CreateEmployeeForm>', () => {
   });
 
   it('fills and submits the form correctly', async () => {
-    setup();
-
     // Fill in the form fields
     fireEvent.change(screen.getByLabelText('First name'), {
       target: { value: 'John' },

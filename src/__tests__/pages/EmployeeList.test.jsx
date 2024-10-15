@@ -20,8 +20,9 @@ describe('<EmployeeList>', () => {
     );
   };
 
+  beforeEach(() => setup());
+
   it('should render EmployeeList table and FAB button', () => {
-    setup();
     expect(screen.getByText('Add employee')).toBeInTheDocument();
     expect(screen.getByText('CURRENT EMPLOYEES')).toBeInTheDocument();
     // Check if each column header of EmployeeListTable is present in the document

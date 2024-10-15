@@ -1,4 +1,3 @@
-// src/__tests__/components/PageLayout.test.jsx
 import { render, screen } from '@testing-library/react';
 import { describe, it, expect, vi } from 'vitest';
 import PageLayout from '../../layouts/PageLayout';

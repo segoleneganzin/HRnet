@@ -1,7 +1,6 @@
-// src/__tests__/components/SectionLayout.test.jsx
 import { render, screen } from '@testing-library/react';
 import { describe, it, expect } from 'vitest';
-import SectionLayout from '../../layouts/SectionLayout'; // Adjust the path if needed
+import SectionLayout from '../../layouts/SectionLayout';
 
 describe('<SectionLayout>', () => {
   const defaultProps = {};

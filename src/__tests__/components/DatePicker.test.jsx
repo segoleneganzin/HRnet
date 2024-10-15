@@ -1,10 +1,9 @@
 import { render, screen } from '@testing-library/react';
 import { describe, it, expect } from 'vitest';
 import { useForm } from 'react-hook-form';
-import DatePicker from '../../components/DatePicker'; // Change path as needed
+import DatePicker from '../../components/DatePicker';
 
 // Create a TestWrapper component to use react-hook-form's useForm hook
- 
 const TestWrapper = ({ errors }) => {
   const { control } = useForm();
   return (
