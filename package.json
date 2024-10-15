@@ -15,9 +15,7 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "test": "vitest",
-    "deploy": "vercel",
-    "deploy:prod": "vercel --prod"
+    "test": "vitest"
   },
   "eslintConfig": {
     "extends": [

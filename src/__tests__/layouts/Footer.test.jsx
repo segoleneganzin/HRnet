@@ -2,7 +2,7 @@ import { render, screen } from '@testing-library/react';
 import { describe, it, expect } from 'vitest';
 import Footer from '../../layouts/Footer';
 
-describe('<Header />', () => {
+describe('<Footer />', () => {
   it('renders the header correctly', () => {
     render(<Footer />);
     // Check that text are presents

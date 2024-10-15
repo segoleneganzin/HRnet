@@ -20,7 +20,8 @@ Les plugins JQuery ont été remplacés :<br>
 - Table : [react-data-table-component](https://www.npmjs.com/package/react-data-table-component)
 
 Pour le moment, les données sont mockées (employees et departments). <br>
-Les états américains permettant de remplir les options du select sont récupérés grâce à la bibliothèque [states-us](https://www.npmjs.com/package/states-us).
+Les états américains permettant de remplir les options du select sont récupérés grâce à la bibliothèque [states-us](https://www.npmjs.com/package/states-us). <br>
+Des test unitaires ont été mis en place avec vitest.
 
 ### 🖥 Mock-up du site
 
@@ -99,7 +100,17 @@ Les états américains permettant de remplir les options du select sont récupé
 
 - **[Vite](https://vitejs.dev/)** (^5.4.8): Un outil de développement frontend de nouvelle génération visant à fournir une expérience de développement plus rapide et plus légère.
 - **[ESLint](https://eslint.org/)** (^9.12.0): Un outil pour identifier et signaler les erreurs trouvées dans le code ECMAScript/JavaScript.
-- **[Plugins ESLint](https://eslint.org/docs/user-guide/configuring/plugins)** : Plugins pour étendre les fonctionnalités d'ESLint, y compris `eslint-plugin-react` (^7.37.1) pour des règles de linting spécifiques à React.
+- **[Plugins ESLint](https://eslint.org/docs/user-guide/configuring/plugins)**: Plugins pour étendre les fonctionnalités d'ESLint, y compris `eslint-plugin-react` (^7.37.1) pour des règles de linting spécifiques à React.
+- **[@testing-library/jest-dom](https://github.com/testing-library/jest-dom)** (^6.5.0): Matchers personnalisés pour Jest afin de tester l'état du DOM.
+- **[@testing-library/react](https://testing-library.com/docs/react-testing-library/intro)** (^16.0.1): Utilitaires pour tester les composants React.
+- **[@vitejs/plugin-react](https://vitejs.dev/plugin-react)** (^4.3.2): Plugin Vite pour React pour une expérience de construction et de développement optimale.
+- **[@vitest/coverage-v8](https://vitest.dev/)** (^2.1.2): Framework de test de Vite pour exécuter des tests unitaires avec couverture.
+- **[eslint-plugin-react-hooks](https://www.npmjs.com/package/eslint-plugin-react-hooks)** (^4.6.2): Plugin ESLint pour faire respecter les règles des Hooks.
+- **[eslint-plugin-react-refresh](https://www.npmjs.com/package/eslint-plugin-react-refresh)** (^0.4.12): Plugin ESLint pour React Fast Refresh.
+- **[globals](https://www.npmjs.com/package/globals)** (^15.11.0): Variables globales utilisées dans différents environnements (Node.js, navigateur, etc.).
+- **[jsdom](https://github.com/jsdom/jsdom)** (^25.0.1): Une implémentation JavaScript des normes DOM et HTML pour les tests dans Node.js.
+- **[Sass](https://sass-lang.com/)** (^1.79.4): Un langage de préprocesseur qui est interprété ou compilé en feuilles de style en cascade (CSS).
+- **[Vitest](https://vitest.dev/)** (^2.1.2): Un framework de test unitaire compatible avec Vite.
 
 ### 🏆 Compétences évaluées
 
@@ -135,7 +146,8 @@ jQuery plugins have been replaced with :<br>
 - Table : [Material React Table](https://www.material-react-table.com/)
 
 Pour le moment, les données sont mockées (employees et departments). <br>
-Currently, data (employees and departments) is mocked. U.S. states for populating the select options are retrieved using the [states-us](https://www.npmjs.com/package/states-us) library.
+Currently, data (employees and departments) is mocked. U.S. states for populating the select options are retrieved using the [states-us](https://www.npmjs.com/package/states-us) library. <br>
+Unit tests were set up with vitest.
 
 ### 🖥 Site mock up
 
@@ -212,9 +224,19 @@ Currently, data (employees and departments) is mocked. U.S. states for populatin
 
 #### Development Tools
 
-- **[Vite](https://vitejs.dev/)** (^5.4.8): A next-generation frontend development tool aimed at providing a faster and lighter development experience.
+- **[Vite](https://vitejs.dev/)** (^5.4.8): A next-generation frontend development tool designed to provide a faster and lighter development experience.
 - **[ESLint](https://eslint.org/)** (^9.12.0): A tool for identifying and reporting errors found in ECMAScript/JavaScript code.
 - **[ESLint Plugins](https://eslint.org/docs/user-guide/configuring/plugins)**: Plugins to extend ESLint's functionality, including `eslint-plugin-react` (^7.37.1) for React-specific linting rules.
+- **[@testing-library/jest-dom](https://github.com/testing-library/jest-dom)** (^6.5.0): Custom matchers for Jest to test the state of the DOM.
+- **[@testing-library/react](https://testing-library.com/docs/react-testing-library/intro)** (^16.0.1): Utilities for testing React components.
+- **[@vitejs/plugin-react](https://vitejs.dev/plugin-react)** (^4.3.2): Vite plugin for React for optimal build and development experience.
+- **[@vitest/coverage-v8](https://vitest.dev/)** (^2.1.2): Vite's test framework for running unit tests with coverage.
+- **[eslint-plugin-react-hooks](https://www.npmjs.com/package/eslint-plugin-react-hooks)** (^4.6.2): ESLint plugin for enforcing the Rules of Hooks.
+- **[eslint-plugin-react-refresh](https://www.npmjs.com/package/eslint-plugin-react-refresh)** (^0.4.12): ESLint plugin for React Fast Refresh.
+- **[globals](https://www.npmjs.com/package/globals)** (^15.11.0): Global variables that are used in different environments (Node.js, browser, etc.).
+- **[jsdom](https://github.com/jsdom/jsdom)** (^25.0.1): A JavaScript implementation of the DOM and HTML standards for testing in Node.js.
+- **[Sass](https://sass-lang.com/)** (^1.79.4): A preprocessor scripting language that is interpreted or compiled into Cascading Style Sheets (CSS).
+- **[Vitest](https://vitest.dev/)** (^2.1.2): A unit testing framework that is compatible with Vite.
 
 ### 🏆 Evaluated Skills
 

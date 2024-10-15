@@ -3,7 +3,7 @@ import { render, screen } from '@testing-library/react';
 import { describe, it, expect } from 'vitest';
 import FormField from '../../components/FormField';
 
-describe('<FormField />', () => {
+describe('<FormField>', () => {
   const defaultProps = {
     field: { name: 'testField', label: 'Test Field' },
     register: vi.fn(),

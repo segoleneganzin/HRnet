@@ -4,7 +4,7 @@ import Button from '../../components/Button';
 
 describe('<Button>', () => {
   const defaultProps = {
-    text: 'OK',
+    content: 'OK',
   };
 
   const setup = (props = defaultProps) => {

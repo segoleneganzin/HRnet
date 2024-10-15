@@ -26,13 +26,19 @@ const EmployeeTableFilter = ({
 }) => {
   const [isFilterOpen, setIsFilterOpen] = useState(false);
 
+  /**
+   * Toggles the visibility of the filter input and clears the filter text.
+   */
   const toggleFilter = () => {
-    setIsFilterOpen((prevIsOpen) => !prevIsOpen);
+    setIsFilterOpen((prev) => !prev);
     handleClear();
   };
 
+  /**
+   * Clears the filter text and resets pagination.
+   */
   const handleClear = () => {
-    setResetPaginationToggle((prevIsOpen) => !prevIsOpen);
+    setResetPaginationToggle((prev) => !prev);
     setFilterText('');
   };
 

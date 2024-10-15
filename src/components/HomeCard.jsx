@@ -27,12 +27,6 @@ import { useNavigate } from 'react-router-dom/dist';
 const HomeCard = ({ icon, title, description, link, linkText }) => {
   const navigate = useNavigate();
 
-  const handleClick = () => {
-    if (link) {
-      navigate(link);
-    }
-  };
-
   return (
     <article className='home-card'>
       <div className='home-card__icon-bg'>
@@ -44,7 +38,7 @@ const HomeCard = ({ icon, title, description, link, linkText }) => {
       <p className='home-card__description'>{description}</p>
 
       <Button
-        handleOnClick={handleClick}
+        handleOnClick={() => navigate(link)}
         className='home-card__btn bold'
         content={linkText}
       />

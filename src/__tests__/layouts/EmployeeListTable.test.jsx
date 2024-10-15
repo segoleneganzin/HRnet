@@ -16,7 +16,7 @@ describe('<EmployeeListTable>', () => {
     );
     // Check if each column header is present in the document
     colDefs.forEach((col) => {
-      expect(screen.getByText(col.header)).toBeInTheDocument();
+      expect(screen.getByText(col.name)).toBeInTheDocument();
     });
   });
 });

@@ -11,7 +11,7 @@ describe('<Header />', () => {
       </MemoryRouter>
     );
     // Check that the logo image is in the document
-    const logoImage = screen.getByAltText('');
+    const logoImage = screen.getByAltText('Logo Wealth Health');
     expect(logoImage).toBeInTheDocument();
     expect(logoImage).toHaveAttribute('src', '/src/assets/img/logo.webp');
 

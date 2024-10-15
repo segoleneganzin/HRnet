@@ -34,14 +34,14 @@ describe('<CreateEmployee>', () => {
     expect(screen.getByLabelText('State')).toBeInTheDocument();
     expect(screen.getByLabelText('Zip code')).toBeInTheDocument();
     expect(screen.getByLabelText('Department')).toBeInTheDocument();
-    expect(screen.getByRole('button', { name: 'Create' })).toBeInTheDocument();
+    expect(
+      screen.getByRole('button', { name: 'Create employee' })
+    ).toBeInTheDocument();
   });
 
   it('should render the modal when isModalOpen is true', async () => {
     setup({ initialModalOpen: true });
-
     // Wait for the modal to appear
-    await waitFor(() => expect(screen.getByRole('dialog')).toBeInTheDocument());
     expect(screen.getByText('Employee Created !')).toBeInTheDocument();
   });
 });

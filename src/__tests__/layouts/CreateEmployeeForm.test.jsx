@@ -32,7 +32,9 @@ describe('<CreateEmployeeForm>', () => {
     expect(screen.getByLabelText('State')).toBeInTheDocument();
     expect(screen.getByLabelText('Zip code')).toBeInTheDocument();
     expect(screen.getByLabelText('Department')).toBeInTheDocument();
-    expect(screen.getByRole('button', { name: 'Create' })).toBeInTheDocument();
+    expect(
+      screen.getByRole('button', { name: 'Create employee' })
+    ).toBeInTheDocument();
   });
 
   it('fills and submits the form correctly', async () => {
@@ -68,7 +70,7 @@ describe('<CreateEmployeeForm>', () => {
     });
 
     // Submit the form
-    fireEvent.click(screen.getByRole('button', { name: 'Create' }));
+    fireEvent.click(screen.getByRole('button', { name: 'Create employee' }));
 
     await waitFor(() => {
       // Check if dispatch has been called

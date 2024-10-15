@@ -22,7 +22,6 @@ const CreateEmployee = ({ initialModalOpen = false }) => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  // Using useMemo for CustomFAB to avoid unnecessary re-renders
   const CustomFAB = (
     <FAB
       icon={currentEmployeesFabIcon}

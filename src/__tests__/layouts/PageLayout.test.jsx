@@ -14,7 +14,7 @@ vi.mock('../../layouts/Footer', () => ({
   default: () => <div>Footer Component</div>,
 }));
 
-describe('<PageLayout />', () => {
+describe('<PageLayout>', () => {
   const defaultProps = {};
 
   const setup = (props = defaultProps) => {

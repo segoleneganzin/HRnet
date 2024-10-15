@@ -3,7 +3,7 @@ import { render, screen } from '@testing-library/react';
 import { describe, it, expect } from 'vitest';
 import SectionLayout from '../../layouts/SectionLayout'; // Adjust the path if needed
 
-describe('<SectionLayout />', () => {
+describe('<SectionLayout>', () => {
   const defaultProps = {};
   const setup = (props = defaultProps) => {
     return render(
