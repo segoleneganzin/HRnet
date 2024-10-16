@@ -4,24 +4,31 @@
 
 ### 📚 Présentation
 
-Ce projet correspond à la migration d'une application web interne jQuery vers React. <br>
-👉 [Code de l'ancienne application](https://github.com/OpenClassrooms-Student-Center/P12_Front-end) <br>
-Le but de ce changement est de réduire la dette technique et d'améliorer la performance de l'application web.<br>
-L'application permet la gestion des dossiers des employés :<br>
+Ce projet correspond à la migration d'une application web interne jQuery vers React.  
+👉 [Code de l'ancienne application](https://github.com/OpenClassrooms-Student-Center/P12_Front-end)  
+Le but de ce changement est de réduire la dette technique et d'améliorer la performance de l'application web.  
+L'application permet la gestion des dossiers des employés :
 
 - Ajout de nouveaux employés
 - Consultations des employés
 
-Les plugins JQuery ont été remplacés :<br>
+Les plugins JQuery ont été remplacés :
 
 - Select : composant interne
 - Modal : [sg-modal-lib](https://www.npmjs.com/package/sg-modal-lib)
 - Date picker : [MUIDatePicker](https://mui.com/x/react-date-pickers/date-picker/)
 - Table : [react-data-table-component](https://www.npmjs.com/package/react-data-table-component)
 
-Pour le moment, les données sont mockées (employees et departments). <br>
-Les états américains permettant de remplir les options du select sont récupérés grâce à la bibliothèque [states-us](https://www.npmjs.com/package/states-us). <br>
+Pour le moment, les données sont mockées (employees et departments).
+
+Les états américains permettant de remplir les options du select sont récupérés grâce à la bibliothèque [states-us](https://www.npmjs.com/package/states-us).
+
 Des test unitaires ont été mis en place avec vitest.
+
+Le fichier manifest.json configure l'application web Wealth Health - HRnet en spécifiant des métadonnées telles que le nom de l'application, une description, les icônes, ainsi que les paramètres de démarrage.  
+Ce fichier garantit une meilleure expérience utilisateur pour les applications web progressives (PWA), avec un affichage optimisé, une icône pour les appareils mobiles, et un thème personnalisé.
+
+Il n'y a ni robots.txt ni sitemap.xml car le SEO n'est pas l'objectif, étant donné qu'il s'agit d'une application web interne.
 
 ### 🖥 Mock-up du site
 
@@ -49,20 +56,20 @@ Des test unitaires ont été mis en place avec vitest.
 - **[Git](https://git-scm.com/)** (^2.44.0)
 - **[npm](https://www.npmjs.com/)** (^10.2.4)
 
-➡ Cloner le projet<br>
-➡ Ouvrir le dossier dans VSCode (ou tout autre IDE)<br>
-➡ Installer les dépendances : `pnpm install`<br>
+➡ Cloner le projet  
+➡ Ouvrir le dossier dans VSCode (ou tout autre IDE)  
+➡ Installer les dépendances : `pnpm install`
 
 ### 🚀 Lancement du projet
 
-➡ Lancer l'application : `pnpm run dev`<br>
+➡ Lancer l'application : `pnpm run dev`
 
 ### ⚙ Contraintes techniques
 
-➡ Utiliser Redux pour gérer le state de l'ensemble de l'application.<br>
-➡ Coder en utilisant le paradigme de la programmation fonctionnelle.<br>
-➡ Amélioration du style de l'application.<br>
-➡ Amélioration des performances de l'application.<br>
+➡ Utiliser Redux pour gérer le state de l'ensemble de l'application.  
+➡ Coder en utilisant le paradigme de la programmation fonctionnelle.  
+➡ Amélioration du style de l'application.  
+➡ Amélioration des performances de l'application.
 
 ### 📈 Rapports de performances
 
@@ -114,10 +121,10 @@ Des test unitaires ont été mis en place avec vitest.
 
 ### 🏆 Compétences évaluées
 
-➡ Analyser la performance d'une application web.<br>
-➡ Déployer une application front-end.<br>
-➡ Refondre une application pour réduire la dette technique.<br>
-➡ Produire de la documentation technique pour une application.<br>
+➡ Analyser la performance d'une application web.  
+➡ Déployer une application front-end.  
+➡ Refondre une application pour réduire la dette technique.  
+➡ Produire de la documentation technique pour une application.
 
 ### 👷‍♀️ Auteurs
 
@@ -131,23 +138,30 @@ Des test unitaires ont été mis en place avec vitest.
 
 ### 📚 Overview
 
-This project involves migrating an internal web application from jQuery to React.<br>
-👉 [Code of the old application](https://github.com/OpenClassrooms-Student-Center/P12_Front-end) <br>
-The goal of this transition is to reduce technical debt and improve the performance of the web application. The application allows for employee file management :<br>
+This project involves migrating an internal web application from jQuery to React.  
+👉 [Code of the old application](https://github.com/OpenClassrooms-Student-Center/P12_Front-end)  
+The goal of this transition is to reduce technical debt and improve the performance of the web application. The application allows for employee file management :
 
 - Adding new employees
 - Viewing employees
 
-jQuery plugins have been replaced with :<br>
+jQuery plugins have been replaced with :
 
 - Select : internal component
 - Modal : [sg-modal-lib](https://www.npmjs.com/package/sg-modal-lib)
 - Date picker : [MUIDatePicker](https://mui.com/x/react-date-pickers/date-picker/)
 - Table : [Material React Table](https://www.material-react-table.com/)
 
-Pour le moment, les données sont mockées (employees et departments). <br>
-Currently, data (employees and departments) is mocked. U.S. states for populating the select options are retrieved using the [states-us](https://www.npmjs.com/package/states-us) library. <br>
+For the moment, the data is mocked up (employees and departments).
+
+Currently, data (employees and departments) is mocked. U.S. states for populating the select options are retrieved using the [states-us](https://www.npmjs.com/package/states-us) library.
+
 Unit tests were set up with vitest.
+
+The manifest.json file configures the Wealth Health - HRnet web application, specifying metadata such as application name, description, icons and startup parameters.  
+This file guarantees a better user experience for progressive web applications (PWA), with an optimized display, an icon for mobile devices, and a customized theme.
+
+There are no robots.txt or sitemap.xml files, as SEO is not the objective, given that this is an internal web application.
 
 ### 🖥 Site mock up
 
@@ -175,20 +189,20 @@ Unit tests were set up with vitest.
 - **[Git](https://git-scm.com/)** (^2.44.0)
 - **[npm](https://www.npmjs.com/)** (^10.2.4)
 
-➡ Clone the project<br>
-➡ Open the folder in VSCode (or any other IDE)<br>
-➡ Install dependencies : `pnpm install`<br>
+➡ Clone the project  
+➡ Open the folder in VSCode (or any other IDE)  
+➡ Install dependencies : `pnpm install`
 
 ### 🚀 Running the Project
 
-➡ Start the application: `pnpm run dev`<br>
+➡ Start the application: `pnpm run dev`
 
 ### ⚙ Technical Constraints
 
-➡ Use Redux to manage the state of the entire application. <br>
-➡ Code using the functional programming paradigm.<br>
-➡ Improve the styling of the application.<br>
-➡ Improved application performance.<br>
+➡ Use Redux to manage the state of the entire application.  
+➡ Code using the functional programming paradigm.  
+➡ Improve the styling of the application.  
+➡ Improved application performance.
 
 ### 📈 Performance Reports
 
@@ -240,10 +254,10 @@ Unit tests were set up with vitest.
 
 ### 🏆 Evaluated Skills
 
-➡ Analyze the performance of a web application.<br>
-➡ Deploy a front-end application.<br>
-➡ Refactor an application to reduce technical debt.<br>
-➡ Produce technical documentation for an application.<br>
+➡ Analyze the performance of a web application.  
+➡ Deploy a front-end application.  
+➡ Refactor an application to reduce technical debt.  
+➡ Produce technical documentation for an application.
 
 ### 👷‍♀️ Author
 
