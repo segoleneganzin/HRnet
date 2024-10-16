@@ -11,7 +11,7 @@ Le but de ce changement est de réduire la dette technique et d'améliorer la pe
 L'application permet la gestion des dossiers des employés :
 
 - Ajout de nouveaux employés
-- Consultations des employés
+- Consultation des employés
 
 Les plugins JQuery ont été remplacés :
 
