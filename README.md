@@ -170,7 +170,7 @@ There are no robots.txt or sitemap.xml files, as SEO is not the objective, given
 
 #### Home page
 
-![Site visual](src/assets/img/screenshot3.png)
+![Site visual](src/assets/img/screenshot-mock/home.png)
 
 #### Create employee
 
