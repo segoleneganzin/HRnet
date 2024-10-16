@@ -4,8 +4,9 @@ import { selectEmployees } from '../features/employeesSlice';
 import { colDefs } from '../utils/tables/employeesColDefs';
 import DataTable from 'react-data-table-component';
 import Loader from '../components/Loader';
-import { filterEmployees } from '../utils/tables/filter';
+import { filterEmployees } from '../utils/tables/filterEmployees';
 import EmployeeTableFilter from './EmployeeTableFilter';
+import { sortEmployees } from '../utils/tables/sortEmployees';
 
 /**
  * Component that displays a table of employees using react-data-table-component.
@@ -54,6 +55,7 @@ const EmployeeListTable = () => {
         setFilterText={setFilterText}
       />
       <DataTable
+        sortFunction={sortEmployees}
         columns={columns}
         data={filteredEmployees}
         fixedHeader={true}

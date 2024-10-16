@@ -16,14 +16,13 @@
     padding: 20px;
     width: fit-content;
   }
-  .ddvZdT,
-  .bOmZtP div:first-child {
-    white-space: wrap;
+  .rdt_TableCell div:first-child,
+  .rdt_TableCol div:first-child {
+    overflow-x: auto;
+    text-overflow: unset;
+    min-width: 90px;
+    scrollbar-width: thin;
   }
-  .dQcPXM {
-    min-width: 150px;
-  }
-
   @include media-breakpoint('min', large-mobile) {
     margin: 0 auto;
     width: 95%;
