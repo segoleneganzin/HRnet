@@ -17,7 +17,7 @@ Les plugins JQuery ont été remplacés :
 
 - Select : composant interne
 - Modal : [sg-modal-lib](https://www.npmjs.com/package/sg-modal-lib)
-- Date picker : [MUIDatePicker](https://mui.com/x/react-date-pickers/date-picker/)
+- Date picker : [@mui/x-date-pickers](https://mui.com/x/react-date-pickers/date-picker/)
 - Table : [react-data-table-component](https://www.npmjs.com/package/react-data-table-component)
 
 Pour le moment, les données sont mockées (employees et departments).
