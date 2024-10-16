@@ -99,7 +99,7 @@ Il n'y a ni robots.txt ni sitemap.xml car le SEO n'est pas l'objectif, étant do
 - **[Prop-Types](https://www.npmjs.com/package/prop-types)** (^15.8.1): Vérification des types à l'exécution pour les props React et les objets similaires.
 - **[React Hook Form](https://react-hook-form.com/)** (^7.53.0): Une bibliothèque de formulaires performante, flexible et extensible pour React.
 - **[Redux Persist](https://github.com/rt2zz/redux-persist)** (^6.0.0): Une bibliothèque pour persister et réhydrater un store Redux.
-- **[sg-modal-lib](https://www.npmjs.com/package/sg-modal-lib)** (^1.1.7): Composant pour la création de modale.
+- **[sg-modal-lib](https://www.npmjs.com/package/sg-modal-lib)** (^1.1.8): Composant pour la création de modale.
 - **[States-US](https://www.npmjs.com/package/states-us)** (^1.1.1): Une bibliothèque pour les données des états américains.
 - **[UUID](https://github.com/uuidjs/uuid)** (^10.0.0): Une bibliothèque pour générer des UUIDs.
 - **[Styled-components](https://styled-components.com/)** (^6.1.13): Une bibliothèque CSS-in-JS qui permet de styliser les composants React.
@@ -234,7 +234,7 @@ There are no robots.txt or sitemap.xml files, as SEO is not the objective, given
 - **[Prop-Types](https://www.npmjs.com/package/prop-types)** (^15.8.1): Runtime type checking for React props and similar objects.
 - **[React Hook Form](https://react-hook-form.com/)** (^7.53.0): A performant, flexible, and extensible form library for React.
 - **[Redux Persist](https://github.com/rt2zz/redux-persist)** (^6.0.0): A library to persist and rehydrate a Redux store.
-- **[sg-modal-lib](https://www.npmjs.com/package/sg-modal-lib)** (^1.1.7): A component for creating modals.
+- **[sg-modal-lib](https://www.npmjs.com/package/sg-modal-lib)** (^1.1.8): A component for creating modals.
 - **[States-US](https://www.npmjs.com/package/states-us)** (^1.1.1): A library for data on U.S. states.
 - **[UUID](https://github.com/uuidjs/uuid)** (^10.0.0): A library for generating UUIDs.
 - **[Styled-components](https://styled-components.com/)** (^6.1.13): A CSS-in-JS library that allows styling React components.
