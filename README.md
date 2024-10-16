@@ -6,7 +6,8 @@
 
 Ce projet correspond à la migration d'une application web interne jQuery vers React.  
 👉 [Code de l'ancienne application](https://github.com/OpenClassrooms-Student-Center/P12_Front-end)  
-Le but de ce changement est de réduire la dette technique et d'améliorer la performance de l'application web.  
+Le but de ce changement est de réduire la dette technique et d'améliorer la performance de l'application web.
+
 L'application permet la gestion des dossiers des employés :
 
 - Ajout de nouveaux employés
@@ -140,7 +141,9 @@ Il n'y a ni robots.txt ni sitemap.xml car le SEO n'est pas l'objectif, étant do
 
 This project involves migrating an internal web application from jQuery to React.  
 👉 [Code of the old application](https://github.com/OpenClassrooms-Student-Center/P12_Front-end)  
-The goal of this transition is to reduce technical debt and improve the performance of the web application. The application allows for employee file management :
+The goal of this transition is to reduce technical debt and improve the performance of the web application.
+
+The application allows for employee file management :
 
 - Adding new employees
 - Viewing employees
