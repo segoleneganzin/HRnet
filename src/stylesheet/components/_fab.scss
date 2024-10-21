@@ -18,6 +18,7 @@
   &__text {
     display: none;
   }
+
   @include media-breakpoint('max', medium-mobile) {
     bottom: 20px;
     position: fixed;
@@ -26,11 +27,6 @@
   @include media-breakpoint('min', medium-mobile) {
     border-color: color(primary);
     padding: 5px 20px 5px 15px;
-
-    &:hover {
-      background-color: transparent;
-      color: color(primary);
-    }
 
     &__icon {
       height: 30px;
@@ -43,6 +39,13 @@
       font-size: fontSize(small);
       line-height: 1;
       padding-left: 10px;
+    }
+
+    &:hover {
+      background-color: transparent;
+      .fab__text {
+        color: color(primary);
+      }
     }
   }
 }
